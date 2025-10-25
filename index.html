@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krupesh Patel - Senior Solution Architect</title>
+    
+    <!-- 1. Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 3. Load Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide-react@0.379.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body class="text-slate-800">
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto p-4 sm:p-8 lg:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+            <!-- ============================================= -->
+            <!-- LEFT COLUMN (Sticky Navigation)             -->
+            <!-- ============================================= -->
+            <header class="lg:sticky lg:top-12 lg:col-span-1 h-full lg:max-h-[90vh] flex flex-col">
+                <!-- 1. Personal Info -->
+                <div>
+                    <h1 class="text-4xl font-bold text-sky-900">Krupesh Patel</h1>
+                    <h2 class="mt-2 text-2xl font-semibold text-sky-700">Sr. Solution Architect</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        15+ years of experience in AI, RPA, and Cloud Solutions with the Microsoft Power Platform.
+                    </p>
+                </div>
+
+                <!-- 2. Contact Info -->
+                <div class="mt-8 space-y-4">
+                    <a href="mailto:kp-9287@hotmail.com" class="flex items-center gap-3 text-slate-600 hover:text-sky-700 transition-colors group">
+                        <i data-lucide="mail" class="w-5 h-5 text-slate-400 group-hover:text-sky-700"></i>
+                        <span class="font-medium">kp-9287@hotmail.com</span>
+                    </a>
+                    <div class="flex items-center gap-3 text-slate-600">
+                        <i data-lucide="phone" class="w-5 h-5 text-slate-400"></i>
+                        <span class="font-medium">(251) 581-4769</span>
+                    </div>
+                    <a href="#" class="flex items-center gap-3 text-slate-600 hover:text-sky-700 transition-colors group">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-slate-400 group-hover:text-sky-700"></i>
+                        <span class="font-medium">linkedin.com/in/krupesh-patel</span>
+                    </a>
+                </div>
+
+                <!-- 
+                  3. Scroll-Spy Navigation (Desktop Only)
+                  This menu automatically highlights as you scroll the page.
+                -->
+                <nav class="hidden lg:block mt-12">
+                    <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">On this page</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li>
+                            <a href="#summary" class="nav-link flex items-center gap-3 text-slate-500 hover:text-slate-900 transition-all">
+                                <span class="nav-dot w-2 h-2 bg-slate-400 rounded-full transition-all"></span>
+                                <span>Professional Summary</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skills" class="nav-link flex items-center gap-3 text-slate-500 hover:text-slate-900 transition-all">
+                                <span class="nav-dot w-2 h-2 bg-slate-400 rounded-full transition-all"></span>
+                                <span>Core Skills</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#experience" class="nav-link flex items-center gap-3 text-slate-500 hover:text-slate-900 transition-all">
+                                <span class="nav-dot w-2 h-2 bg-slate-400 rounded-full transition-all"></span>
+                                <span>Experience</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="nav-link flex items-center gap-3 text-slate-500 hover:text-slate-900 transition-all">
+                                <span class="nav-dot w-2 h-2 bg-slate-400 rounded-full transition-all"></span>
+                                <span>Projects</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#education" class="nav-link flex items-center gap-3 text-slate-500 hover:text-slate-900 transition-all">
+                                <span class="nav-dot w-2 h-2 bg-slate-400 rounded-full transition-all"></span>
+                                <span>Education & Certs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- 
+                  4. Experience Counter
+                  This is the counter you requested that increments on scroll.
+                -->
+                <div class="hidden lg:block mt-12 pt-8 border-t border-slate-200">
+                    <div class="flex items-baseline gap-3">
+                        <span id="experience-counter" class="text-6xl font-bold text-sky-900 transition-all duration-300">
+                            01
+                        </span>
+                        <span class="text-xl font-medium text-slate-500">/ 11</span>
+                    </div>
+                    <p class="mt-2 text-sm text-slate-500">Career Positions</p>
+                </div>
+            </header>
+
+            <!-- ============================================= -->
+            <!-- RIGHT COLUMN (Scrollable Content)           -->
+            <!-- ============================================= -->
+            <main class="lg:col-span-2">
+
+                <!-- 1. Professional Summary -->
+                <section id="summary" class="scroll-mt-24 rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                    <h3 class="text-2xl font-bold text-sky-900">Professional Summary</h3>
+                    <p class="mt-4 text-base text-slate-600 leading-relaxed">
+                        15+ years of comprehensive experience in System Analysis, Designing, Implementation, and Testing of Windows, Web, and Portal Based Applications. Proven expert in SharePoint Online (Dynamics 365) as an Architect, Developer, and Admin.
+                    </p>
+                    <p class="mt-4 text-base text-slate-600 leading-relaxed">
+                        Specialized in AI & RPA using the Microsoft Power Platform (Power Apps, Power Automate, Power BI) & UiPath. Expertise in ETL using Alteryx/SQL/Dataverse and modern web technologies including Angular, CSS, jQuery, and HTML 5.
+                    </p>
+                </section>
+                
+                <!-- 2. Company Logos Scroller -->
+                <section id="company-logos" class="mt-12">
+                     <h3 class="text-xl font-bold text-sky-900 mb-4 px-6 sm:px-8">Trusted By</h3>
+                    <div class="logo-scroller bg-white py-6 shadow-sm rounded-xl">
+                        <div class="logo-scroller-inner">
+                            <div class="logo-item">Hunt Oil Company</div>
+                            <div class="logo-item">Live Nation</div>
+                            <div class="logo-item">Wells Fargo</div>
+                            <div class="logo-item">American Airlines</div>
+                            <div class="logo-item">Range Resources</div>
+                            <div class="logo-item">Fannie Mae</div>
+                            <div class="logo-item">Bluetooth SIG</div>
+                            <div class="logo-item">Ernst & Young</div>
+                            
+                            <!-- Duplicate for seamless loop -->
+                            <div class="logo-item">Hunt Oil Company</div>
+                            <div class="logo-item">Live Nation</div>
+                            <div class="logo-item">Wells Fargo</div>
+                            <div class="logo-item">American Airlines</div>
+                            <div class="logo-item">Range Resources</div>
+                            <div class="logo-item">Fannie Mae</div>
+                            <div class="logo-item">Bluetooth SIG</div>
+                            <div class="logo-item">Ernst & Young</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Core Skills -->
+                <section id="skills" class="scroll-mt-24 mt-12 rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                    <h3 class="text-2xl font-bold text-sky-900">Core Skills</h3>
+                    <div class="mt-6 space-y-5">
+                        <div>
+                            <h4 class="font-semibold text-slate-600">Power Platform & AI/RPA</h4>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="skill-badge">Power Apps</span>
+                                <span class="skill-badge">Power Automate (RPA)</span>
+                                <span class="skill-badge">Power BI</span>
+                                <span class="skill-badge">UiPath</span>
+                                <span class="skill-badge">Dataverse</span>
+                                <span class="skill-badge">AI Agents</span>
+                                <span class="skill-badge">Dynamics 365</span>
+                            </div>
+                        </div>
+                         <div>
+                            <h4 class="font-semibold text-slate-600">SharePoint & .NET</h4>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="skill-badge">SharePoint Online</span>
+                                <span class="skill-badge">SPFx</span>
+                                <span class="skill-badge">SharePoint Designer</span>
+                                <span class="skill-badge">C#</span>
+                                <span class="skill-badge">ASP.Net</span>
+                                <span class="skill-badge">.Net Framework</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-600">Web & Scripting</h4>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="skill-badge">Angular</span>
+                                <span class="skill-badge">NodeJS</span>
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">Typescript</span>
+                                <span class="skill-badge">jQuery</span>
+                                <span class="skill-badge">HTML5</span>
+                                <span class="skill-badge">CSS3</span>
+                                <span class="skill-badge">Bootstrap</span>
+                                <span class="skill-badge">Graph API</span>
+                                <span class="skill-badge">REST</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-600">Databases & Tools</h4>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="skill-badge">SQL Server</span>
+                                <span class="skill-badge">Oracle</span>
+                                <span class="skill-badge">Teradata</span>
+                                <span class="skill-badge">Alteryx</span>
+                                <span class="skill-badge">Sharegate</span>
+                                <span class="skill-badge">Nintex</span>
+                                <span class="skill-badge">K2</span>
+                                <span class="skill-badge">Azure DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Work Experience -->
+                <section id="experience" class="scroll-mt-24 mt-12">
+                    <h3 class="text-2xl font-bold text-sky-900 mb-8 px-6 sm:px-8">Work Experience</h3>
+                    
+                    <!-- This container uses the custom timeline styles -->
+                    <div class="space-y-4">
+
+                        <div id="exp-1" data-index="1" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Apr 2023 - Current</div>
+                            <h4 class="text-lg font-bold text-slate-900">Sr. Solution Architect</h4>
+                            <h5 class="font-semibold text-slate-600">Hunt Oil Company, Dallas, TX</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Architected and governed multiple Power Platform environments, creating custom components (Header, Left Nav, Themes) for rapid development.</li>
+                                <li>Delivered a complete Master Data Management (MDM) solution with vendor onboarding, including IRS/Bank of America validation and integration with OpenInvoice & SAP S4/HANA.</li>
+                                <li>Migrated 30+ UiPath RPA processes to Power Platform RPA in under 2 months, saving over $40K annually.</li>
+                                <li>Managed and mentored a team of 3 Power Apps developers, establishing automated deployment pipelines.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="exp-2" data-index="2" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Oct 2022 - Mar 2023</div>
+                            <h4 class="text-lg font-bold text-slate-900">Lead Application Architect</h4>
+                            <h5 class="font-semibold text-slate-600">Live Nation/Ticketmaster, Dallas, TX</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Led a team of 3 to establish Power Platform environments and governance.</li>
+                                <li>Developed a new Supplier Intake process using Power Apps with multi-tier approval workflows and DocuSign integration for digital signatures.</li>
+                                <li>Created automation to extract data from DocuSign templates and populate Dataverse.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="exp-3" data-index="3" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Dec 2022 - Oct 2023</div>
+                            <h4 class="text-lg font-bold text-slate-900">Lead Application Architect</h4>
+                            <h5 class="font-semibold text-slate-600">Wells Fargo Bank, Dallas, TX</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Established governance and site structure for the migration of 1200+ SP2013 sites to SharePoint Online for the WIM department.</li>
+                                <li>Managed an offshore team and used Sharegate/AvePoint Fly to schedule and execute the migration.</li>
+                                <li>Developed a "New Site Intake" process using Power Apps and Power Automate.</li>
+                                <li>Deployed custom SPFx solutions for Mega Menu, Footer, and Banners.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="exp-4" data-index="4" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Oct 2021 - Dec 2022</div>
+                            <h4 class="text-lg font-bold text-slate-900">Lead Application Developer</h4>
+                            <h5 class="font-semibold text-slate-600">Bravo Tech (Hunt Consolidated, Inc.), Dallas, TX</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Developed RPA processes using UiPath to extract utility statements and scrape PDF data from DocuSign.</li>
+                                <li>Maintained a compliance tracker app for Hunt Utility Services using Power Apps & Flow.</li>
+                                <li>Created a Contractor Management application to meet compliance requirements.</li>
+                            </ul>
+                        </div>
+                        
+                         <div id="exp-5" data-index="5" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Jun 2018 - Oct 2021</div>
+                            <h4 class="text-lg font-bold text-slate-900">Lead Application Developer</h4>
+                            <h5 class="font-semibold text-slate-600">American Airlines Inc., Fort Worth, TX</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Led UI technical solutions, collaborating with business counterparts on digital goals.</li>
+                                <li>Created an FAA-approved application for Flight Ops (J8 Message) to prevent overfly, saving an estimated $2B annually.</li>
+                                <li>Automated data import processes from Teradata/ODS to SQL using Alteryx workflows for K2 applications.</li>
+                                <li>Developed a digital signature control and common look/feel for K2 applications.</li>
+                            </ul>
+                        </div>
+                        
+                         <div id="exp-6" data-index="6" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Dec 2015 - Jul 2017</div>
+                            <h4 class="text-lg font-bold text-slate-900">Sr. SharePoint Developer</h4>
+                            <h5 class="font-semibold text-slate-600">Range Resources, Fort Worth, TX</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Designed and implemented mobile-friendly forms and workflows for the Operations Team using Nintex Mobile.</li>
+                                <li>Automated the "Turn in Line (TIL)" approval process, capturing geo-locations and actual signatures.</li>
+                                <li>Used custom JavaScript within Nintex Forms to extend OOTB functionality.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="exp-7" data-index="7" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Aug 2014 - Dec 2015</div>
+                            <h4 class="text-lg font-bold text-slate-900">Sr. SharePoint Architecture - Developer</h4>
+                            <h5 class="font-semibold text-slate-600">Fannie Mae, Dallas, TX</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Migrated content and workflows from SharePoint 2007 to SharePoint 2013, enhancing UI and functionality.</li>
+                                <li>Created a mobile/iPad Check-In Application ("Red Flag Tracker") for meetings and events.</li>
+                                <li>Developed multi-level, multi-stage approval workflows using SharePoint Designer 2013.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="exp-8" data-index="8" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Aug 2013 - Jul 2014</div>
+                            <h4 class="text-lg font-bold text-slate-900">Sr. SharePoint Developer/Admin</h4>
+                            <h5 class="font-semibold text-slate-600">Institute for Intergovernmental Research (IIR/DHS), Tallahassee, FL</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Managed and enhanced NIEM.gov, providing full support for SharePoint 2013 (Office 365) and On-Premises.</li>
+                                <li>Configured AD to SharePoint 2013 Online using ADFS 2.0 and Directory Sync.</li>
+                                <li>Set up new search and query rules to promote results for faster access.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="exp-9" data-index="9" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Feb 2013 - July 2013</div>
+                            <h4 class="text-lg font-bold text-slate-900">Sr. Software Developer</h4>
+                            <h5 class="font-semibold text-slate-600">Bluetooth SIG. (HQ), Kirkland, WA</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Redesigned bluetooth.org, focusing on security, search, and navigation.</li>
+                                <li>Implemented "Friendly URL" feature from Managed Metadata Term Store.</li>
+                                <li>Created a SPList-driven Mega Menu with caching to improve performance.</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="exp-10" data-index="10" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">Apr 2012 - Feb 2013</div>
+                            <h4 class="text-lg font-bold text-slate-900">Software Application Developer</h4>
+                            <h5 class="font-semibold text-slate-600">Lazard Frères Ltd., Manhattan, NY</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Developed and designed a document management solution for investment bankers to collaborate securely.</li>
+                                <li>Created custom web parts, user controls, and application pages.</li>
+                                <li>Implemented custom Enterprise Keywords and auto-tagging to create a knowledge-based system.</li>
+                            </ul>
+                        </div>
+
+                        <div id="exp-11" data-index="11" class="timeline-item rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date text-sm font-medium text-slate-500 mb-1">July 2011 - Apr 2012</div>
+                            <h4 class="text-lg font-bold text-slate-900">Software Developer</h4>
+                            <h5 class="font-semibold text-slate-600">Ernst & Young LLP, Cleveland, OH (EY)</h5>
+                            <ul class="mt-3 list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Worked on the "FUSION" project to integrate SharePoint 2010 features with IBM Lotus Note.</li>
+                                <li>Utilized Word Automation Service, Document Sets, and Ribbon Customization.</li>
+                                <li>Created custom job definitions to convert documents to PDF and XPS.</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+                <!-- 5. Projects -->
+                <section id="projects" class="scroll-mt-24 mt-12 rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                    <h3 class="text-2xl font-bold text-sky-900">Key Projects</h3>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-1 gap-6">
+
+                        <!-- Project 1: Power Platform Scroller -->
+                        <div class="rounded-lg border border-slate-200 overflow-hidden">
+                            <div class="p-5">
+                                <h4 class="text-lg font-bold text-slate-900">Power Platform Solutions</h4>
+                                <p class="mt-2 text-slate-600">A collection of custom Power Apps, Power Automate flows, and Power BI dashboards built to solve complex business problems, from vendor management to risk assessment.</p>
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    <span class="skill-badge-sm">Power Apps</span>
+                                    <span class="skill-badge-sm">Power Automate</span>
+                                    <span class="skill-badge-sm">Dataverse</span>
+                                    <span class="skill-badge-sm">SAP S4/HANA</span>
+                                </div>
+                            </div>
+
+                            <!-- Image Scroller -->
+                            <div class="relative bg-slate-100" data-scroller-id="project1">
+                                <!-- Images Container -->
+                                <div class="scroller">
+                                    <div class="scroller-item">
+                                        <img src="https://placehold.co/600x400/0ea5e9/white?text=Power+App+Dashboard" alt="Power App Dashboard" class="w-full h-64 object-cover">
+                                    </div>
+                                    <div class="scroller-item">
+                                        <img src="https://placehold.co/600x400/0c4a6e/white?text=Power+Automate+Flow" alt="Power Automate Flow" class="w-full h-64 object-cover">
+                                    </div>
+                                    <div class="scroller-item">
+                                        <img src="https://placehold.co/600x400/0369a1/white?text=Power+BI+Report" alt="Power BI Report" class="w-full h-64 object-cover">
+                                    </div>
+                                    <div class="scroller-item">
+                                        <img src="https://placehold.co/600x400/0891b2/white?text=Dataverse+Schema" alt="Dataverse Schema" class="w-full h-64 object-cover">
+                                    </div>
+                                </div>
+                                
+                                <!-- Controls -->
+                                <button class="scroller-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2 hover:bg-white transition-all shadow-md">
+                                    <i data-lucide="chevron-left" class="w-5 h-5 text-slate-800"></i>
+                                </button>
+                                <button class="scroller-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2 hover:bg-white transition-all shadow-md">
+                                    <i data-lucide="chevron-right" class="w-5 h-5 text-slate-800"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="rounded-lg border border-slate-200 p-5">
+                            <h4 class="text-lg font-bold text-slate-900">FAA-Approved J8 Message System</h4>
+                            <p class="mt-2 text-slate-600">Developed a critical application for American Airlines Flight Ops to communicate with dispatchers, preventing overfly incidents and saving an estimated $2B annually. The system was approved by the FAA.</p>
+                             <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="skill-badge-sm">K2</span>
+                                <span class="skill-badge-sm">SQL</span>
+                                <span class="skill-badge-sm">Alteryx</span>
+                                <span class="skill-badge-sm">AngularJS</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="rounded-lg border border-slate-200 p-5">
+                            <h4 class="text-lg font-bold text-slate-900">Master Data Management (MDM) & Vendor Onboarding</h4>
+                            <p class="mt-2 text-slate-600">Built a complete MDM and vendor onboarding system for Hunt Oil Company, featuring validation against IRS and Bank of America, and full integration with OpenInvoice and SAP S4/HANA.</p>
+                             <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="skill-badge-sm">Power Platform</span>
+                                <span class="skill-badge-sm">DocuSign</span>
+                                <span class="skill-badge-sm">SAP S4/HANA</span>
+                                <span class="skill-badge-sm">Custom API</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                
+                <!-- 6. Education & Certifications -->
+                <section id="education" class="scroll-mt-24 mt-12 rounded-xl bg-white shadow-sm p-6 sm:p-8">
+                    <h3 class="text-2xl font-bold text-sky-900">Education & Certifications</h3>
+                    
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Education -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-4">Education</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800">Master of Science, Computer Science</h5>
+                                    <p class="text-slate-600">University of Bridgeport, Bridgeport, CT</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-800">Bachelor of Engineering, Information Technology</h5>
+                                    <p class="text-slate-600">BVM Engineering College, S.P. University, Gujarat, IN</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-4">Certifications</h4>
+                            <ul class="list-disc list-outside pl-5 space-y-2 text-slate-600">
+                                <li>Microsoft Certified Power Platform Architect</li>
+                                <li>Microsoft Certified - Power Platform Developer</li>
+                                <li>UiPath Certified RPA Developer</li>
+                                <li>Nintex Workflow Pro Certified</li>
+                                <li>K2 Certified Architect</li>
+                                <li>MCTS: 70-488 (SharePoint 2013 Core App Dev)</li>
+                                <li>MCTS: 70-573 (SharePoint 2010 App Dev)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+            </main>
+        </div>
+    </div>
+    
+    <!-- Inline CSS for skill badges -->
+    <style>
+        
+    </style>
+
+    <!-- 5. Inline JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. Icon Replacement ---
+            // This finds all elements with `data-lucide` and replaces them with SVG icons
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // --- 2. Project Image Scrollers ---
+            // This logic finds all scrollers and hooks up their next/prev buttons
+            const scrollers = document.querySelectorAll('[data-scroller-id]');
+            scrollers.forEach(scrollerWrapper => {
+                const scroller = scrollerWrapper.querySelector('.scroller');
+                const prevBtn = scrollerWrapper.querySelector('.scroller-prev');
+                const nextBtn = scrollerWrapper.querySelector('.scroller-next');
+                
+                if (!scroller || !prevBtn || !nextBtn) return;
+
+                const itemWidth = scroller.querySelector('.scroller-item').clientWidth;
+
+                nextBtn.addEventListener('click', () => {
+                    scroller.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    scroller.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+                });
+            });
+
+
+            // --- 3. Scroll-Spy Navigation & Counter ---
+            // This is the logic for the "incrementing number" and active nav state
+            
+            // Only run this on larger screens where the nav is visible
+            if (window.innerWidth < 1024) return;
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section[id]');
+            const experienceItems = document.querySelectorAll('.timeline-item[data-index]');
+            const counterElement = document.getElementById('experience-counter');
+
+            // Create an observer to watch all main sections
+            const observer = new IntersectionObserver((entries) => {
+                let activeSectionId = null;
+                
+                // Find the first visible section from the top
+                for (const entry of entries) {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+                        activeSectionId = entry.target.id;
+                        break;
+                    }
+                }
+                
+                // If no section is "active" (e.g., at the very top/bottom),
+                // find the one closest to the top of the viewport.
+                if (!activeSectionId) {
+                    let closestEntry = [...entries].sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+                                                  .find(e => e.boundingClientRect.top > 0);
+                    if (closestEntry) {
+                        activeSectionId = closestEntry.target.id;
+                    }
+                }
+
+                // Update navigation links
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${activeSectionId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }, { 
+                rootMargin: '0px 0px -50% 0px', // Triggers when section is in the top half
+                threshold: 0.1
+            });
+            
+            sections.forEach(section => observer.observe(section));
+            
+            
+            // Create a separate observer for the experience timeline items
+            const experienceObserver = new IntersectionObserver((entries) => {
+                 let activeItem = null;
+                
+                // Find the topmost visible experience item
+                for (const entry of entries) {
+                     if (entry.isIntersecting) {
+                        activeItem = entry.target;
+                        break; // We only care about the first one
+                    }
+                }
+                
+                if (activeItem) {
+                    const index = activeItem.getAttribute('data-index');
+                    
+                    // Update the counter
+                    if (counterElement) {
+                        counterElement.textContent = index.toString().padStart(2, '0');
+                    }
+                    
+                    // Highlight the active timeline item
+                    experienceItems.forEach(item => {
+                        if (item.id === activeItem.id) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+
+            }, { 
+                rootMargin: '-40% 0px -60% 0px', // Triggers when an item is in the middle 40%
+                threshold: 0
+            });
+            
+            experienceItems.forEach(item => experienceObserver.observe(item));
+
+        });
+    </script>
+</body>
+</html>

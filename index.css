@@ -1,0 +1,143 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* Tailwind gray-50 */
+}
+
+/* --- Active state for scroll-spy navigation --- */
+.nav-link.active {
+    color: #0c4a6e; /* Tailwind sky-900 */
+    font-weight: 600;
+    transform: translateX(4px);
+}
+
+.nav-link.active .nav-dot {
+    background-color: #0c4a6e; /* Tailwind sky-900 */
+}
+
+/* --- Styles for the experience timeline --- */
+.timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* The vertical line */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0.45rem; /* Aligns with center of dot */
+    top: 0.25rem;
+    bottom: -0.25rem;
+    width: 2px;
+    background-color: #e2e8f0; /* Tailwind slate-200 */
+}
+
+.timeline-item:last-child::before {
+        height: 0; /* No line after the last item */
+}
+
+/* The dot */
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    height: 1rem;
+    width: 1rem;
+    background-color: #cbd5e1; /* Tailwind slate-300 */
+    border-radius: 9999px;
+    border: 2px solid #f8fafc; /* Tailwind gray-50 */
+    transition: all 0.3s ease;
+}
+
+/* Active dot for timeline */
+.timeline-item.active .timeline-dot {
+    background-color: #0ea5e9; /* Tailwind sky-500 */
+    transform: scale(1.1);
+}
+
+.timeline-item.active .timeline-date {
+    color: #0369a1; /* Tailwind sky-700 */
+    font-weight: 600;
+}
+
+/* --- Project Scroller --- */
+.scroller {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    display: flex;
+    border-radius: 0.5rem; /* rounded-lg */
+}
+
+.scroller-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+/* Hide scrollbar */
+.scroller {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.scroller::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* --- Rolling Company Logos --- */
+.logo-scroller {
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.logo-scroller-inner {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem; /* px-8 */
+    color: #64748b; /* text-slate-500 */
+    font-weight: 600; /* font-semibold */
+    font-size: 1.125rem; /* text-lg */
+    white-space: nowrap;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.skill-badge {
+            display: inline-block;
+            background-color: #e0f2fe; /* sky-100 */
+            color: #0c4a6e; /* sky-900 */
+            padding: 0.25rem 0.75rem; /* px-3 py-1 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+        }
+.skill-badge-sm {
+    display: inline-block;
+    background-color: #f0f9ff; /* sky-50 */
+    color: #0369a1; /* sky-700 */
+    padding: 0.125rem 0.625rem; /* px-2.5 py-0.5 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 500; /* font-medium */
+    border: 1px solid #bae6fd; /* sky-200 */
+}
