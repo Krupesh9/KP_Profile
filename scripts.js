@@ -1,100 +1,185 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
 
-    // --- Icon Replacement ---
-    if (window.lucide) {
-        lucide.createIcons();
-    }
+    // Mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    // --- Neon Light Effect ---
-    const lightEffect = document.querySelector('.background-light-effect');
-    document.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth * 100;
-        const y = e.clientY / window.innerHeight * 100;
-        document.documentElement.style.setProperty('--light-x', `${x}%`);
-        document.documentElement.style.setProperty('--light-y', `${y}%`);
-    });
-
-    // --- Mobile Menu ---
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // --- Scroll Animations ---
-    const sections = document.querySelectorAll('.section');
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+
+    // Set default theme to light if no theme is saved
+    if (localStorage.getItem('theme') === 'dark') {
+        html.classList.add('dark');
+        themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    } else {
+        html.classList.remove('dark');
+        themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        if (html.classList.contains('dark')) {
+            html.classList.remove('dark');
+            themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.classList.add('dark');
+            themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Pill navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navMarker = document.getElementById('nav-marker');
+    const navMenu = document.getElementById('nav-menu');
+
+    function moveMarker(element) {
+        if (!element || !navMarker) return;
+        navMarker.style.width = `${element.offsetWidth}px`;
+        navMarker.style.left = `${element.offsetLeft}px`;
+        navMarker.style.height = `${element.offsetHeight}px`;
+        navMarker.style.top = `${element.offsetTop}px`;
+        navLinks.forEach(link => link.classList.remove('active'));
+        element.classList.add('active');
+    }
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            // Adjust 72px for header height
+            if (pageYOffset >= sectionTop - 72) { 
+                current = section.getAttribute('id');
             }
         });
-    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
+        const activeLink = navMenu.querySelector(`a[href*=${current}]`);
+        moveMarker(activeLink);
     });
 
-    // --- Dynamic Content Loading ---
-    const experienceContainer = document.querySelector('#experience .space-y-8');
-    const projectsContainer = document.querySelector('#projects .grid');
+    // Initial marker position
+    const initialActiveLink = navMenu.querySelector('a[href="#home"]');
+    if (initialActiveLink) {
+        moveMarker(initialActiveLink);
+    }
 
-    const experienceData = [
-        {
-            date: 'Apr 2023 - Current',
-            title: 'Sr. Solution Architect',
-            company: 'Hunt Oil Company, Dallas, TX',
-            description: 'Architected and governed multiple Power Platform environments, creating custom components for rapid development. Delivered a complete Master Data Management (MDM) solution with vendor onboarding, including IRS/Bank of America validation and integration with OpenInvoice & SAP S4/HANA. Migrated 30+ UiPath RPA processes to Power Platform RPA in under 2 months, saving over $40K annually. Managed and mentored a team of 3 Power Apps developers, establishing automated deployment pipelines.'
-        },
-        {
-            date: 'Oct 2022 - Mar 2023',
-            title: 'Lead Application Architect',
-            company: 'Live Nation/Ticketmaster, Dallas, TX',
-            description: 'Led a team of 3 to establish Power Platform environments and governance. Developed a new Supplier Intake process using Power Apps with multi-tier approval workflows and DocuSign integration for digital signatures. Created automation to extract data from DocuSign templates and populate Dataverse.'
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop - 70, // Adjust for header height
+                behavior: 'smooth'
+            });
+            // Update marker immediately on click
+            moveMarker(link); 
+        });
+    });
+
+    // Update marker position on window resize
+    window.addEventListener('resize', () => {
+        const activeLink = navMenu.querySelector('.nav-link.active');
+        moveMarker(activeLink);
+    });
+
+
+    // Count-up animation
+    const statsSection = document.getElementById('stats');
+    const counters = statsSection.querySelectorAll('[data-count]');
+
+    const countUp = (element) => {
+        const target = +element.getAttribute('data-count');
+        const duration = 2000; // 2 seconds
+        const frameRate = 1000 / 60; // 60 fps
+        const totalFrames = Math.round(duration / frameRate);
+        let frame = 0;
+
+        const counter = setInterval(() => {
+            frame++;
+            const progress = frame / totalFrames;
+            const currentCount = Math.round(target * progress);
+            
+            if(element.dataset.count === "2"){
+                 element.innerText = currentCount + 'B+';
+            } else {
+                 element.innerText = currentCount + '+';
+            }
+
+            if (frame === totalFrames) {
+                clearInterval(counter);
+            }
+        }, frameRate);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                counters.forEach(counter => {
+                    countUp(counter);
+                });
+                observer.disconnect(); // Animate only once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+
+    // Mouse light effect
+    document.addEventListener('mousemove', (e) => {
+        document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
+        document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+
+    // Project Carousels
+    document.querySelectorAll('.project-carousel').forEach(carousel => {
+        const inner = carousel.querySelector('.carousel-inner');
+        const prevBtn = carousel.querySelector('.carousel-control-prev');
+        const nextBtn = carousel.querySelector('.carousel-control-next');
+        const indicatorsContainer = carousel.querySelector('.carousel-indicators');
+        const items = inner.querySelectorAll('img');
+        const totalItems = items.length;
+        let currentIndex = 0;
+
+        // Create indicators
+        for (let i = 0; i < totalItems; i++) {
+            const indicator = document.createElement('div');
+            indicator.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/50', 'cursor-pointer');
+            if (i === 0) indicator.classList.add('bg-white');
+            indicator.addEventListener('click', () => showSlide(i));
+            indicatorsContainer.appendChild(indicator);
         }
-    ];
+        const indicators = indicatorsContainer.querySelectorAll('div');
 
-    const projectsData = [
-        {
-            title: 'Power Platform Solutions',
-            description: 'A collection of custom Power Apps, Power Automate flows, and Power BI dashboards built to solve complex business problems, from vendor management to risk assessment.',
-            tags: ['Power Apps', 'Power Automate', 'Dataverse', 'SAP S4/HANA']
-        },
-        {
-            title: 'FAA-Approved J8 Message System',
-            description: 'Developed a critical application for American Airlines Flight Ops to communicate with dispatchers, preventing overfly incidents and saving an estimated $2B annually. The system was approved by the FAA.',
-            tags: ['K2', 'SQL', 'Alteryx', 'AngularJS']
-        },
-        {
-            title: 'Master Data Management (MDM) & Vendor Onboarding',
-            description: 'Built a complete MDM and vendor onboarding system for Hunt Oil Company, featuring validation against IRS and Bank of America, and full integration with OpenInvoice and SAP S4/HANA.',
-            tags: ['Power Platform', 'DocuSign', 'SAP S4/HANA', 'Custom API']
+        function showSlide(index) {
+            if (index < 0) {
+                currentIndex = totalItems - 1;
+            } else if (index >= totalItems) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            indicators.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.classList.add('bg-white');
+                    dot.classList.remove('bg-white/50');
+                } else {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/50');
+                }
+            });
         }
-    ];
 
-    experienceData.forEach(item => {
-        const experienceItem = document.createElement('div');
-        experienceItem.className = 'card p-6 sm:p-8';
-        experienceItem.innerHTML = `
-            <div class="text-sm font-medium text-slate-500 mb-1">${item.date}</div>
-            <h4 class="text-lg font-bold text-white">${item.title}</h4>
-            <h5 class="font-semibold text-sky-400">${item.company}</h5>
-            <p class="mt-3 text-slate-400">${item.description}</p>
-        `;
-        experienceContainer.appendChild(experienceItem);
+        prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+        showSlide(0); // Initialize first slide
     });
-
-    projectsData.forEach(item => {
-        const projectItem = document.createElement('div');
-        projectItem.className = 'card p-6 sm:p-8';
-        projectItem.innerHTML = `
-            <h4 class="text-lg font-bold text-white">${item.title}</h4>
-            <p class="mt-2 text-slate-400">${item.description}</p>
-            <div class="mt-3 flex flex-wrap gap-2">
-                ${item.tags.map(tag => `<span class="skill-badge-sm">${tag}</span>`).join('')}
-            </div>
-        `;
-        projectsContainer.appendChild(projectItem);
-    });
-
 });

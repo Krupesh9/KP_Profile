@@ -1,107 +1,113 @@
-/* Apple-like Design & Neon Light Effect */
-
-:root {
-    --slate-900: #0f172a;
-    --slate-800: #1e293b;
-    --slate-700: #334155;
-    --slate-400: #94a3b8;
-    --slate-300: #cbd5e1;
-    --sky-400: #38bdf8;
-    --sky-500: #0ea5e9;
-    --purple-500: #a855f7;
-
-    --light-x: 50%;
-    --light-y: 50%;
+.nav-link.active {
+    color: #2563eb; /* blue-600 */
+    font-weight: 600;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
+.dark .nav-link.active {
+    color: #60a5fa; /* blue-400 */
 }
 
-.background-light-effect {
+@keyframes shimmer {
+    0% {
+        box-shadow: 0 0 5px #8b5cf6, 0 0 10px #8b5cf6, 0 0 20px #8b5cf6, 0 0 40px #8b5cf6;
+    }
+    50% {
+        box-shadow: 0 0 10px #a78bfa, 0 0 20px #a78bfa, 0 0 40px #a78bfa, 0 0 80px #a78bfa;
+    }
+    100% {
+        box-shadow: 0 0 5px #8b5cf6, 0 0 10px #8b5cf6, 0 0 20px #8b5cf6, 0 0 40px #8b5cf6;
+    }
+}
+
+.neon-divider {
+    height: 2px;
+    width: 100%;
+    max-width: 40rem; /* 640px */
+    background-color: #8b5cf6;
+    animation: shimmer 3s infinite linear;
+}
+
+.dark .neon-divider {
+    background-color: #a78bfa;
+}
+
+.dark body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background: radial-gradient(circle at var(--light-x) var(--light-y), rgba(56, 189, 248, 0.15), rgba(168, 85, 247, 0.15), transparent 40%);
+    pointer-events: none;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 20%);
+    z-index: 100;
+    transition: background 0.1s ease-in-out;
 }
 
-.nav-link {
-    color: var(--slate-300);
-    transition: color 0.3s;
+
+.p-4 {
+    padding: 0.5rem !important;
+}
+
+.gap-x-4 {
+    column-gap: 5rem !important;
+}
+
+/* Carousel Styles */
+.project-carousel {
     position: relative;
 }
 
-.nav-link:hover {
-    color: white;
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
-.nav-link::after {
-    content: '';
+.carousel-inner img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 9999px; /* full rounded */
+    cursor: pointer;
+    z-index: 20;
+}
+
+.carousel-control-prev {
+    left: 1rem;
+}
+
+.carousel-control-next {
+    right: 1rem;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--sky-400);
-    transition: width 0.3s;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 20;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.carousel-indicators div {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px; /* full rounded */
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
 }
 
-.card {
-    background-color: rgba(30, 41, 59, 0.5);
-    border: 1px solid var(--slate-700);
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.card:hover {
-    background-color: rgba(30, 41, 59, 0.8);
-    border-color: var(--slate-400);
-}
-
-.input-field {
-    background-color: var(--slate-800);
-    border: 1px solid var(--slate-700);
-    color: var(--slate-300);
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.input-field:focus {
-    outline: none;
-    border-color: var(--sky-400);
-    box-shadow: 0 0 0 2px var(--sky-400);
-}
-
-.button-primary {
-    background-color: var(--sky-500);
-    color: white;
-    font-weight: bold;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s;
-}
-
-.button-primary:hover {
-    background-color: var(--sky-400);
-}
-
-.section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s, transform 0.6s;
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
+.carousel-indicators div.bg-white {
+    background-color: white;
 }
