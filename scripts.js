@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Bravo Tech (Hunt Consolidated, Inc.)",
                 "period": "Oct 2021 - Dec 2022",
                 "title": "Lead Application Developer",
-                "logo": "./companyLogo/huntLogo.png",
+                "logo": "./companyLogo/TekSystems.png",
                 "icon": "bi-gear-wide-connected",
                 "responsibilities": [
                     "Developed RPA processes using UiPath to extract data from utility statements.",
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Range Resources",
                 "period": "Dec 2015 - Jul 2017",
                 "title": "Sr. SharePoint Developer",
-                "logo": "companyLogo/RRLogo.png",
+                "logo": "./companyLogo/RRLogo.png",
                 "icon": "bi-geo-alt-fill",
                 "responsibilities": [
                     "Expertise in Design and Implement, Testing, Deployment phases of the SDLC for SP2013 Intranet Portal.",
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Involved in all the phase of the SDLC but the key role is SP 2010 Architect/Developer in Tech Team.",
                     "Involved in creating PowerShell scripts to install complete SharePoint including custom WSP in 3 Hours.",
                     "Extensively involved in creating Document Library and Document Set using custom Application Page with custom rule specified in different list using CAML.",
-                    "Created Custom Sequential multi-leveled Workflow using VS2010 as well as SPD 2010 Workflow for sending customized E-Mail Notification."
+                    "Created Custom Sequential multi-leveled Workflow using VS2010 and as well as SPD 2010 Workflow for sending customized E-Mail Notification."
                 ]
             },
             {
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "icon": "bi-briefcase-fill",
                 "responsibilities": [
                     "Involved only in Implementation phase. Key role is SP 2010 Dev.",
-                    "Extensively work on 2010\'s new feature like Word Automation Service and Document Set along with the Ribbon Customization using both SP Object Model and Client Object Model.",
+                    "Extensively work on 2010's new feature like Word Automation Service and Document Set along with the Ribbon Customization using both SP Object Model and Client Object Model.",
                     "Created Custom Sequential multi-stage Workflow using VS2010 and associated that with InfoPath 2010.",
                     "Activated and associate the same workflow with custom Ribbon, Content Type and List for DTU."
                 ]
