@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Live Nation / Ticketmaster",
                 "period": "Oct 2022 - Mar 2023",
                 "title": "Lead Application Architect",
-                "logo": "./companyLogo/liveNation.png",
+                "logo": "companyLogo/liveNation.png",
                 "icon": "bi-ticket-perforated-fill",
                 "responsibilities": [
                     "Led a team of 3 to learn Power Platform fundamentals.",
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Wells Fargo Bank",
                 "period": "Dec 2022 - Oct 2023",
                 "title": "Lead Application Architect",
-                "logo": "./companyLogo/wellsFargo.png",
+                "logo": "companyLogo/wellsFargo.png",
                 "icon": "bi-bank2",
                 "responsibilities": [
                     "Established governance and site structure for the migration of 1200+ SP2013 sites.",
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "American Airlines Inc.",
                 "period": "Jun 2018 - Oct 2021",
                 "title": "Lead Application Developer",
-                "logo": "./companyLogo/aaLogo.png",
+                "logo": "companyLogo/aaLogo.png",
                 "icon": "bi-airplane-fill",
                 "responsibilities": [
                     "Led UI technical solutions throughout the entire product lifecycle.",
