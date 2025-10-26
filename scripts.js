@@ -33,6 +33,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 "skills": ["UiPath", "Power Automate RPA", "K2", "Nintex", "Alteryx", "Document Processing"]
             },
             {
+                "category": "Artificial Intelligence",
+                "icon": "bi-cpu-fill",
+                "color": "red",
+                "skills": ["AI Agents", "Machine Learning", "Natural Language Processing", "Generative AI (Claude, Gemini, ChatGPT 5)"]
+            },
+            {
+                "category": "Microsoft Copilot Studio",
+                "icon": "bi-robot",
+                "color": "teal",
+                "skills": ["Conversational AI", "Bot Development", "Custom Connectors", "Generative AI Integration"]
+            },
+            {
+                "category": "Vibe Coding & Collaboration",
+                "icon": "bi-people-fill",
+                "color": "pink",
+                "skills": ["Real-time Collaboration", "Interactive Development", "Pair Programming", "Code Sharing"]
+            },
+            {
                 "category": "Integration & APIs",
                 "icon": "bi-plug-fill",
                 "color": "amber",
