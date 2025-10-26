@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.className = 'relative mb-12';
             div.innerHTML = `
-                <div class="md:absolute md:left-0 md:top-0 hidden md:flex flex-col items-center w-24 text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
+                <div class="absolute top-0 left-0 flex flex-col items-center w-24 text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
                     <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">${job.period.split(' - ')[1]}</span>
                     <i class="bi bi-arrow-up text-slate-400 dark:text-slate-500 text-lg"></i>
                     <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
@@ -560,13 +560,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="pl-24 md:pl-32 w-full">
                     <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
                         <div class="text-left w-full">
-                            <div class="md:hidden flex items-center gap-4 mb-2">
-                                <div class="flex flex-col items-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
-                                    <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">${job.period.split(' - ')[1]}</span>
-                                    <i class="bi bi-arrow-up text-slate-400 dark:text-slate-500 text-lg"></i>
-                                    <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
-                                </div>
-                            </div>
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
