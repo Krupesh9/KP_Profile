@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    console.log('Script loaded and DOMContentLoaded fired.');
+
     const portfolioData = {
         "skills": [
             {
@@ -358,6 +360,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
+    // Close mobile menu when a link is clicked
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
     // --- PILL NAVIGATION --- //
     const navLinks = document.querySelectorAll('.nav-link');
     const navMarker = document.getElementById('nav-marker');
@@ -482,6 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- DYNAMIC DATA LOADING --- //
+    console.log('Attempting to populate sections...');
     populateSkills(portfolioData.skills);
     populateProjects(portfolioData.projects);
     populateExperience(portfolioData.experience);
@@ -621,5 +632,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 educationContainer.appendChild(border);
             }
         });
+    }
+
+    // --- STICKY PROFILE PHOTO IN HEADER --- //
+    const mainProfilePhoto = document.querySelector('#home .gemini-glow-border img');
+    const headerKpContainer = document.querySelector('header .flex.items-center.gap-2 > div');
+
+    if (mainProfilePhoto && headerKpContainer) {
+        const originalKpContent = headerKpContainer.innerHTML;
+        const stickyProfilePhotoHtml = `<img src="${mainProfilePhoto.src}" alt="Krupesh Patel" class="w-10 h-10 object-contain rounded-md shadow-md transition-transform duration-300 zoom-150">`;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0
+        };
+
+        const profilePhotoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Main profile photo is in view, show 'KP'
+                    headerKpContainer.innerHTML = originalKpContent;
+                    headerKpContainer.classList.remove('p-0'); // Remove padding if added for image
+                } else {
+                    // Main profile photo is out of view, show sticky photo
+                    headerKpContainer.innerHTML = stickyProfilePhotoHtml;
+                    headerKpContainer.classList.add('p-0'); // Add padding if needed for image
+                }
+            });
+        }, observerOptions);
+
+        profilePhotoObserver.observe(mainProfilePhoto);
     }
 });
