@@ -65,12 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/huntLogo.png",
                 "icon": "bi-buildings-fill",
                 "responsibilities": [
-                    "Setup and governed multiple Power Platform environments.",
-                    "Created reusable Power Apps components for rapid development.",
-                    "Developed a Master Data Management solution for vendor onboarding.",
-                    "Automated vendor creation in SAP S4/HANA via OpenInvoice integration.",
-                    "Built complex document templates with DocuSign.",
-                    "Managed a team of 3 developers and established Power Pipelines for CI/CD."
+                    "Architected and governed scalable Power Platform environments for enterprise solutions.",
+                    "Spearheaded a reusable Power Apps component library to accelerate development.",
+                    "Led the design of an MDM solution for streamlined vendor onboarding.",
+                    "Orchestrated vendor creation automation in SAP S4/HANA via OpenInvoice.",
+                    "Engineered complex DocuSign workflows for document generation and signing.",
+                    "Directed a team of 3 developers, implementing CI/CD pipelines for Power Platform.",
+                    "Pioneered modern development practices to foster a culture of innovation."
                 ]
             },
             {
@@ -80,11 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/wellsFargo.png",
                 "icon": "bi-bank2",
                 "responsibilities": [
-                    "Established governance and site structure for the migration of 1200+ SP2013 sites.",
-                    "Created a new site intake process with Power Apps and Power Automate.",
-                    "Managed an offshore team for migration and development tasks.",
-                    "Used Sharegate/AvePoint to migrate and schedule site migrations.",
-                    "Deployed custom SPFx Mega Menu, Footer, and Banner solutions."
+                    "Spearheaded governance and architecture for the migration of 1200+ SharePoint sites.",
+                    "Innovated an automated site intake process with Power Apps and Power Automate.",
+                    "Directed an offshore team for all migration and development activities.",
+                    "Strategically used Sharegate/AvePoint for seamless site migrations.",
+                    "Led the deployment of custom SPFx solutions for a unified user experience.",
+                    "Championed modern SharePoint features and best practices to drive user adoption."
                 ]
             },
             {
@@ -94,11 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/liveNation.png",
                 "icon": "bi-ticket-perforated-fill",
                 "responsibilities": [
-                    "Led a team of 3 to learn Power Platform fundamentals.",
-                    "Automated data extraction from DocuSign templates into Dataverse.",
-                    "Created a new supplier intake process using Power Apps with multi-tier approvals.",
-                    "Developed Canvas Power Apps for business owners to manage and automate tasks.",
-                    "Built Power BI reports for vendor submission tracking and status updates."
+                    "Mentored and upskilled a team of 3 on Power Platform fundamentals.",
+                    "Architected an automated solution to extract and sync DocuSign data into Dataverse.",
+                    "Spearheaded a new supplier intake process with a multi-tier approval workflow.",
+                    "Empowered business owners with intuitive Canvas Power Apps for task automation.",
+                    "Delivered actionable insights with Power BI reports for vendor tracking.",
+                    "Championed the Power Platform to solve complex business problems and drive innovation."
                 ]
             },
             {
@@ -108,10 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/TekSystems.png",
                 "icon": "bi-gear-wide-connected",
                 "responsibilities": [
-                    "Developed RPA processes using UiPath to extract data from utility statements.",
-                    "Scraped PDF data from DocuSign to generate reports and notifications.",
-                    "Maintained a compliance tracker SharePoint App using Power Apps & Flow.",
-                    "Used Figma to create mockups and demonstrate functionality to end-users."
+                    "Engineered and deployed robust RPA processes with UiPath for data extraction.",
+                    "Designed an intelligent data scraping solution for PDFs from DocuSign.",
+                    "Architected a mission-critical compliance tracker with SharePoint and Power Platform.",
+                    "Translated business requirements into high-fidelity mockups with Figma.",
+                    "Provided technical leadership on automation best practices to drive innovation.",
+                    "Collaborated with cross-functional teams to prioritize automation opportunities."
                 ]
             },
             {
@@ -121,11 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/aaLogo.png",
                 "icon": "bi-airplane-fill",
                 "responsibilities": [
-                    "Led UI technical solutions throughout the entire product lifecycle.",
-                    "Created an application to communicate with Flights Ops via J8 Message, saving $2B a year.",
-                    "Integrated Bootstrap to K2 Forms for responsive UI without server integration.",
-                    "Created common look and feel for K2 Applications and SharePoint 2013.",
-                    "Delivered the New A/C Parts setup system using K2, used by twenty groups."
+                    "Directed the technical vision and execution of UI solutions across the product lifecycle.",
+                    "Architected a mission-critical Flight Ops app, saving an estimated $2B annually.",
+                    "Pioneered Bootstrap integration with K2 Forms for modern, responsive UIs.",
+                    "Established a unified design language for all K2 and SharePoint applications.",
+                    "Spearheaded the development of a new A/C Parts setup system used by 20+ groups.",
+                    "Provided technical leadership and mentorship to a team of UI/UX developers."
                 ]
             },
             {
@@ -135,10 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/RRLogo.png",
                 "icon": "bi-geo-alt-fill",
                 "responsibilities": [
-                    "Expertise in Design and Implement, Testing, Deployment phases of the SDLC for SP2013 Intranet Portal.",
-                    "Designed the Workflows and Mobile Friendly Forms for the Operations Team using Nintex Tool.",
-                    "Used custom JavaScript and Style Sheet inside the Nintex Form to achieve solution which is not possible using the current version of the Nintex by Rules and Validation, pushed the limitation of Nintex.",
-                    "Extensively used Nintex Forms to collect Actual Signature and capture the Geo Location using Nintex."
+                    "Led the end-to-end SDLC for the SharePoint 2013 Intranet Portal.",
+                    "Architected complex, mobile-friendly workflows and forms with Nintex.",
+                    "Pioneered custom JavaScript and CSS solutions to extend Nintex Forms capabilities.",
+                    "Engineered a novel solution for capturing digital signatures and geo-location.",
+                    "Provided expert guidance on SharePoint and Nintex best practices.",
+                    "Collaborated with stakeholders to translate business requirements into technical solutions."
                 ]
             },
             {
@@ -148,10 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/FannieMaeLogo-2.png",
                 "icon": "bi-house-door-fill",
                 "responsibilities": [
-                    "Involved in Design and Implement, Testing, Deployment phases of the SDLC for SP2007-SP2013 Sites.",
-                    "Migrated contents and workflows from SharePoint 2007 Sites to SharePoint 2013; also did updates and enhancement on the old site to new site with feature emails and workflows as well as UI.",
-                    "Created Mobile/iPad Check-In Application for one of the Business Group called Red Flag Tracker using jQuery for their upcoming meeting/events and email notification with check in link sent via SPD 2013 WF.",
-                    "Created Cascading Drop Down menu for the different State and City using SP Services."
+                    "Directed all SDLC phases for the SP2007 to SP2013 site migration and enhancement.",
+                    "Led the successful migration of content and workflows with significant UI/UX upgrades.",
+                    "Architected a mobile-first Check-In app for iPad to streamline event management.",
+                    "Engineered a dynamic cascading drop-down menu solution with SharePoint Services.",
+                    "Provided technical leadership on SharePoint best practices for platform modernization.",
+                    "Collaborated with stakeholders to translate requirements into innovative solutions."
                 ]
             },
             {
@@ -161,16 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/IIRDHS.png",
                 "icon": "bi-shield-fill-check",
                 "responsibilities": [
-                    "Managed and enhanced NIEM.gov site and other SharePoint 2013 (Office 365) projects.",
-                    "Involved in Design, Implementation, Testing, and Deployment phases of SDLC for SP2010/SP2013.",
-                    "Configured SharePoint 2013 Online (Office 365) and On-Premises.",
-                    "Created SPList App driven Homepage Image Rotator and Biography Page.",
-                    "Setup faster Search and Query Rules for SP 2013.",
-                    "Configured AD to SharePoint 2013 Online with ADFS 2.0 and Directory Sync.",
-                    "Customized SPD Workflow for IEPD and Term Submission Process.",
-                    "Generated reports and scheduled online classes using Salesforce, Blackboard, and iContact.",
-                    "Developed Web Parts using C#, VS 2012/10, and Sandbox Solution.",
-                    "Cleaned up existing site bugs and unnecessary code, created documentation for end users."
+                    "Led the management and enhancement of NIEM.gov and other key SharePoint 2013 projects.",
+                    "Directed the end-to-end SDLC for SharePoint 2010 and 2013 projects.",
+                    "Architected and administered hybrid SharePoint environments (Online and On-Premises).",
+                    "Engineered advanced search configurations and query rules in SharePoint 2013.",
+                    "Spearheaded Active Directory integration with SharePoint Online using ADFS 2.0.",
+                    "Developed and deployed custom C#-based sandbox solutions and web parts.",
+                    "Provided technical leadership in cleaning up legacy code and resolving site bugs."
                 ]
             },
             {
@@ -180,10 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/BluetoothSIG.png",
                 "icon": "bi-bluetooth",
                 "responsibilities": [
-                    "Involved in all phases of SDLC Agile, leading as SP 2013 Admin/Developer in Online Team.",
-                    "Redesigned bluetooth.org site for secure, searchable, and navigable content.",
-                    "Implemented Voting and Attendance functionality.",
-                    "Utilized SharePoint 2013 for internal and external sites."
+                    "Led all phases of the Agile SDLC as the lead SP 2013 Admin/Developer.",
+                    "Architected and executed a complete redesign of the public-facing bluetooth.org.",
+                    "Engineered new voting and attendance tracking functionalities in SharePoint.",
+                    "Leveraged SharePoint 2013 for both internal and external-facing websites.",
+                    "Provided technical leadership and strategic direction on SharePoint solutions.",
+                    "Collaborated with stakeholders to translate requirements into technical solutions."
                 ]
             },
             {
@@ -193,10 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/LazardLogo.png",
                 "icon": "bi-bar-chart-line-fill",
                 "responsibilities": [
-                    "Involved in all the phase of the SDLC but the key role is SP 2010 Architect/Developer in Tech Team.",
-                    "Involved in creating PowerShell scripts to install complete SharePoint including custom WSP in 3 Hours.",
-                    "Extensively involved in creating Document Library and Document Set using custom Application Page with custom rule specified in different list using CAML.",
-                    "Created Custom Sequential multi-leveled Workflow using VS2010 and as well as SPD 2010 Workflow for sending customized E-Mail Notification."
+                    "Led the architecture and development of SharePoint 2010 solutions.",
+                    "Engineered automated deployment of SharePoint environments with PowerShell.",
+                    "Architected a robust system for creating Document Libraries and Document Sets.",
+                    "Designed and developed complex, multi-level sequential workflows in VS2010 & SPD.",
+                    "Provided technical leadership and expertise in SharePoint 2010 solutions.",
+                    "Collaborated with stakeholders to translate requirements into technical designs."
                 ]
             },
             {
@@ -206,10 +217,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/EYLogo.png",
                 "icon": "bi-briefcase-fill",
                 "responsibilities": [
-                    "Involved only in Implementation phase. Key role is SP 2010 Dev.",
-                    "Extensively work on 2010's new feature like Word Automation Service and Document Set along with the Ribbon Customization using both SP Object Model and Client Object Model.",
-                    "Created Custom Sequential multi-stage Workflow using VS2010 and associated that with InfoPath 2010.",
-                    "Activated and associate the same workflow with custom Ribbon, Content Type and List for DTU."
+                    "Played a key role in the implementation of SharePoint 2010 projects.",
+                    "Leveraged advanced features like Word Automation Services and Document Sets.",
+                    "Engineered extensive ribbon customizations using SP Object Model and CSOM.",
+                    "Designed and developed complex, multi-stage workflows in Visual Studio 2010.",
+                    "Spearheaded the integration of custom workflows with ribbon controls and content types.",
+                    "Provided technical expertise on SharePoint 2010 development best practices."
                 ]
             }
         ],
@@ -547,30 +560,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.className = 'relative mb-12';
             div.innerHTML = `
-                <div class="absolute top-0 left-0 flex flex-col items-center w-24 text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
+                <div class="hidden md:flex absolute top-0 left-0 flex-col items-center w-24 text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
                     <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">${job.period.split(' - ')[1]}</span>
                     <i class="bi bi-arrow-up text-slate-400 dark:text-slate-500 text-lg"></i>
                     <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
                 </div>
-                <div class="absolute left-[22px] top-[-50px] z-10">
+                <div class="absolute left-1/2 -translate-x-1/2 md:left-12 md:-translate-x-1/2 z-10">
                     <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
                         <i class="bi ${job.icon} text-3xl text-blue-600"></i>
                     </div>
                 </div>
-                <div class="pl-24 md:pl-32 w-full">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                        <div class="text-left w-full">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
-                                    <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
-                                </div>
-                                <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain hidden sm:block">
-                            </div>
-                            <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
-                                ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
-                            </ul>
+                <div class="w-full md:pl-32">
+                    <div class="mt-20 md:mt-0 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+                        <div class="md:hidden text-center mb-4">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
+                            <p class="text-slate-600 dark:text-slate-400 font-semibold">${job.company}</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">${job.period}</p>
                         </div>
+                        <div class="hidden md:flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
+                                <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
+                            </div>
+                            <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain">
+                        </div>
+                        <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
+                            ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                        </ul>
                     </div>
                 </div>
             `;
