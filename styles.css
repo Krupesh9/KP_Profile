@@ -121,3 +121,7 @@
 .dark #experience-container img {
     filter: invert(1) hue-rotate(180deg);
 }
+
+.job-icon {
+    margin-left: -9.5rem;
+}

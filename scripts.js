@@ -559,35 +559,28 @@ document.addEventListener('DOMContentLoaded', () => {
         experience.forEach(job => {
             const div = document.createElement('div');
             div.className = 'relative mb-12';
+
             div.innerHTML = `
-                <div class="hidden md:flex absolute top-0 left-0 flex-col items-center w-24 text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">${job.period.split(' - ')[1]}</span>
-                    <i class="bi bi-arrow-up text-slate-400 dark:text-slate-500 text-lg"></i>
-                    <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
-                </div>
-                <div class="absolute left-1/2 -translate-x-1/2 md:left-12 md:-translate-x-1/2 z-10">
-                    <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
+                <div class="hidden md:block absolute top-0 left-32 -translate-x-1/2 z-10">
+                    <div class="job-icon bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
                         <i class="bi ${job.icon} text-3xl text-blue-600"></i>
                     </div>
                 </div>
-                <div class="w-full md:pl-32">
-                    <div class="mt-20 md:mt-0 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                        <div class="md:hidden text-center mb-4">
-                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
-                            <p class="text-slate-600 dark:text-slate-400 font-semibold">${job.company}</p>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">${job.period}</p>
-                        </div>
-                        <div class="hidden md:flex justify-between items-start">
-                            <div>
-                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
-                                <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+                    <div class="flex justify-between items-start">
+                        <div class="w-full text-left">
+                            <div class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold px-3 py-1 rounded-md inline-block mb-4">
+                                ${job.period.replace(' - ', ' &nbsp;&rarr;&nbsp; ')}
                             </div>
-                            <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">${job.title}</h3>
+                            <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
                         </div>
-                        <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
-                            ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
-                        </ul>
+                        <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain">
                     </div>
+                    <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1 text-left">
+                        ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                    </ul>
                 </div>
             `;
             experienceContainer.appendChild(div);
