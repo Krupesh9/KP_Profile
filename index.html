@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
@@ -156,36 +155,12 @@
         <!-- Featured Projects Section -->
         <section id="projects" class="py-20">
             <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
-                
-                <!-- Image Carousel -->
-                <div class="lg:col-span-3 relative rounded-xl shadow-2xl overflow-hidden aspect-video bg-slate-200 dark:bg-slate-700">
-                    <div class="swiper-container project-image-swiper">
-                        <div class="swiper-wrapper">
-                            <!-- Images will be populated by JS -->
-                        </div>
-                    </div>
+            <div id="project-card" class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden">
+                <div id="project-image-container" class="relative aspect-video lg:aspect-auto">
+                    <!-- Project image will be populated by JS -->
                 </div>
-
-                <!-- Project Details -->
-                <div class="lg:col-span-2">
-                    <div class="swiper-container project-details-swiper">
-                        <div class="swiper-wrapper">
-                            <!-- Slides will be populated by JS -->
-                        </div>
-                        
-                        <!-- Navigation Buttons -->
-                        <div class="flex items-center justify-between mt-6">
-                            <button class="project-prev bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
-                                <i class="bi bi-arrow-left text-2xl"></i>
-                            </button>
-                            <div class="project-pagination text-center text-sm font-semibold text-slate-500 dark:text-slate-400"></div>
-                            <button class="project-next bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
-                                <i class="bi bi-arrow-right text-2xl"></i>
-                            </button>
-                        </div>
-                    </div>
+                <div id="project-details-container" class="p-8 lg:p-12 flex flex-col justify-center">
+                    <!-- Project details will be populated by JS -->
                 </div>
             </div>
         </section>
@@ -228,7 +203,6 @@
         <p class="text-slate-500 dark:text-slate-400">&copy; 2025 Krupesh Patel. All rights reserved.</p>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 
