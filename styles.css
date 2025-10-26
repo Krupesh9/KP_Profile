@@ -7,17 +7,18 @@
     }
 }
 
-.gemini-glow {
+.gemini-glow-border {
     position: relative;
-    padding: 4px; /* border width */
+    overflow: hidden;
 }
 
-.gemini-glow::before {
+.gemini-glow-border::before {
     content: '';
     position: absolute;
-    z-index: -1;
-    inset: 0;
-    border-radius: 9999px; /* rounded-full */
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
     background: conic-gradient(
         #4285F4,
         #9333ea,
@@ -25,6 +26,11 @@
         #4285F4
     );
     animation: rotate-glow 4s linear infinite;
+}
+
+.gemini-glow-border img {
+    position: relative;
+    z-index: 1;
 }
 
 .nav-link.active {
