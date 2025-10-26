@@ -129,3 +129,34 @@
 .zoom-150 {
     zoom: 1.5;
 }
+
+@media (max-width: 768px) {
+    body {
+        /*padding-left: 1rem; /* Add some padding on mobile */
+        /*padding-right: 1rem; /* Add some padding on mobile */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .job-icon {
+        margin-left: 0; /* Reset negative margin for mobile */
+        /* Or adjust to a smaller, positive margin if needed */
+    }
+
+    .experience-card .flex.justify-between.items-start {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .experience-card .company-logo {
+        display: none !important; /* Hide company logo on mobile */
+    }
+
+    .experience-card .w-full.text-left {
+        order: 1 !important;
+    }
+
+    .experience-card .job-period {
+        width: auto !important;
+    }}
