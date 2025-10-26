@@ -7,28 +7,21 @@
     color: #60a5fa; /* blue-400 */
 }
 
-@keyframes shimmer {
+#nav-marker {
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes scroll {
     0% {
-        box-shadow: 0 0 5px #8b5cf6, 0 0 10px #8b5cf6, 0 0 20px #8b5cf6, 0 0 40px #8b5cf6;
-    }
-    50% {
-        box-shadow: 0 0 10px #a78bfa, 0 0 20px #a78bfa, 0 0 40px #a78bfa, 0 0 80px #a78bfa;
+        transform: translateX(0);
     }
     100% {
-        box-shadow: 0 0 5px #8b5cf6, 0 0 10px #8b5cf6, 0 0 20px #8b5cf6, 0 0 40px #8b5cf6;
+        transform: translateX(-50%);
     }
 }
 
-.neon-divider {
-    height: 2px;
-    width: 100%;
-    max-width: 40rem; /* 640px */
-    background-color: #8b5cf6;
-    animation: shimmer 3s infinite linear;
-}
-
-.dark .neon-divider {
-    background-color: #a78bfa;
+.logos-slide {
+    animation: scroll 30s linear infinite;
 }
 
 .dark body::before {
@@ -44,70 +37,30 @@
     transition: background 0.1s ease-in-out;
 }
 
-
-.p-4 {
-    padding: 0.5rem !important;
-}
-
-.gap-x-4 {
-    column-gap: 5rem !important;
-}
-
-/* Carousel Styles */
-.project-carousel {
-    position: relative;
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-inner img {
+/* Swiper Styles */
+.swiper-container {
     width: 100%;
-    flex-shrink: 0;
-    object-fit: cover;
+    height: 100%;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 0.5rem;
-    border-radius: 9999px; /* full rounded */
-    cursor: pointer;
-    z-index: 20;
+.project-details-swiper .swiper-slide {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-control-prev {
-    left: 1rem;
+.project-details-swiper .swiper-slide-active {
+    opacity: 1 !important;
 }
 
-.carousel-control-next {
-    right: 1rem;
+.project-pagination {
+    font-family: 'Poppins', sans-serif;
 }
 
-.carousel-indicators {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
-    z-index: 20;
+.project-next,
+.project-prev {
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.carousel-indicators div {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 9999px; /* full rounded */
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-}
-
-.carousel-indicators div.bg-white {
-    background-color: white;
+.font-semibold{
+    text-align: left;
 }

@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
@@ -70,9 +71,9 @@
 
         <!-- Landing Section -->
         <section id="home" class="text-center flex flex-col justify-center items-center py-8 md:py-12">
-            <img src="./examples/About.png" alt="Krupesh Patel" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+            <img src="profilePhoto.jpeg" alt="Krupesh Patel" class="w-32 rounded-full mx-auto mb-4 shadow-lg">
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">Krupesh Patel</h1>
-            <h2 class="text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400 mt-2">Senior Solution Architect</h2>
+            <h2 class="text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400 mt-2">Senior Innovation Architect</h2>
             <p class="text-base text-slate-500 dark:text-slate-400 mt-3 max-w-2xl mx-auto">Transforming businesses through intelligent automation and cloud solutions</p>
             
             <div class="my-4 flex items-center justify-center gap-2 text-green-600 dark:text-green-400 font-semibold">
@@ -83,7 +84,7 @@
             <div class="flex flex-wrap justify-center gap-3 my-4">
                 <a href="mailto:kp-9287@hotmail.com" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium py-2 px-5 rounded-full flex items-center gap-2 transition"><i class="bi bi-envelope-fill"></i> kp-9287@hotmail.com</a>
                 <a href="tel:2515814769" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium py-2 px-5 rounded-full flex items-center gap-2 transition"><i class="bi bi-telephone-fill"></i> (251) 581-4769</a>
-                <a href="https://www.linkedin.com/in/krupesh-patel/" target="_blank" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium py-2 px-5 rounded-full flex items-center gap-2 transition"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/krupesh87" target="_blank" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium py-2 px-5 rounded-full flex items-center gap-2 transition"><i class="bi bi-linkedin"></i> LinkedIn</a>
             </div>
 
             <div id="stats" class="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 my-6 max-w-5xl mx-auto">
@@ -126,480 +127,76 @@
                 </a>
             </div>
 
+            <!-- Skills Section -->
+            <section id="skills" class="py-20">
+                <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
+                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
 
-
-                        <!-- Skills Section -->
-        <section id="skills" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Power Platform -->
-                <div class="p-6 rounded-xl border bg-purple-50 dark:bg-purple-900/50 border-purple-200 dark:border-purple-800">
-                    <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-purple-800 dark:text-purple-300">
-                        <i class="bi bi-lightning-charge-fill"></i> Power Platform
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Power Apps</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Power Automate</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Power BI</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Dataverse</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">AI Agents</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">RPA</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Power Pages</span>
+        <!-- Clients Section -->
+        <section id="clients" class="py-16 bg-slate-100 dark:bg-slate-800/50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-10">My Valued Clients & Employers</h2>
+                <div class="relative h-20 overflow-hidden">
+                    <div class="logos-slide flex items-center absolute top-0 left-0 w-max h-full">
+                        <img src="./companyLogo/aaLogo.png" alt="American Airlines" class="h-10 mx-8 object-contain">
+                        <img src="./companyLogo/huntLogo.png" alt="Hunt Oil" class="h-10 mx-8 object-contain">
+                        <img src="./companyLogo/liveNation.png" alt="Live Nation" class="h-10 mx-8 object-contain">
+                        <img src="./companyLogo/wellsFargo.png" alt="Wells Fargo" class="h-10 mx-8 object-contain">
+                        <!-- Duplicate logos for seamless scroll -->
+                        <img src="./companyLogo/aaLogo.png" alt="American Airlines" class="h-10 mx-8 object-contain">
+                        <img src="./companyLogo/huntLogo.png" alt="Hunt Oil" class="h-10 mx-8 object-contain">
+                        <img src="./companyLogo/liveNation.png" alt="Live Nation" class="h-10 mx-8 object-contain">
+                        <img src="./companyLogo/wellsFargo.png" alt="Wells Fargo" class="h-10 mx-8 object-contain">
                     </div>
                 </div>
-
-                <!-- Cloud & Azure -->
-                <div class="p-6 rounded-xl border bg-blue-50 dark:bg-blue-900/50 border-blue-200 dark:border-blue-800">
-                    <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-blue-800 dark:text-blue-300">
-                        <i class="bi bi-cloud-fill"></i> Cloud & Azure
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Azure Functions</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Logic Apps</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Azure DevOps</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">On-Prem Gateway</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">API Management</span>
-                    </div>
-                </div>
-
-                <!-- SharePoint & M365 -->
-                <div class="p-6 rounded-xl border bg-green-50 dark:bg-green-900/50 border-green-200 dark:border-green-800">
-                    <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-green-800 dark:text-green-300">
-                        <i class="bi bi-microsoft-teams"></i> SharePoint & M365
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">SharePoint Online</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">SP2013</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">SPFx</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Dynamics 365</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">MS Teams</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Graph API</span>
-                    </div>
-                </div>
-
-                <!-- Programming -->
-                <div class="p-6 rounded-xl border bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700">
-                    <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-slate-800 dark:text-slate-300">
-                        <i class="bi bi-code-slash"></i> Programming
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">C#</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">SQL</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">TypeScript</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Angular</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">React</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Node.js</span>
-                    </div>
-                </div>
-
-                <!-- RPA & Automation -->
-                <div class="p-6 rounded-xl border bg-cyan-50 dark:bg-cyan-900/50 border-cyan-200 dark:border-cyan-800">
-                    <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-cyan-800 dark:text-cyan-300">
-                        <i class="bi bi-robot"></i> RPA & Automation
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">UiPath</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Power Automate RPA</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">K2</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Nintex</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Alteryx</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Document Processing</span>
-                    </div>
-                </div>
-
-                <!-- Integration & APIs -->
-                <div class="p-6 rounded-xl border bg-amber-50 dark:bg-amber-900/50 border-amber-200 dark:border-amber-800">
-                    <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-amber-800 dark:text-amber-300">
-                        <i class="bi bi-plug-fill"></i> Integration & APIs
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">REST APIs</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">SAP S4/HANA</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">ServiceNow</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">DocuSign</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Salesforce</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">IRS API</span>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <!-- Featured Projects Section -->
         <section id="projects" class="py-20">
             <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-            <div class="space-y-16">
-
-                <!-- Project 1: Hunt Oil - MDM -->
-                <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="relative rounded-xl shadow-2xl overflow-hidden aspect-video project-carousel">
-                        <div class="carousel-inner">
-                            <img src="https://placehold.co/1280x720/3b82f6/ffffff?text=Project+1" alt="Project 1 Image 1">
-                            <img src="https://placehold.co/1280x720/6366f1/ffffff?text=Project+1" alt="Project 1 Image 2">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Image Carousel -->
+                <div class="lg:col-span-3 relative rounded-xl shadow-2xl overflow-hidden aspect-video bg-slate-200 dark:bg-slate-700">
+                    <div class="swiper-container project-image-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Images will be populated by JS -->
                         </div>
-                        <div class="carousel-control-prev"><i class="bi bi-chevron-left"></i></div>
-                        <div class="carousel-control-next"><i class="bi bi-chevron-right"></i></div>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Hunt Oil Company - <span class="text-blue-600 dark:text-blue-400">2023-Present</span></p>
-                        <h3 class="text-2xl font-bold mt-2">Master Data Management & Vendor Onboarding</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm">A comprehensive Master Data Management solution for vendor onboarding, including validation with IRS and Bank of America APIs, and automated vendor creation in SAP S4/HANA.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Power Platform</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">SAP S4/HANA</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">DocuSign</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">IRS API</span>
-                        </div>
-                        <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Vendor Validation:</strong> Integrated with IRS and Bank of America APIs.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Automation:</strong> Real-time, automated vendor creation in SAP S4/HANA.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Efficiency:</strong> Reduced vendor onboarding time significantly.</span></li>
-                        </ul>
                     </div>
                 </div>
 
-                <!-- Project 2: Hunt Oil - RPA Migration -->
-                <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg lg:order-last">
-                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Hunt Oil Company - <span class="text-blue-600 dark:text-blue-400">2023-Present</span></p>
-                        <h3 class="text-2xl font-bold mt-2">RPA Migration - UiPath to Power Platform</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm">Migrated over 30 UiPath RPA processes to Power Platform RPA in under two months, achieving significant cost savings and improving auditability with Work Queues.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Power Automate RPA</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">UiPath</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Work Queue</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">AI Processing</span>
+                <!-- Project Details -->
+                <div class="lg:col-span-2">
+                    <div class="swiper-container project-details-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides will be populated by JS -->
                         </div>
-                        <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Cost Savings:</strong> Saved over $40K annually.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Rapid Migration:</strong> Completed the migration of 30+ processes in less than 2 months.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Enhanced Auditing:</strong> Implemented Work Queues for better process tracking and logging.</span></li>
-                        </ul>
-                    </div>
-                    <div class="relative rounded-xl shadow-2xl overflow-hidden aspect-video project-carousel">
-                        <div class="carousel-inner">
-                            <img src="https://placehold.co/1280x720/ec4899/ffffff?text=Project+2" alt="Project 2 Image 1">
-                            <img src="https://placehold.co/1280x720/8b5cf6/ffffff?text=Project+2" alt="Project 2 Image 2">
+                        
+                        <!-- Navigation Buttons -->
+                        <div class="flex items-center justify-between mt-6">
+                            <button class="project-prev bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
+                                <i class="bi bi-arrow-left text-2xl"></i>
+                            </button>
+                            <div class="project-pagination text-center text-sm font-semibold text-slate-500 dark:text-slate-400"></div>
+                            <button class="project-next bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
+                                <i class="bi bi-arrow-right text-2xl"></i>
+                            </button>
                         </div>
-                        <div class="carousel-control-prev"><i class="bi bi-chevron-left"></i></div>
-                        <div class="carousel-control-next"><i class="bi bi-chevron-right"></i></div>
-                        <div class="carousel-indicators"></div>
                     </div>
                 </div>
-
-                <!-- Project 3: Live Nation - Supplier Management -->
-                <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="relative rounded-xl shadow-2xl overflow-hidden aspect-video project-carousel">
-                        <div class="carousel-inner">
-                            <img src="https://placehold.co/1280x720/22c55e/ffffff?text=Project+3" alt="Project 3 Image 1">
-                            <img src="https://placehold.co/1280x720/14b8a6/ffffff?text=Project+3" alt="Project 3 Image 2">
-                        </div>
-                        <div class="carousel-control-prev"><i class="bi bi-chevron-left"></i></div>
-                        <div class="carousel-control-next"><i class="bi bi-chevron-right"></i></div>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Live Nation - <span class="text-blue-600 dark:text-blue-400">2022-2023</span></p>
-                        <h3 class="text-2xl font-bold mt-2">Supplier Management Automation</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm">Developed a new supplier intake process using Power Apps with a multi-tier approval workflow, and automated data extraction from DocuSign into Dataverse.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Power Apps</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Power Automate</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Dataverse</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Power BI</span>
-                        </div>
-                        <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Process Improvement:</strong> Streamlined supplier intake with a new Power App.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Team Leadership:</strong> Led and trained a team of 3 on Power Platform fundamentals.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Data Integration:</strong> Automated data extraction from DocuSign templates.</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 4: Wells Fargo - Migration -->
-                <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg lg:order-last">
-                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Wells Fargo - <span class="text-blue-600 dark:text-blue-400">2022-2023</span></p>
-                        <h3 class="text-2xl font-bold mt-2">SharePoint Migration & Automation</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm">Led the migration of over 1200 SharePoint 2013 sites to SharePoint Online, establishing governance, automating site intake, and managing a large offshore team.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">SharePoint</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Power Apps</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Sharegate</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">SPFx</span>
-                        </div>
-                        <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Large-Scale Migration:</strong> Successfully managed the migration of 1200+ sites.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Governance:</strong> Established a robust governance and site structure for SP Online.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Custom Branding:</strong> Deployed custom SPFx solutions for a unified user experience.</span></li>
-                        </ul>
-                    </div>
-                    <div class="relative rounded-xl shadow-2xl overflow-hidden aspect-video project-carousel">
-                        <div class="carousel-inner">
-                            <img src="https://placehold.co/1280x720/f97316/ffffff?text=Project+4" alt="Project 4 Image 1">
-                            <img src="https://placehold.co/1280x720/eab308/ffffff?text=Project+4" alt="Project 4 Image 2">
-                        </div>
-                        <div class="carousel-control-prev"><i class="bi bi-chevron-left"></i></div>
-                        <div class="carousel-control-next"><i class="bi bi-chevron-right"></i></div>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                </div>
-
-                <!-- Project 5: American Airlines - Flight Ops -->
-                <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="relative rounded-xl shadow-2xl overflow-hidden aspect-video project-carousel">
-                        <div class="carousel-inner">
-                            <img src="https://placehold.co/1280x720/ef4444/ffffff?text=Project+5" alt="Project 5 Image 1">
-                            <img src="https://placehold.co/1280x720/dc2626/ffffff?text=Project+5" alt="Project 5 Image 2">
-                        </div>
-                        <div class="carousel-control-prev"><i class="bi bi-chevron-left"></i></div>
-                        <div class="carousel-control-next"><i class="bi bi-chevron-right"></i></div>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">American Airlines - <span class="text-blue-600 dark:text-blue-400">2018-2021</span></p>
-                        <h3 class="text-2xl font-bold mt-2">Flight Ops Communication & K2 Modernization</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm">Created a critical application for Flight Ops to prevent overfly incidents, saving the company $2B annually, and modernized legacy K2 forms with responsive UI.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">K2</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Bootstrap</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">SQL</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Angular</span>
-                        </div>
-                        <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Massive Cost Savings:</strong> Saved $2B per year by eliminating overfly events.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>UI Modernization:</strong> Rebuilt legacy K2 forms with a responsive Bootstrap interface.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Enterprise Solution:</strong> Delivered a new A/C Parts setup system used by 20 different groups.</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 6: Range Resources - Intranet Portal -->
-                <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg lg:order-last">
-                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Range Resources - <span class="text-blue-600 dark:text-blue-400">2015-2017</span></p>
-                        <h3 class="text-2xl font-bold mt-2">Intranet Portal & Mobile Forms</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm">Designed and implemented mobile-friendly Nintex forms and workflows for the Operations Team, including an end-to-end automated process for "Turn in Line" submissions.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">SharePoint</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Nintex Forms</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Nintex Workflow</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">jQuery</span>
-                        </div>
-                        <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Mobile First:</strong> Created mobile-friendly forms for field operations.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Advanced Features:</strong> Captured geo-location and actual signatures within forms.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>SQL Integration:</strong> Connected forms to external SQL data lists for dynamic data.</span></li>
-                        </ul>
-                    </div>
-                    <div class="relative rounded-xl shadow-2xl overflow-hidden aspect-video project-carousel">
-                        <div class="carousel-inner">
-                            <img src="https://placehold.co/1280x720/0891b2/ffffff?text=Project+6" alt="Project 6 Image 1">
-                            <img src="https://placehold.co/1280x720/06b6d4/ffffff?text=Project+6" alt="Project 6 Image 2">
-                        </div>
-                        <div class="carousel-control-prev"><i class="bi bi-chevron-left"></i></div>
-                        <div class="carousel-control-next"><i class="bi bi-chevron-right"></i></div>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Fannie Mae - Internal Sites -->
-                <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="relative rounded-xl shadow-2xl overflow-hidden aspect-video project-carousel">
-                        <div class="carousel-inner">
-                            <img src="https://placehold.co/1280x720/4f46e5/ffffff?text=Project+7" alt="Project 7 Image 1">
-                            <img src="https://placehold.co/1280x720/6d28d9/ffffff?text=Project+7" alt="Project 7 Image 2">
-                        </div>
-                        <div class="carousel-control-prev"><i class="bi bi-chevron-left"></i></div>
-                        <div class="carousel-control-next"><i class="bi bi-chevron-right"></i></div>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Fannie Mae - <span class="text-blue-600 dark:text-blue-400">2014-2015</span></p>
-                        <h3 class="text-2xl font-bold mt-2">Internal Site Design & Automation</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm">Migrated legacy SharePoint 2007 sites and developed a jQuery-based Mobile/iPad Check-In application with automated email notifications and multi-stage approval workflows.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">SharePoint 2013</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">jQuery</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">SP Services</span>
-                            <span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">Workflow</span>
-                        </div>
-                        <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Legacy Modernization:</strong> Migrated SharePoint 2007 sites and workflows to SP 2013.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Custom Application:</strong> Built a mobile check-in app for corporate events.</span></li>
-                            <li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span><strong>Complex Workflows:</strong> Designed and implemented multi-stage approval processes.</span></li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="py-20">
              <h2 class="text-4xl font-bold text-center mb-20">My Experience</h2>
-            <div class="relative max-w-5xl mx-auto px-4">
+            <div id="experience-container" class="relative max-w-5xl mx-auto px-4">
                 <div class="absolute left-4 md:left-24 h-full w-0.5 bg-slate-200 dark:bg-slate-700"></div>
-                
-                <!-- Hunt Oil Company -->
-                <div class="relative flex items-start mb-12">
-                    <div class="hidden md:flex flex-col items-center w-24 text-right bg-slate-100 dark:bg-slate-800 p-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Apr 2023</span>
-                        <i class="bi bi-arrow-down text-slate-400 dark:text-slate-500 text-lg"></i>
-                        <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">Current</span>
-                    </div>
-                    <div class="absolute left-[calc(1rem+0.25rem)] md:left-[calc(6rem+0.25rem)] -translate-x-1/2 z-10">
-                        <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
-                            <i class="bi bi-buildings-fill text-3xl text-blue-600"></i>
-                        </div>
-                    </div>
-                    <div class="pl-10 md:pl-12 w-full">
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg flex justify-between items-start gap-4">
-                            <div class="text-left">
-                                <div class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">Apr 2023 - Current</div>
-                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">Senior Solution Architect</h3>
-                                <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">Hunt Oil Company</p>
-                                <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
-                                    <li>Setup and governed multiple Power Platform environments.</li>
-                                    <li>Created reusable Power Apps components for rapid development.</li>
-                                    <li>Developed a Master Data Management solution for vendor onboarding.</li>
-                                    <li>Automated vendor creation in SAP S4/HANA via OpenInvoice integration.</li>
-                                    <li>Built complex document templates with DocuSign.</li>
-                                    <li>Managed a team of 3 developers and established Power Pipelines for CI/CD.</li>
-                                </ul>
-                            </div>
-                            <img src="./companyLogo/huntLogo.png" alt="Hunt Oil Logo" class="w-24 h-auto object-contain hidden sm:block">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Live Nation -->
-                <div class="relative flex items-start mb-12">
-                     <div class="hidden md:flex flex-col items-center w-24 text-right bg-slate-100 dark:bg-slate-800 p-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Oct 2022</span>
-                        <i class="bi bi-arrow-down text-slate-400 dark:text-slate-500 text-lg"></i>
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Mar 2023</span>
-                    </div>
-                    <div class="absolute left-[calc(1rem+0.25rem)] md:left-[calc(6rem+0.25rem)] -translate-x-1/2 z-10">
-                        <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
-                            <i class="bi bi-ticket-perforated-fill text-3xl text-blue-600"></i>
-                        </div>
-                    </div>
-                    <div class="pl-10 md:pl-12 w-full">
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg flex justify-between items-start gap-4">
-                            <div class="text-left">
-                                <div class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">Oct 2022 - Mar 2023</div>
-                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lead Application Architect</h3>
-                                <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">Live Nation / Ticketmaster</p>
-                                <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
-                                    <li>Led a team of 3 to learn Power Platform fundamentals.</li>
-                                    <li>Automated data extraction from DocuSign templates into Dataverse.</li>
-                                    <li>Created a new supplier intake process using Power Apps with multi-tier approvals.</li>
-                                    <li>Developed Canvas Power Apps for business owners to manage and automate tasks.</li>
-                                    <li>Built Power BI reports for vendor submission tracking and status updates.</li>
-                                </ul>
-                            </div>
-                             <img src="./companyLogo/liveNation.png" alt="Live Nation Logo" class="w-24 h-auto object-contain hidden sm:block">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wells Fargo -->
-                <div class="relative flex items-start mb-12">
-                     <div class="hidden md:flex flex-col items-center w-24 text-right bg-slate-100 dark:bg-slate-800 p-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Dec 2022</span>
-                        <i class="bi bi-arrow-down text-slate-400 dark:text-slate-500 text-lg"></i>
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Oct 2023</span>
-                    </div>
-                    <div class="absolute left-[calc(1rem+0.25rem)] md:left-[calc(6rem+0.25rem)] -translate-x-1/2 z-10">
-                        <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
-                            <i class="bi bi-bank2 text-3xl text-blue-600"></i>
-                        </div>
-                    </div>
-                    <div class="pl-10 md:pl-12 w-full">
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg flex justify-between items-start gap-4">
-                            <div class="text-left">
-                                <div class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">Dec 2022 - Oct 2023</div>
-                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lead Application Architect</h3>
-                                <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">Wells Fargo Bank</p>
-                                <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
-                                    <li>Established governance and site structure for the migration of 1200+ SP2013 sites.</li>
-                                    <li>Created a new site intake process with Power Apps and Power Automate.</li>
-                                    <li>Managed an offshore team for migration and development tasks.</li>
-                                    <li>Used Sharegate/AvePoint to migrate and schedule site migrations.</li>
-                                    <li>Deployed custom SPFx Mega Menu, Footer, and Banner solutions.</li>
-                                </ul>
-                            </div>
-                            <img src="./companyLogo/wellsFargo.png" alt="Wells Fargo Logo" class="w-20 h-auto object-contain hidden sm:block">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bravo Tech (Hunt Consolidated, Inc.) -->
-                <div class="relative flex items-start mb-12">
-                     <div class="hidden md:flex flex-col items-center w-24 text-right bg-slate-100 dark:bg-slate-800 p-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Oct 2021</span>
-                        <i class="bi bi-arrow-down text-slate-400 dark:text-slate-500 text-lg"></i>
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Dec 2022</span>
-                    </div>
-                    <div class="absolute left-[calc(1rem+0.25rem)] md:left-[calc(6rem+0.25rem)] -translate-x-1/2 z-10">
-                        <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
-                            <i class="bi bi-gear-wide-connected text-3xl text-blue-600"></i>
-                        </div>
-                    </div>
-                    <div class="pl-10 md:pl-12 w-full">
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg flex justify-between items-start gap-4">
-                            <div class="text-left">
-                                <div class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">Oct 2021 - Dec 2022</div>
-                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lead Application Developer</h3>
-                                <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">Bravo Tech (Hunt Consolidated, Inc.)</p>
-                                <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
-                                    <li>Developed RPA processes using UiPath to extract data from utility statements.</li>
-                                    <li>Scraped PDF data from DocuSign to generate reports and notifications.</li>
-                                    <li>Maintained a compliance tracker SharePoint App using Power Apps & Flow.</li>
-                                    <li>Used Figma to create mockups and demonstrate functionality to end-users.</li>
-                                </ul>
-                            </div>
-                            <img src="./companyLogo/huntLogo.png" alt="Hunt Oil Logo" class="w-24 h-auto object-contain hidden sm:block">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- American Airlines -->
-                <div class="relative flex items-start">
-                     <div class="hidden md:flex flex-col items-center w-24 text-right bg-slate-100 dark:bg-slate-800 p-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Jun 2018</span>
-                        <i class="bi bi-arrow-down text-slate-400 dark:text-slate-500 text-lg"></i>
-                        <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">Oct 2021</span>
-                    </div>
-                    <div class="absolute left-[calc(1rem+0.25rem)] md:left-[calc(6rem+0.25rem)] -translate-x-1/2 z-10">
-                        <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
-                            <i class="bi bi-airplane-fill text-3xl text-blue-600"></i>
-                        </div>
-                    </div>
-                    <div class="pl-10 md:pl-12 w-full">
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg flex justify-between items-start gap-4">
-                            <div class="text-left">
-                                <div class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">Jun 2018 - Oct 2021</div>
-                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lead Application Developer</h3>
-                                <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">American Airlines Inc.</p>
-                                <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
-                                    <li>Led UI technical solutions throughout the entire product lifecycle.</li>
-                                    <li>Created an application to communicate with Flights Ops via J8 Message, saving $2B a year.</li>
-                                    <li>Integrated Bootstrap to K2 Forms for responsive UI without server integration.</li>
-                                    <li>Created common look and feel for K2 Applications and SharePoint 2013.</li>
-                                    <li>Delivered the New A/C Parts setup system using K2, used by twenty groups.</li>
-                                </ul>
-                            </div>
-                            <img src="./companyLogo/aaLogo.png" alt="American Airlines Logo" class="w-28 h-auto object-contain hidden sm:block">
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        </section>
 
         <!-- Certifications & Education Section -->
         <section id="certifications" class="py-20">
@@ -611,50 +208,7 @@
                     <h3 class="font-bold text-2xl flex items-center gap-3 mb-6 text-slate-800 dark:text-slate-200">
                         <i class="bi bi-award-fill"></i> Professional Certifications
                     </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
-                                <p class="font-semibold">Power Platform Architect</p>
-                            </div>
-                            <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">2024</span>
-                        </div>
-                        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
-                                <p class="font-semibold">Power Platform Developer</p>
-                            </div>
-                            <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">2024</span>
-                        </div>
-                        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
-                                <p class="font-semibold">UiPath Certified RPA Developer</p>
-                            </div>
-                            <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">2022</span>
-                        </div>
-                        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
-                                <p class="font-semibold">Nintex Workflow Pro Certified</p>
-                            </div>
-                            <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">2021</span>
-                        </div>
-                        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
-                                <p class="font-semibold">K2 Certified Architect</p>
-                            </div>
-                            <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">2021</span>
-                        </div>
-                        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
-                                <p class="font-semibold">Microsoft SharePoint Developer</p>
-                            </div>
-                            <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">2014</span>
-                        </div>
-                    </div>
+                    <div id="certifications-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
                 </div>
 
                 <!-- Education -->
@@ -662,19 +216,7 @@
                     <h3 class="font-bold text-2xl flex items-center gap-3 mb-6 text-slate-800 dark:text-slate-200">
                         <i class="bi bi-mortarboard-fill"></i> Education
                     </h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-bold text-lg">Master of Science, Computer Science</h4>
-                            <p class="text-slate-600 dark:text-slate-400">University of Bridgeport, CT</p>
-                            <span class="inline-block bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-xs font-semibold px-2 py-1 rounded-full mt-2">GPA: 3.76/4.0 - 2011</span>
-                        </div>
-                        <div class="border-t border-slate-200 dark:border-slate-700 my-4"></div>
-                        <div>
-                            <h4 class="font-bold text-lg">Bachelor of Engineering, Information Technology</h4>
-                            <p class="text-slate-600 dark:text-slate-400">BVM Engineering College, S.P. University, Gujarat, India</p>
-                            <span class="inline-block bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-xs font-semibold px-2 py-1 rounded-full mt-2">GPA: 6.77/10.0 - 2008</span>
-                        </div>
-                    </div>
+                    <div id="education-container" class="space-y-6"></div>
                 </div>
 
             </div>
@@ -686,6 +228,7 @@
         <p class="text-slate-500 dark:text-slate-400">&copy; 2025 Krupesh Patel. All rights reserved.</p>
     </footer>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 

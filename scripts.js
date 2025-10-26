@@ -1,41 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- THEME TOGGLE --- //
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-
-    // Mobile menu
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-
-    // Set default theme to light if no theme is saved
     if (localStorage.getItem('theme') === 'dark') {
         html.classList.add('dark');
         themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
     } else {
-        html.classList.remove('dark');
         themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
     }
-
     themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
         if (html.classList.contains('dark')) {
-            html.classList.remove('dark');
-            themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-            localStorage.setItem('theme', 'light');
-        } else {
-            html.classList.add('dark');
             themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
             localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+            localStorage.setItem('theme', 'light');
         }
     });
 
-    // Pill navigation
+    // --- MOBILE MENU --- //
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // --- PILL NAVIGATION --- //
     const navLinks = document.querySelectorAll('.nav-link');
     const navMarker = document.getElementById('nav-marker');
     const navMenu = document.getElementById('nav-menu');
+    const sections = document.querySelectorAll('section');
 
     function moveMarker(element) {
         if (!element || !navMarker) return;
@@ -47,139 +41,225 @@ document.addEventListener('DOMContentLoaded', () => {
         element.classList.add('active');
     }
 
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            // Adjust 72px for header height
-            if (pageYOffset >= sectionTop - 72) { 
+            if (pageYOffset >= section.offsetTop - 72) { 
                 current = section.getAttribute('id');
             }
         });
-
         const activeLink = navMenu.querySelector(`a[href*=${current}]`);
         moveMarker(activeLink);
     });
 
-    // Initial marker position
-    const initialActiveLink = navMenu.querySelector('a[href="#home"]');
-    if (initialActiveLink) {
-        moveMarker(initialActiveLink);
-    }
-
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            window.scrollTo({
-                top: targetElement.offsetTop - 70, // Adjust for header height
-                behavior: 'smooth'
-            });
-            // Update marker immediately on click
+            const targetElement = document.querySelector(link.getAttribute('href'));
+            window.scrollTo({ top: targetElement.offsetTop - 70, behavior: 'smooth' });
             moveMarker(link); 
         });
     });
 
-    // Update marker position on window resize
-    window.addEventListener('resize', () => {
-        const activeLink = navMenu.querySelector('.nav-link.active');
-        moveMarker(activeLink);
-    });
+    window.addEventListener('resize', () => moveMarker(navMenu.querySelector('.nav-link.active')));
+    moveMarker(navMenu.querySelector('a[href="#home"]'));
 
-
-    // Count-up animation
+    // --- STATS COUNT-UP --- //
     const statsSection = document.getElementById('stats');
     const counters = statsSection.querySelectorAll('[data-count]');
-
-    const countUp = (element) => {
-        const target = +element.getAttribute('data-count');
-        const duration = 2000; // 2 seconds
-        const frameRate = 1000 / 60; // 60 fps
-        const totalFrames = Math.round(duration / frameRate);
-        let frame = 0;
-
-        const counter = setInterval(() => {
-            frame++;
-            const progress = frame / totalFrames;
-            const currentCount = Math.round(target * progress);
-            
-            if(element.dataset.count === "2"){
-                 element.innerText = currentCount + 'B+';
-            } else {
-                 element.innerText = currentCount + '+';
-            }
-
-            if (frame === totalFrames) {
-                clearInterval(counter);
-            }
-        }, frameRate);
-    };
-
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                counters.forEach(counter => {
-                    countUp(counter);
-                });
-                observer.disconnect(); // Animate only once
-            }
-        });
+        if (entries[0].isIntersecting) {
+            counters.forEach(counter => {
+                const target = +counter.dataset.count;
+                let current = 0;
+                const increment = target / 100;
+                const update = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.innerText = `${Math.ceil(current)}${counter.dataset.count.includes('B') ? 'B+' : '+'}`;
+                        requestAnimationFrame(update);
+                    }
+                };
+                update();
+            });
+            observer.disconnect();
+        }
     }, { threshold: 0.5 });
-
     observer.observe(statsSection);
 
-    // Mouse light effect
-    document.addEventListener('mousemove', (e) => {
-        document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
-        document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
-    });
+    // --- CLIENT LOGO SCROLLER --- //
+    const logosContainer = document.querySelector(".logos-slide");
+    if (logosContainer) {
+        const totalWidth = Array.from(logosContainer.children).reduce((w, c) => w + c.offsetWidth + (parseInt(getComputedStyle(c).marginRight) * 2), 0);
+        logosContainer.style.width = `${totalWidth}px`;
+        const animationDuration = totalWidth / 100; 
+        logosContainer.style.animation = `scroll ${animationDuration}s linear infinite`;
+    }
 
-    // Project Carousels
-    document.querySelectorAll('.project-carousel').forEach(carousel => {
-        const inner = carousel.querySelector('.carousel-inner');
-        const prevBtn = carousel.querySelector('.carousel-control-prev');
-        const nextBtn = carousel.querySelector('.carousel-control-next');
-        const indicatorsContainer = carousel.querySelector('.carousel-indicators');
-        const items = inner.querySelectorAll('img');
-        const totalItems = items.length;
-        let currentIndex = 0;
+    // --- DYNAMIC DATA LOADING --- //
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data fetched successfully:', data);
+            populateSkills(data.skills);
+            populateProjects(data.projects);
+            populateExperience(data.experience);
+            populateCertifications(data.certifications);
+            populateEducation(data.education);
+        })
+        .catch(error => console.error('Error fetching data:', error));
 
-        // Create indicators
-        for (let i = 0; i < totalItems; i++) {
-            const indicator = document.createElement('div');
-            indicator.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/50', 'cursor-pointer');
-            if (i === 0) indicator.classList.add('bg-white');
-            indicator.addEventListener('click', () => showSlide(i));
-            indicatorsContainer.appendChild(indicator);
-        }
-        const indicators = indicatorsContainer.querySelectorAll('div');
+    function populateSkills(skills) {
+        console.log("Populating skills...");
+        const skillsContainer = document.getElementById('skills-container');
+        skills.forEach(skillCategory => {
+            const div = document.createElement('div');
+            div.className = `p-6 rounded-xl border bg-${skillCategory.color}-50 dark:bg-${skillCategory.color}-900/50 border-${skillCategory.color}-200 dark:border-${skillCategory.color}-800`;
+            div.innerHTML = `
+                <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-${skillCategory.color}-800 dark:text-${skillCategory.color}-300">
+                    <i class="bi ${skillCategory.icon}"></i> ${skillCategory.category}
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    ${skillCategory.skills.map(skill => `<span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">${skill}</span>`).join('')}
+                </div>
+            `;
+            skillsContainer.appendChild(div);
+        });
+    }
 
-        function showSlide(index) {
-            if (index < 0) {
-                currentIndex = totalItems - 1;
-            } else if (index >= totalItems) {
-                currentIndex = 0;
-            } else {
-                currentIndex = index;
-            }
-            inner.style.transform = `translateX(-${currentIndex * 100}%)`;
-            indicators.forEach((dot, i) => {
-                if (i === currentIndex) {
-                    dot.classList.add('bg-white');
-                    dot.classList.remove('bg-white/50');
-                } else {
-                    dot.classList.remove('bg-white');
-                    dot.classList.add('bg-white/50');
-                }
+    function populateProjects(projects) {
+        console.log("Populating projects...");
+        const imageSwiperWrapper = document.querySelector('.project-image-swiper .swiper-wrapper');
+        const detailsSwiperWrapper = document.querySelector('.project-details-swiper .swiper-wrapper');
+
+        projects.forEach(project => {
+            // Populate Image Carousel
+            project.images.forEach(imgUrl => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `<img src="${imgUrl}" alt="${project.title}" class="w-full h-full object-cover">`;
+                imageSwiperWrapper.appendChild(slide);
             });
-        }
 
-        prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
-        nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+            // Populate Details Carousel
+            const detailsSlide = document.createElement('div');
+            detailsSlide.className = 'swiper-slide';
+            detailsSlide.innerHTML = `
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg h-full flex flex-col">
+                    <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">${project.company} - <span class="text-blue-600 dark:text-blue-400">${project.period}</span></p>
+                    <h3 class="text-2xl font-bold mt-2">${project.title}</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm flex-grow">${project.description}</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        ${project.tags.map(tag => `<span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`).join('')}
+                    </div>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        ${project.highlights.map(highlight => `<li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span>${highlight}</span></li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            detailsSwiperWrapper.appendChild(detailsSlide);
+        });
 
-        showSlide(0); // Initialize first slide
-    });
+        const detailsSwiper = new Swiper('.project-details-swiper', {
+            loop: true,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            pagination: {
+                el: '.project-pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.project-next',
+                prevEl: '.project-prev',
+            },
+        });
+
+        const imageSwiper = new Swiper('.project-image-swiper', {
+            loop: true,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            effect: 'creative',
+            creativeEffect: {
+                prev: { translate: ['-20%', 0, -1], rotate: [0, 0, -2] },
+                next: { translate: ['100%', 0, 0] },
+            },
+            thumbs: {
+                swiper: detailsSwiper
+            }
+        });
+
+        detailsSwiper.controller.control = imageSwiper;
+        imageSwiper.controller.control = detailsSwiper;
+    }
+
+    function populateExperience(experience) {
+        console.log("Populating experience...");
+        const experienceContainer = document.getElementById('experience-container');
+        experience.forEach(job => {
+            const div = document.createElement('div');
+            div.className = 'relative flex items-start mb-12';
+            div.innerHTML = `
+                <div class="hidden md:flex flex-col items-center w-24 text-right bg-slate-100 dark:bg-slate-800 p-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
+                    <i class="bi bi-arrow-down text-slate-400 dark:text-slate-500 text-lg"></i>
+                    <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">${job.period.split(' - ')[1]}</span>
+                </div>
+                <div class="absolute left-[calc(1rem+0.25rem)] md:left-[calc(6rem+0.25rem)] -translate-x-1/2 z-10">
+                    <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
+                        <i class="bi ${job.icon} text-3xl text-blue-600"></i>
+                    </div>
+                </div>
+                <div class="pl-10 md:pl-12 w-full">
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg flex justify-between items-start gap-4">
+                        <div class="text-left">
+                            <div class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">${job.period}</div>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
+                            <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
+                            <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
+                                ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain hidden sm:block">
+                    </div>
+                </div>
+            `;
+            experienceContainer.appendChild(div);
+        });
+    }
+
+    function populateCertifications(certifications) {
+        console.log("Populating certifications...");
+        const certContainer = document.getElementById('certifications-container');
+        certifications.forEach(cert => {
+            const div = document.createElement('div');
+            div.className = 'bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between';
+            div.innerHTML = `
+                <div class="flex items-center gap-4">
+                    <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
+                    <p class="font-semibold">${cert.name}</p>
+                </div>
+                <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">${cert.year}</span>
+            `;
+            certContainer.appendChild(div);
+        });
+    }
+
+    function populateEducation(education) {
+        console.log("Populating education...");
+        const educationContainer = document.getElementById('education-container');
+        education.forEach((edu, index) => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <h4 class="font-bold text-lg">${edu.degree}</h4>
+                <p class="text-slate-600 dark:text-slate-400">${edu.university}</p>
+                <span class="inline-block bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-xs font-semibold px-2 py-1 rounded-full mt-2">${edu.details}</span>
+            `;
+            educationContainer.appendChild(div);
+            if (index < education.length - 1) {
+                const border = document.createElement('div');
+                border.className = 'border-t border-slate-200 dark:border-slate-700 my-4';
+                educationContainer.appendChild(border);
+            }
+        });
+    }
 });
