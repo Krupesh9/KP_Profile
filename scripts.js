@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Hunt Oil Company",
                 "period": "Apr 2023 - Current",
                 "title": "Senior Solution Architect",
-                "logo": "companyLogo/huntLogo.png",
+                "logo": "./companyLogo/huntLogo.png",
                 "icon": "bi-buildings-fill",
                 "responsibilities": [
                     "Setup and governed multiple Power Platform environments.",
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Wells Fargo Bank",
                 "period": "Dec 2022 - Oct 2023",
                 "title": "Lead Application Architect",
-                "logo": "companyLogo/wellsFargo.png",
+                "logo": "./companyLogo/wellsFargo.png",
                 "icon": "bi-bank2",
                 "responsibilities": [
                     "Established governance and site structure for the migration of 1200+ SP2013 sites.",
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Live Nation / Ticketmaster",
                 "period": "Oct 2022 - Mar 2023",
                 "title": "Lead Application Architect",
-                "logo": "companyLogo/liveNation.png",
+                "logo": "./companyLogo/liveNation.png",
                 "icon": "bi-ticket-perforated-fill",
                 "responsibilities": [
                     "Led a team of 3 to learn Power Platform fundamentals.",
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Bravo Tech (Hunt Consolidated, Inc.)",
                 "period": "Oct 2021 - Dec 2022",
                 "title": "Lead Application Developer",
-                "logo": "companyLogo/huntLogo.png",
+                "logo": "./companyLogo/huntLogo.png",
                 "icon": "bi-gear-wide-connected",
                 "responsibilities": [
                     "Developed RPA processes using UiPath to extract data from utility statements.",
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "American Airlines Inc.",
                 "period": "Jun 2018 - Oct 2021",
                 "title": "Lead Application Developer",
-                "logo": "companyLogo/aaLogo.png",
+                "logo": "./companyLogo/aaLogo.png",
                 "icon": "bi-airplane-fill",
                 "responsibilities": [
                     "Led UI technical solutions throughout the entire product lifecycle.",
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Fannie Mae",
                 "period": "Aug 2014 - Dec 2015",
                 "title": "Sr. SharePoint Architecture – Developer/Designer/Ui Developer",
-                "logo": "companyLogo/FannieMaeLogo-2.png",
+                "logo": "./companyLogo/FannieMaeLogo-2.png",
                 "icon": "bi-house-door-fill",
                 "responsibilities": [
                     "Involved in Design and Implement, Testing, Deployment phases of the SDLC for SP2007-SP2013 Sites.",
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Institute for Intergovernmental Research (IIR/DHS)",
                 "period": "Aug 2013 - Jul 2014",
                 "title": "Sr. SharePoint Developer/Administrator/Architect/Migration",
-                "logo": "companyLogo/IIRDHS.png",
+                "logo": "./companyLogo/IIRDHS.png",
                 "icon": "bi-shield-fill-check",
                 "responsibilities": [
                     "Managed and enhanced NIEM.gov site and other SharePoint 2013 (Office 365) projects.",
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Bluetooth SIG (HQ)",
                 "period": "Feb 2013 - Jul 2013",
                 "title": "Sr. Software Developer",
-                "logo": "companyLogo/BluetoothSIG.png",
+                "logo": "./companyLogo/BluetoothSIG.png",
                 "icon": "bi-bluetooth",
                 "responsibilities": [
                     "Involved in all phases of SDLC Agile, leading as SP 2013 Admin/Developer in Online Team.",
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Lazard",
                 "period": "Apr 2012 - Feb 2013",
                 "title": "Software Application Developer",
-                "logo": "companyLogo/LazardLogo.png",
+                "logo": "./companyLogo/LazardLogo.png",
                 "icon": "bi-bar-chart-line-fill",
                 "responsibilities": [
                     "Involved in all the phase of the SDLC but the key role is SP 2010 Architect/Developer in Tech Team.",
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Ernst & Young LLP",
                 "period": "Jul 2011 - Apr 2012",
                 "title": "Software Developer",
-                "logo": "companyLogo/EYLogo.png",
+                "logo": "./companyLogo/EYLogo.png",
                 "icon": "bi-briefcase-fill",
                 "responsibilities": [
                     "Involved only in Implementation phase. Key role is SP 2010 Dev.",
