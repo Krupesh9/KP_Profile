@@ -132,14 +132,19 @@
 
 @media (max-width: 768px) {
     body {
-        /*padding-left: 1rem; /* Add some padding on mobile */
-        /*padding-right: 1rem; /* Add some padding on mobile */
+        padding-left: 1rem; /* Add some padding on mobile */
+        padding-right: 1rem; /* Add some padding on mobile */
         overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
     .job-icon {
         margin-left: 0; /* Reset negative margin for mobile */
         /* Or adjust to a smaller, positive margin if needed */
+    }
+
+    .experience-card {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .experience-card .flex.justify-between.items-start {
