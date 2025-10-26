@@ -1,3 +1,32 @@
+@keyframes rotate-glow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.gemini-glow {
+    position: relative;
+    padding: 4px; /* border width */
+}
+
+.gemini-glow::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: 9999px; /* rounded-full */
+    background: conic-gradient(
+        #4285F4,
+        #9333ea,
+        #ec4899,
+        #4285F4
+    );
+    animation: rotate-glow 4s linear infinite;
+}
+
 .nav-link.active {
     color: #2563eb; /* blue-600 */
     font-weight: 600;
