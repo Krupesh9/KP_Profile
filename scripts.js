@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Established a robust governance and site structure for SharePoint Online.",
                     "Deployed custom SPFx solutions for a unified and branded user experience."
                 ],
-                "images": ["https://placehold.co/1280x720/f97316/ffffff?text=SharePoint+Migration", "https://placehold.co/1280x720/eab308/ffffff?text=Wells+Fargo+Portal"]
+                "images": ["https://placehold.co/1280x720/f97316/ffffff?text=SharePoint+Migration", "https://placehold.co/1280x720/eab308/ffffff?text=Wells+Farto+Portal"]
             },
             {
                 "company": "American Airlines",
@@ -434,8 +434,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logosContainer) {
         const totalWidth = Array.from(logosContainer.children).reduce((w, c) => w + c.offsetWidth + (parseInt(getComputedStyle(c).marginRight) * 2), 0);
         logosContainer.style.width = `${totalWidth}px`;
-        const animationDuration = totalWidth / 100; 
+        const animationDuration = totalWidth / 400; 
         logosContainer.style.animation = `scroll ${animationDuration}s linear infinite`;
+    }
+
+    const scrollLeftButton = document.getElementById("scroll-left");
+    const scrollRightButton = document.getElementById("scroll-right");
+    const logos = document.getElementById("logos-container");
+
+    if (logos && scrollLeftButton && scrollRightButton) {
+        scrollLeftButton.addEventListener("click", () => {
+            logos.scrollBy({ left: -300, behavior: 'smooth' });
+            logosContainer.style.animationPlayState = 'paused';
+            setTimeout(() => {
+                logosContainer.style.animationPlayState = 'running';
+            }, 5000);
+        });
+
+        scrollRightButton.addEventListener("click", () => {
+            logos.scrollBy({ left: 300, behavior: 'smooth' });
+            logosContainer.style.animationPlayState = 'paused';
+            setTimeout(() => {
+                logosContainer.style.animationPlayState = 'running';
+            }, 5000);
+        });
+
+        logos.addEventListener('mouseenter', () => {
+            logosContainer.style.animationPlayState = 'paused';
+        });
+
+        logos.addEventListener('mouseleave', () => {
+            logosContainer.style.animationPlayState = 'running';
+        });
     }
 
     // --- DYNAMIC DATA LOADING --- //
@@ -515,29 +545,39 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!experienceContainer) return;
         experience.forEach(job => {
             const div = document.createElement('div');
-            div.className = 'relative flex items-start mb-12';
+            div.className = 'relative mb-12';
             div.innerHTML = `
-                <div class="hidden md:flex flex-col items-center w-24 text-right bg-slate-100 dark:bg-slate-800 p-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
-                    <i class="bi bi-arrow-down text-slate-400 dark:text-slate-500 text-lg"></i>
+                <div class="md:absolute md:left-0 md:top-0 hidden md:flex flex-col items-center w-24 text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
                     <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">${job.period.split(' - ')[1]}</span>
+                    <i class="bi bi-arrow-up text-slate-400 dark:text-slate-500 text-lg"></i>
+                    <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
                 </div>
-                <div class="absolute left-[calc(1rem+0.25rem)] md:left-[calc(6rem+0.25rem)] -translate-x-1/2 z-10">
+                <div class="absolute left-[22px] top-[-50px] z-10">
                     <div class="bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
                         <i class="bi ${job.icon} text-3xl text-blue-600"></i>
                     </div>
                 </div>
-                <div class="pl-10 md:pl-12 w-full">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg flex justify-between items-start gap-4">
-                        <div class="text-left">
-                            <div class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">${job.period}</div>
-                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
-                            <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
+                <div class="pl-24 md:pl-32 w-full">
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+                        <div class="text-left w-full">
+                            <div class="md:hidden flex items-center gap-4 mb-2">
+                                <div class="flex flex-col items-center bg-slate-100 dark:bg-slate-800 p-2 rounded-md border border-slate-200 dark:border-slate-700 shadow-sm">
+                                    <span class="text-blue-700 dark:text-blue-300 text-xs font-medium">${job.period.split(' - ')[1]}</span>
+                                    <i class="bi bi-arrow-up text-slate-400 dark:text-slate-500 text-lg"></i>
+                                    <span class="text-slate-600 dark:text-slate-300 text-xs font-medium">${job.period.split(' - ')[0]}</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">${job.title}</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
+                                </div>
+                                <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain hidden sm:block">
+                            </div>
                             <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1">
                                 ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
                             </ul>
                         </div>
-                        <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain hidden sm:block">
                     </div>
                 </div>
             `;

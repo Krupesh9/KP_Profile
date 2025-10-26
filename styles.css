@@ -24,6 +24,19 @@
     animation: scroll 30s linear infinite;
 }
 
+.logos:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+#logos-container::-webkit-scrollbar {
+    display: none;
+}
+
+#logos-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 .dark body::before {
     content: "";
     position: fixed;
