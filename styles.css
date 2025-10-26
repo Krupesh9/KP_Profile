@@ -68,3 +68,8 @@
 .gap-x-4 {
     column-gap: 5rem !important;
 }
+
+.dark .logos-slide img,
+.dark #experience-container img {
+    filter: invert(1) hue-rotate(180deg);
+}
