@@ -143,6 +143,8 @@
     .experience-card {
         width: 100%;
         box-sizing: border-box;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     .experience-card .flex.justify-between.items-start {
