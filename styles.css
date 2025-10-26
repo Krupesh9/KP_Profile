@@ -141,7 +141,7 @@
     }
 
     .experience-card {
-        width: 100%;
+        width: calc(100% - 2rem);
         box-sizing: border-box;
         margin-left: 1rem;
         margin-right: 1rem;
