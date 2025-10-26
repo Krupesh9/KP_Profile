@@ -339,67 +339,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function populateProjects(projects) {
-        const imageSwiperWrapper = document.querySelector('.project-image-swiper .swiper-wrapper');
-        const detailsSwiperWrapper = document.querySelector('.project-details-swiper .swiper-wrapper');
+        let currentProject = 0;
+        const projectImageContainer = document.getElementById('project-image-container');
+        const projectDetailsContainer = document.getElementById('project-details-container');
 
-        projects.forEach(project => {
-            // Populate Image Carousel
-            project.images.forEach(imgUrl => {
-                const slide = document.createElement('div');
-                slide.className = 'swiper-slide';
-                slide.innerHTML = `<img src="${imgUrl}" alt="${project.title}" class="w-full h-full object-cover">`;
-                imageSwiperWrapper.appendChild(slide);
-            });
-
-            // Populate Details Carousel
-            const detailsSlide = document.createElement('div');
-            detailsSlide.className = 'swiper-slide';
-            detailsSlide.innerHTML = `
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg h-full flex flex-col">
-                    <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">${project.company} - <span class="text-blue-600 dark:text-blue-400">${project.period}</span></p>
-                    <h3 class="text-2xl font-bold mt-2">${project.title}</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm flex-grow">${project.description}</p>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        ${project.tags.map(tag => `<span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`).join('')}
-                    </div>
-                    <ul class="mt-4 space-y-2 text-sm">
-                        ${project.highlights.map(highlight => `<li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span>${highlight}</span></li>`).join('')}
-                    </ul>
+        function showProject(index) {
+            const project = projects[index];
+            projectImageContainer.innerHTML = `<img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover">`;
+            projectDetailsContainer.innerHTML = `
+                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">${project.company} - <span class="text-blue-600 dark:text-blue-400">${project.period}</span></p>
+                <h3 class="text-2xl font-bold mt-2">${project.title}</h3>
+                <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm flex-grow">${project.description}</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    ${project.tags.map(tag => `<span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`).join('')}
+                </div>
+                <ul class="mt-4 space-y-2 text-sm">
+                    ${project.highlights.map(highlight => `<li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span>${highlight}</span></li>`).join('')}
+                </ul>
+                <div class="flex items-center justify-between mt-6">
+                    <button id="prev-project" class="bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
+                        <i class="bi bi-arrow-left text-2xl"></i>
+                    </button>
+                    <div class="text-center text-sm font-semibold text-slate-500 dark:text-slate-400">${index + 1} / ${projects.length}</div>
+                    <button id="next-project" class="bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
+                        <i class="bi bi-arrow-right text-2xl"></i>
+                    </button>
                 </div>
             `;
-            detailsSwiperWrapper.appendChild(detailsSlide);
-        });
 
-        const detailsSwiper = new Swiper('.project-details-swiper', {
-            loop: true,
-            autoplay: { delay: 5000, disableOnInteraction: false },
-            effect: 'fade',
-            fadeEffect: { crossFade: true },
-            pagination: {
-                el: '.project-pagination',
-                type: 'fraction',
-            },
-            navigation: {
-                nextEl: '.project-next',
-                prevEl: '.project-prev',
-            },
-        });
+            document.getElementById('prev-project').addEventListener('click', () => {
+                currentProject = (currentProject - 1 + projects.length) % projects.length;
+                showProject(currentProject);
+            });
 
-        const imageSwiper = new Swiper('.project-image-swiper', {
-            loop: true,
-            autoplay: { delay: 5000, disableOnInteraction: false },
-            effect: 'creative',
-            creativeEffect: {
-                prev: { translate: ['-20%', 0, -1], rotate: [0, 0, -2] },
-                next: { translate: ['100%', 0, 0] },
-            },
-            thumbs: {
-                swiper: detailsSwiper
-            }
-        });
+            document.getElementById('next-project').addEventListener('click', () => {
+                currentProject = (currentProject + 1) % projects.length;
+                showProject(currentProject);
+            });
+        }
 
-        detailsSwiper.controller.control = imageSwiper;
-        imageSwiper.controller.control = detailsSwiper;
+        showProject(0);
     }
 
     function populateExperience(experience) {
