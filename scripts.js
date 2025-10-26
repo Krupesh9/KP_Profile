@@ -56,20 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             {
-                "company": "Live Nation / Ticketmaster",
-                "period": "Oct 2022 - Mar 2023",
-                "title": "Lead Application Architect",
-                "logo": "companyLogo/liveNation.png",
-                "icon": "bi-ticket-perforated-fill",
-                "responsibilities": [
-                    "Led a team of 3 to learn Power Platform fundamentals.",
-                    "Automated data extraction from DocuSign templates into Dataverse.",
-                    "Created a new supplier intake process using Power Apps with multi-tier approvals.",
-                    "Developed Canvas Power Apps for business owners to manage and automate tasks.",
-                    "Built Power BI reports for vendor submission tracking and status updates."
-                ]
-            },
-            {
                 "company": "Wells Fargo Bank",
                 "period": "Dec 2022 - Oct 2023",
                 "title": "Lead Application Architect",
@@ -81,6 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Managed an offshore team for migration and development tasks.",
                     "Used Sharegate/AvePoint to migrate and schedule site migrations.",
                     "Deployed custom SPFx Mega Menu, Footer, and Banner solutions."
+                ]
+            },
+            {
+                "company": "Live Nation / Ticketmaster",
+                "period": "Oct 2022 - Mar 2023",
+                "title": "Lead Application Architect",
+                "logo": "companyLogo/liveNation.png",
+                "icon": "bi-ticket-perforated-fill",
+                "responsibilities": [
+                    "Led a team of 3 to learn Power Platform fundamentals.",
+                    "Automated data extraction from DocuSign templates into Dataverse.",
+                    "Created a new supplier intake process using Power Apps with multi-tier approvals.",
+                    "Developed Canvas Power Apps for business owners to manage and automate tasks.",
+                    "Built Power BI reports for vendor submission tracking and status updates."
                 ]
             },
             {
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Range Resources",
                 "period": "Dec 2015 - Jul 2017",
                 "title": "Sr. SharePoint Developer",
-                "logo": "companyLogo/RangeResource.png",
+                "logo": "companyLogo/RRLogo.png",
                 "icon": "bi-geo-alt-fill",
                 "responsibilities": [
                     "Expertise in Design and Implement, Testing, Deployment phases of the SDLC for SP2013 Intranet Portal.",
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Fannie Mae",
                 "period": "Aug 2014 - Dec 2015",
                 "title": "Sr. SharePoint Architecture – Developer/Designer/Ui Developer",
-                "logo": "companyLogo/FannieMae.png",
+                "logo": "companyLogo/FannieMaeLogo-2.png",
                 "icon": "bi-house-door-fill",
                 "responsibilities": [
                     "Involved in Design and Implement, Testing, Deployment phases of the SDLC for SP2007-SP2013 Sites.",
@@ -137,10 +137,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             {
+                "company": "Institute for Intergovernmental Research (IIR/DHS)",
+                "period": "Aug 2013 - Jul 2014",
+                "title": "Sr. SharePoint Developer/Administrator/Architect/Migration",
+                "logo": "companyLogo/IIRDHS.png",
+                "icon": "bi-shield-fill-check",
+                "responsibilities": [
+                    "Managed and enhanced NIEM.gov site and other SharePoint 2013 (Office 365) projects.",
+                    "Involved in Design, Implementation, Testing, and Deployment phases of SDLC for SP2010/SP2013.",
+                    "Configured SharePoint 2013 Online (Office 365) and On-Premises.",
+                    "Created SPList App driven Homepage Image Rotator and Biography Page.",
+                    "Setup faster Search and Query Rules for SP 2013.",
+                    "Configured AD to SharePoint 2013 Online with ADFS 2.0 and Directory Sync.",
+                    "Customized SPD Workflow for IEPD and Term Submission Process.",
+                    "Generated reports and scheduled online classes using Salesforce, Blackboard, and iContact.",
+                    "Developed Web Parts using C#, VS 2012/10, and Sandbox Solution.",
+                    "Cleaned up existing site bugs and unnecessary code, created documentation for end users."
+                ]
+            },
+            {
+                "company": "Bluetooth SIG (HQ)",
+                "period": "Feb 2013 - Jul 2013",
+                "title": "Sr. Software Developer",
+                "logo": "companyLogo/BluetoothSIG.png",
+                "icon": "bi-bluetooth",
+                "responsibilities": [
+                    "Involved in all phases of SDLC Agile, leading as SP 2013 Admin/Developer in Online Team.",
+                    "Redesigned bluetooth.org site for secure, searchable, and navigable content.",
+                    "Implemented Voting and Attendance functionality.",
+                    "Utilized SharePoint 2013 for internal and external sites."
+                ]
+            },
+            {
                 "company": "Lazard",
                 "period": "Apr 2012 - Feb 2013",
                 "title": "Software Application Developer",
-                "logo": "companyLogo/Lazard.png",
+                "logo": "companyLogo/LazardLogo.png",
                 "icon": "bi-bar-chart-line-fill",
                 "responsibilities": [
                     "Involved in all the phase of the SDLC but the key role is SP 2010 Architect/Developer in Tech Team.",
@@ -153,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Ernst & Young LLP",
                 "period": "Jul 2011 - Apr 2012",
                 "title": "Software Developer",
-                "logo": "companyLogo/EY.png",
+                "logo": "companyLogo/EYLogo.png",
                 "icon": "bi-briefcase-fill",
                 "responsibilities": [
                     "Involved only in Implementation phase. Key role is SP 2010 Dev.",
