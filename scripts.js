@@ -570,13 +570,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
                     <div class="flex justify-between items-start">
                         <div class="w-full text-left">
-                            <div class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold px-3 py-1 rounded-md inline-block mb-4">
+                            <div class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold px-3 py-1 rounded-md block w-40 text-center">
                                 ${job.period.replace(' - ', ' &nbsp;&rarr;&nbsp; ')}
                             </div>
                             <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">${job.title}</h3>
                             <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
                         </div>
-                        <img src="${job.logo}" alt="${job.company} Logo" class="w-24 h-auto object-contain">
+                        <img src="${job.logo}" alt="${job.company} Logo" class="w-28 h-auto object-contain">
                     </div>
                     <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1 text-left">
                         ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
