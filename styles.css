@@ -132,8 +132,6 @@
 
 @media (max-width: 768px) {
     body {
-        padding-left: 1rem; /* Add some padding on mobile */
-        padding-right: 1rem; /* Add some padding on mobile */
         overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
