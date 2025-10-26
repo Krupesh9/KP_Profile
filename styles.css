@@ -64,3 +64,7 @@
 .font-semibold{
     text-align: left;
 }
+
+.gap-x-4 {
+    column-gap: 5rem !important;
+}

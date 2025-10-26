@@ -296,19 +296,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const counters = statsSection.querySelectorAll('[data-count]');
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
-            counters.forEach(counter => {
-                const target = +counter.dataset.count;
-                let current = 0;
-                const increment = target / 100;
-                const update = () => {
-                    if (current < target) {
-                        current += increment;
-                        counter.innerText = `${Math.ceil(current)}${counter.dataset.count.includes('B') ? 'B+' : '+'}`;
-                        requestAnimationFrame(update);
-                    }
-                };
-                update();
-            });
+                    counters.forEach(counter => {
+                        const target = +counter.dataset.count;
+                        let current = 0;
+                        const increment = target / 100;
+                        const isCostSavings = counter.previousElementSibling && counter.previousElementSibling.classList.contains('bi-piggy-bank');
+            
+                        const update = () => {
+                            if (current < target) {
+                                current += increment;
+                                const displayValue = Math.ceil(current);
+                                if (isCostSavings) {
+                                    counter.innerText = `${displayValue}B+`;
+                                } else {
+                                    counter.innerText = `${displayValue}+`;
+                                }
+                                requestAnimationFrame(update);
+                            } else {
+                                if (isCostSavings) {
+                                    counter.innerText = `${target}B+`;
+                                } else {
+                                    counter.innerText = `${target}+`;
+                                }
+                            }
+                        };
+                        update();
+                    });
             observer.disconnect();
         }
     }, { threshold: 0.5 });
