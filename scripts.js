@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Hunt Oil Company",
                 "period": "Apr 2023 - Current",
                 "title": "Senior Solution Architect",
-                "logo": "./companyLogo/huntLogo.png",
+                "logo": "companyLogo/huntLogo.png",
                 "icon": "bi-buildings-fill",
                 "responsibilities": [
                     "Setup and governed multiple Power Platform environments.",
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "company": "Bravo Tech (Hunt Consolidated, Inc.)",
                 "period": "Oct 2021 - Dec 2022",
                 "title": "Lead Application Developer",
-                "logo": "./companyLogo/huntLogo.png",
+                "logo": "companyLogo/huntLogo.png",
                 "icon": "bi-gear-wide-connected",
                 "responsibilities": [
                     "Developed RPA processes using UiPath to extract data from utility statements.",
@@ -266,8 +266,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 current = section.getAttribute('id');
             }
         });
-        const activeLink = navMenu.querySelector(`a[href*=${current}]`);
-        moveMarker(activeLink);
+        if (current) {
+            const activeLink = navMenu.querySelector(`a[href*=${current}]`);
+            if (activeLink) {
+                moveMarker(activeLink);
+            }
+        }
     });
 
     navLinks.forEach(link => {
@@ -279,7 +283,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    window.addEventListener('resize', () => moveMarker(navMenu.querySelector('.nav-link.active')));
+    window.addEventListener('resize', () => {
+        const activeLink = navMenu.querySelector('.nav-link.active');
+        if (activeLink) {
+            moveMarker(activeLink);
+        }
+    });
     moveMarker(navMenu.querySelector('a[href="#home"]'));
 
     // --- STATS COUNT-UP --- //
@@ -303,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.disconnect();
         }
     }, { threshold: 0.5 });
-    observer.observe(statsSection);
+    if (statsSection) observer.observe(statsSection);
 
     // --- CLIENT LOGO SCROLLER --- //
     const logosContainer = document.querySelector(".logos-slide");
@@ -323,6 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function populateSkills(skills) {
         const skillsContainer = document.getElementById('skills-container');
+        if (!skillsContainer) return;
         skills.forEach(skillCategory => {
             const div = document.createElement('div');
             div.className = `p-6 rounded-xl border bg-${skillCategory.color}-50 dark:bg-${skillCategory.color}-900/50 border-${skillCategory.color}-200 dark:border-${skillCategory.color}-800`;
@@ -339,14 +349,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function populateProjects(projects) {
-        let currentProject = 0;
-        const projectImageContainer = document.getElementById('project-image-container');
-        const projectDetailsContainer = document.getElementById('project-details-container');
+        let currentProjectIndex = 0;
+        const imageContainer = document.getElementById('project-image-container');
+        const detailsContainer = document.getElementById('project-details-container');
 
-        function showProject(index) {
+        if (!imageContainer || !detailsContainer) return;
+
+        function renderProject(index) {
             const project = projects[index];
-            projectImageContainer.innerHTML = `<img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover">`;
-            projectDetailsContainer.innerHTML = `
+            
+            imageContainer.innerHTML = `<img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover absolute inset-0">`;
+
+            detailsContainer.innerHTML = `
                 <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">${project.company} - <span class="text-blue-600 dark:text-blue-400">${project.period}</span></p>
                 <h3 class="text-2xl font-bold mt-2">${project.title}</h3>
                 <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm flex-grow">${project.description}</p>
@@ -368,21 +382,22 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             document.getElementById('prev-project').addEventListener('click', () => {
-                currentProject = (currentProject - 1 + projects.length) % projects.length;
-                showProject(currentProject);
+                currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
+                renderProject(currentProjectIndex);
             });
 
             document.getElementById('next-project').addEventListener('click', () => {
-                currentProject = (currentProject + 1) % projects.length;
-                showProject(currentProject);
+                currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+                renderProject(currentProjectIndex);
             });
         }
 
-        showProject(0);
+        renderProject(currentProjectIndex);
     }
 
     function populateExperience(experience) {
         const experienceContainer = document.getElementById('experience-container');
+        if (!experienceContainer) return;
         experience.forEach(job => {
             const div = document.createElement('div');
             div.className = 'relative flex items-start mb-12';
@@ -417,6 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function populateCertifications(certifications) {
         const certContainer = document.getElementById('certifications-container');
+        if (!certContainer) return;
         certifications.forEach(cert => {
             const div = document.createElement('div');
             div.className = 'bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between';
@@ -433,6 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function populateEducation(education) {
         const educationContainer = document.getElementById('education-container');
+        if (!educationContainer) return;
         education.forEach((edu, index) => {
             const div = document.createElement('div');
             div.innerHTML = `
