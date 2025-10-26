@@ -109,6 +109,58 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Created common look and feel for K2 Applications and SharePoint 2013.",
                     "Delivered the New A/C Parts setup system using K2, used by twenty groups."
                 ]
+            },
+            {
+                "company": "Range Resources",
+                "period": "Dec 2015 - Jul 2017",
+                "title": "Sr. SharePoint Developer",
+                "logo": "companyLogo/RangeResource.png",
+                "icon": "bi-geo-alt-fill",
+                "responsibilities": [
+                    "Expertise in Design and Implement, Testing, Deployment phases of the SDLC for SP2013 Intranet Portal.",
+                    "Designed the Workflows and Mobile Friendly Forms for the Operations Team using Nintex Tool.",
+                    "Used custom JavaScript and Style Sheet inside the Nintex Form to achieve solution which is not possible using the current version of the Nintex by Rules and Validation, pushed the limitation of Nintex.",
+                    "Extensively used Nintex Forms to collect Actual Signature and capture the Geo Location using Nintex."
+                ]
+            },
+            {
+                "company": "Fannie Mae",
+                "period": "Aug 2014 - Dec 2015",
+                "title": "Sr. SharePoint Architecture – Developer/Designer/Ui Developer",
+                "logo": "companyLogo/FannieMae.png",
+                "icon": "bi-house-door-fill",
+                "responsibilities": [
+                    "Involved in Design and Implement, Testing, Deployment phases of the SDLC for SP2007-SP2013 Sites.",
+                    "Migrated contents and workflows from SharePoint 2007 Sites to SharePoint 2013; also did updates and enhancement on the old site to new site with feature emails and workflows as well as UI.",
+                    "Created Mobile/iPad Check-In Application for one of the Business Group called Red Flag Tracker using jQuery for their upcoming meeting/events and email notification with check in link sent via SPD 2013 WF.",
+                    "Created Cascading Drop Down menu for the different State and City using SP Services."
+                ]
+            },
+            {
+                "company": "Lazard",
+                "period": "Apr 2012 - Feb 2013",
+                "title": "Software Application Developer",
+                "logo": "companyLogo/Lazard.png",
+                "icon": "bi-bar-chart-line-fill",
+                "responsibilities": [
+                    "Involved in all the phase of the SDLC but the key role is SP 2010 Architect/Developer in Tech Team.",
+                    "Involved in creating PowerShell scripts to install complete SharePoint including custom WSP in 3 Hours.",
+                    "Extensively involved in creating Document Library and Document Set using custom Application Page with custom rule specified in different list using CAML.",
+                    "Created Custom Sequential multi-leveled Workflow using VS2010 as well as SPD 2010 Workflow for sending customized E-Mail Notification."
+                ]
+            },
+            {
+                "company": "Ernst & Young LLP",
+                "period": "Jul 2011 - Apr 2012",
+                "title": "Software Developer",
+                "logo": "companyLogo/EY.png",
+                "icon": "bi-briefcase-fill",
+                "responsibilities": [
+                    "Involved only in Implementation phase. Key role is SP 2010 Dev.",
+                    "Extensively work on 2010\'s new feature like Word Automation Service and Document Set along with the Ribbon Customization using both SP Object Model and Client Object Model.",
+                    "Created Custom Sequential multi-stage Workflow using VS2010 and associated that with InfoPath 2010.",
+                    "Activated and associate the same workflow with custom Ribbon, Content Type and List for DTU."
+                ]
             }
         ],
         "certifications": [
