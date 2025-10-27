@@ -701,4 +701,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
         profilePhotoObserver.observe(mainProfilePhoto);
     }
+
+    // --- IMAGE GALLERY MODAL --- //
+    const imageGalleryModal = document.getElementById('image-gallery-modal');
+    const viewGalleryButton = document.getElementById('view-gallery-button');
+    const closeGalleryModalButton = document.getElementById('close-gallery-modal');
+    const gallerySlidesContainer = imageGalleryModal.querySelector('.gallery-carousel-slides');
+    const galleryPrevButton = imageGalleryModal.querySelector('.gallery-carousel-prev');
+    const galleryNextButton = imageGalleryModal.querySelector('.gallery-carousel-next');
+    const galleryIndicatorsContainer = imageGalleryModal.querySelector('.gallery-carousel-indicators');
+    const galleryImageName = document.getElementById('gallery-image-name');
+
+    const galleryImages = [
+        { src: './projects/MDM/GLAccountHome.png', name: 'GLAccountHome' },
+        { src: './projects/MDM/DOARequest-DocuSign.png', name: 'DOARequest-DocuSign' },
+        { src: './projects/MDM/AdminScreenBOAIRS.png', name: 'AdminScreenBOAIRS' },
+        { src: './projects/MDM/DocuSign Integration.png', name: 'DocuSign Integration' },
+        { src: './projects/MDM/businesspartners.png', name: 'businesspartners' },
+        { src: './projects/MDM/mdmhome.png', name: 'mdmhome' },
+        { src: './projects/ITPMO/Generating.png', name: 'Generating' },
+        { src: './projects/ITPMO/ItempagewithGenAI integration.png', name: 'ItempagewithGenAI integration' },
+        { src: './projects/riskregister/Riskhomepage.png', name: 'Riskhomepage' },
+        { src: './projects/ITPMO/HelpPae.png', name: 'HelpPae' },
+        { src: './projects/ITPMO/GanttView.png', name: 'GanttView' },
+        { src: './projects/ITPMO/BoxIntegration.png', name: 'BoxIntegration' },
+        { src: './projects/henassetmgmt/historypage.png', name: 'historypage' },
+        { src: './projects/henassetmgmt/adminpage.png', name: 'adminpage' },
+        { src: './projects/henassetmgmt/editablepartsview.png', name: 'editablepartsview' },
+        { src: './projects/henassetmgmt/homepage.png', name: 'homepage' }
+    ];
+
+    let currentGallerySlide = 0;
+
+    function populateGalleryCarousel() {
+        gallerySlidesContainer.innerHTML = galleryImages.map(image => `
+            <div class="gallery-carousel-slide w-full flex-shrink-0 h-full">
+                <img src="${image.src}" alt="${image.name}" class="w-full h-full object-contain">
+            </div>
+        `).join('');
+
+        galleryIndicatorsContainer.innerHTML = galleryImages.map((_, index) => `
+            <button class="gallery-carousel-indicator w-3 h-3 bg-white bg-opacity-50 rounded-full" data-slide-to="${index}"></button>
+        `).join('');
+
+        showGallerySlide(currentGallerySlide);
+    }
+
+    function showGallerySlide(index) {
+        gallerySlidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        galleryIndicatorsContainer.querySelectorAll('.gallery-carousel-indicator').forEach((indicator, i) => {
+            if (i === index) {
+                indicator.classList.add('active');
+                indicator.classList.remove('bg-opacity-50');
+            } else {
+                indicator.classList.remove('active');
+                indicator.classList.add('bg-opacity-50');
+            }
+        });
+        galleryImageName.textContent = galleryImages[index].name;
+    }
+
+    function nextGallerySlide() {
+        currentGallerySlide = (currentGallerySlide + 1) % galleryImages.length;
+        showGallerySlide(currentGallerySlide);
+    }
+
+    function prevGallerySlide() {
+        currentGallerySlide = (currentGallerySlide - 1 + galleryImages.length) % galleryImages.length;
+        showGallerySlide(currentGallerySlide);
+    }
+
+    viewGalleryButton.addEventListener('click', () => {
+        imageGalleryModal.classList.remove('hidden');
+        populateGalleryCarousel(); // Populate and show the first slide when modal opens
+    });
+
+    closeGalleryModalButton.addEventListener('click', () => {
+        imageGalleryModal.classList.add('hidden');
+    });
+
+    galleryPrevButton.addEventListener('click', prevGallerySlide);
+    galleryNextButton.addEventListener('click', nextGallerySlide);
+
+    galleryIndicatorsContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('gallery-carousel-indicator')) {
+            currentGallerySlide = parseInt(e.target.dataset.slideTo);
+            showGallerySlide(currentGallerySlide);
+        }
+    });
 });
