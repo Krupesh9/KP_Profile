@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Completed the migration of 30+ processes in less than 2 months.",
                     "Implemented Work Queues for enhanced auditing and process tracking."
                 ],
-                "images": ["https://placehold.co/1280x720/ec4899/ffffff?text=RPA+Migration", "https://placehold.co/1280x720/8b5cf6/ffffff?text=Power+Automate"]
+                "images": ["./projects/RPA/RPA - Dashboard - Quick Start.png"]
             },
             {
                 "title": "Hunt Wiki - Agent AI",
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Automated responses for open enrollment and HR-related queries.",
                     "Improved employee self-service and reduced support workload."
                 ],
-                "images": ["https://placehold.co/1280x720/FF5733/ffffff?text=Hunt+Wiki+AI", "https://placehold.co/1280x720/33FF57/ffffff?text=AI+Bot+Interface"]
+                "images": ["./projects/HuntWiki/Hunt Wiki - AI Agent.png", "./projects/HuntWiki/Hunt Wiki - AI Agent - Prompt.png", "./projects/HuntWiki/Hunt Wiki - AI Agent - Open Enrollment.png", "./projects/HuntWiki/Hunt Wiki - AI Agent - Response.png"]
             },
             {
                 "title": "IT Project/Portfolio Management",
@@ -728,7 +728,12 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: './projects/henassetmgmt/HEN Asset Mgmt - Quick History View.png', name: 'HEN Asset Mgmt - Quick History View' },
         { src: './projects/henassetmgmt/HEN Asset Mgmt - Admin.png', name: 'HEN Asset Mgmt - Admin' },
         { src: './projects/henassetmgmt/HEN Asset Mgmt - Editable Grid View - Parts.png', name: 'HEN Asset Mgmt - Editable Grid View - Parts' },
-        { src: './projects/henassetmgmt/HEN Asset Mgmt - Home View with Cards.png', name: 'HEN Asset Mgmt - Home View with Cards' }
+        { src: './projects/henassetmgmt/HEN Asset Mgmt - Home View with Cards.png', name: 'HEN Asset Mgmt - Home View with Cards' },
+        { src: './projects/RPA/RPA - Dashboard - Quick Start.png', name: 'RPA - Dashboard - Quick Start' },
+        { src: './projects/HuntWiki/Hunt Wiki - AI Agent.png', name: 'Hunt Wiki - AI Agents' },
+        { src: './projects/HuntWiki/Hunt Wiki - AI Agent - Prompt.png', name: 'Hunt Wiki - AI Agent - Prompt' },
+        { src: './projects/HuntWiki/Hunt Wiki - AI Agent - Open Enrollment.png', name: 'Hunt Wiki - AI Agent - Open Enrollment' },
+        { src: './projects/HuntWiki/Hunt Wiki - AI Agent - Response.png', name: 'Hunt Wiki - AI Agent - Response' }
     ];
 
     let currentGallerySlide = 0;
