@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Real-time, automated vendor creation in SAP S4/HANA.",
                     "Reduced vendor onboarding time significantly through automation."
                 ],
-                "images": ["https://placehold.co/1280x720/3b82f6/ffffff?text=MDM+Solution", "https://placehold.co/1280x720/6366f1/ffffff?text=SAP+Integration"]
+                "images": ["./projects/MDM/AdminScreenBOAIRS.png", "./projects/MDM/businesspartners.png", "./projects/MDM/DOARequest-DocuSign.png", "./projects/MDM/DocuSign Integration.png", "./projects/MDM/GLAccountHome.png", "./projects/MDM/mdmhome.png"]
             },
             {
                 "title": "RPA Migration - UiPath to Power Platform",
@@ -290,38 +290,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 "images": ["https://placehold.co/1280x720/ec4899/ffffff?text=RPA+Migration", "https://placehold.co/1280x720/8b5cf6/ffffff?text=Power+Automate"]
             },
             {
-                "title": "Supplier Management Automation",
-                "description": "Developed a new supplier intake process using Power Apps with a multi-tier approval workflow, and automated data extraction from DocuSign into Dataverse.",
-                "tags": ["Power Apps", "Power Automate", "Dataverse", "Power BI"],
+                "title": "Hunt Wiki - Agent AI",
+                "description": "An AI-powered bot designed to provide intelligent assistance for internal documentation, open enrollment inquiries, and other organizational details, enhancing knowledge retrieval and employee support.",
+                "tags": ["AI", "Bot", "Knowledge Management", "Internal Communications", "Generative AI"],
                 "highlights": [
-                    "Streamlined supplier intake with a new Power App and approval workflow.",
-                    "Led and trained a team of 3 on Power Platform fundamentals.",
-                    "Automated data extraction from DocuSign templates into Dataverse."
+                    "Developed an AI bot for instant access to internal documents.",
+                    "Automated responses for open enrollment and HR-related queries.",
+                    "Improved employee self-service and reduced support workload."
                 ],
-                "images": ["https://placehold.co/1280x720/22c55e/ffffff?text=Supplier+Intake", "https://placehold.co/1280x720/14b8a6/ffffff?text=Live+Nation+Dashboard"]
+                "images": ["https://placehold.co/1280x720/FF5733/ffffff?text=Hunt+Wiki+AI", "https://placehold.co/1280x720/33FF57/ffffff?text=AI+Bot+Interface"]
             },
             {
-                "title": "SharePoint Migration & Automation",
-                "description": "Led the migration of over 1200 SharePoint 2013 sites to SharePoint Online, establishing governance, automating site intake, and managing a large offshore team.",
-                "tags": ["SharePoint", "Power Apps", "Sharegate", "SPFx"],
+                "title": "IT Project/Portfolio Management",
+                "description": "A comprehensive solution for managing IT projects and portfolios, enhancing visibility, control, and strategic alignment across all initiatives. Features include Gantt charts, Box integration, and GenAI-powered insights.",
+                "tags": ["Project Management", "Portfolio Management", "ITPMO", "Gantt Chart", "Box Integration", "GenAI"],
                 "highlights": [
-                    "Successfully managed the migration of over 1200 SharePoint sites.",
-                    "Established a robust governance and site structure for SharePoint Online.",
-                    "Deployed custom SPFx solutions for a unified and branded user experience."
+                    "Implemented robust project and portfolio tracking with Gantt views.",
+                    "Integrated with Box for seamless document management and collaboration.",
+                    "Leveraged Generative AI for intelligent insights and reporting.",
+                    "Streamlined project workflows and improved decision-making."
                 ],
-                "images": ["https://placehold.co/1280x720/f97316/ffffff?text=SharePoint+Migration", "https://placehold.co/1280x720/eab308/ffffff?text=Wells+Farto+Portal"]
+                "images": ["./projects/ITPMO/BoxIntegration.png", "./projects/ITPMO/GanttView.png", "./projects/ITPMO/Generating.png", "./projects/ITPMO/HelpPae.png", "./projects/ITPMO/ItempagewithGenAI integration.png"]
             },
-            {
-                "title": "Flight Ops Communication & K2 Modernization",
-                "description": "Created a critical application for Flight Ops to prevent overfly incidents, saving the company $2B annually, and modernized legacy K2 forms with responsive UI.",
-                "tags": ["K2", "Bootstrap", "SQL", "Angular"],
-                "highlights": [
-                    "Saved an estimated $2B per year by eliminating overfly events.",
-                    "Rebuilt legacy K2 forms with a modern, responsive Bootstrap interface.",
-                    "Delivered a new A/C Parts setup system used by 20 different groups."
-                ],
-                "images": ["https://placehold.co/1280x720/ef4444/ffffff?text=Flight+Ops+App", "https://placehold.co/1280x720/dc2626/ffffff?text=K2+Modernization"]
-            }
+
         ]
     };
 
@@ -517,7 +508,18 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderProject(index) {
             const project = projects[index];
             
-            imageContainer.innerHTML = `<img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover absolute inset-0">`;
+            imageContainer.innerHTML = `
+                <div class="carousel-container relative w-full h-full overflow-hidden rounded-lg">
+                    <div class="carousel-slides flex transition-transform duration-500 ease-in-out h-full">
+                        ${project.images.map(image => `<div class="carousel-slide w-full flex-shrink-0 h-full"><img src="${image}" alt="${project.title}" class="w-full h-full object-cover"></div>`).join('')}
+                    </div>
+                    <button class="carousel-button carousel-prev absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"><i class="bi bi-chevron-left"></i></button>
+                    <button class="carousel-button carousel-next absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"><i class="bi bi-chevron-right"></i></button>
+                    <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                        ${project.images.map((_, index) => `<button class="carousel-indicator w-3 h-3 bg-white bg-opacity-50 rounded-full ${index === 0 ? 'active' : ''}" data-slide-to="${index}"></button>`).join('')}
+                    </div>
+                </div>
+            `;
 
             detailsContainer.innerHTML = `
                 <h3 class="text-2xl font-bold mt-2">${project.title}</h3>
@@ -539,6 +541,52 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
+            // Carousel Logic
+            const carouselSlides = imageContainer.querySelector('.carousel-slides');
+            const carouselIndicators = imageContainer.querySelectorAll('.carousel-indicator');
+            const prevCarouselButton = imageContainer.querySelector('.carousel-prev');
+            const nextCarouselButton = imageContainer.querySelector('.carousel-next');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                carouselSlides.style.transform = `translateX(-${index * 100}%)`;
+                carouselIndicators.forEach((indicator, i) => {
+                    if (i === index) {
+                        indicator.classList.add('active');
+                        indicator.classList.remove('bg-opacity-50');
+                    } else {
+                        indicator.classList.remove('active');
+                        indicator.classList.add('bg-opacity-50');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % project.images.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + project.images.length) % project.images.length;
+                showSlide(currentSlide);
+            }
+
+            prevCarouselButton.addEventListener('click', prevSlide);
+            nextCarouselButton.addEventListener('click', nextSlide);
+
+            carouselIndicators.forEach(indicator => {
+                indicator.addEventListener('click', (e) => {
+                    currentSlide = parseInt(e.target.dataset.slideTo);
+                    showSlide(currentSlide);
+                });
+            });
+
+            showSlide(currentSlide); // Initialize carousel
+
+            // Auto-play (optional)
+            // setInterval(nextSlide, 5000); // Change image every 5 seconds
+
+            // Existing project navigation (now for the project details, not images)
             document.getElementById('prev-project').addEventListener('click', () => {
                 currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
                 renderProject(currentProjectIndex);
