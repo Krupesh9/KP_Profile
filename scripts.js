@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Real-time, automated vendor creation in SAP S4/HANA.",
                     "Reduced vendor onboarding time significantly through automation."
                 ],
-                "images": ["./projects/MDM/AdminScreenBOAIRS.png", "./projects/MDM/businesspartners.png", "./projects/MDM/DOARequest-DocuSign.png", "./projects/MDM/DocuSign Integration.png", "./projects/MDM/GLAccountHome.png", "./projects/MDM/mdmhome.png"]
+                "images": ["./projects/MDM/MDM - Admin Screen (IRS & BoA Validation).png", "./projects/MDM/MDM - Business Partners - Home with Process Flow.png", "./projects/MDM/MDM - Delegation of Authority - Home.png", "./projects/MDM/MDM - DocuSign Integration with Task, Data Extraction.png", "./projects/MDM/MDM - GL Account Home.png", "./projects/MDM/Master Data Management (MDM - Home).png"]
             },
             {
                 "title": "RPA Migration - UiPath to Power Platform",
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Leveraged Generative AI for intelligent insights and reporting.",
                     "Streamlined project workflows and improved decision-making."
                 ],
-                "images": ["./projects/ITPMO/BoxIntegration.png", "./projects/ITPMO/GanttView.png", "./projects/ITPMO/Generating.png", "./projects/ITPMO/HelpPae.png", "./projects/ITPMO/ItempagewithGenAI integration.png"]
+                "images": ["./projects/ITPMO/IT PMO - Box Integration in Power Apps.png", "./projects/ITPMO/IT PMO - Gantt View with Quick Filters.png", "./projects/ITPMO/IT PMO - Generative AI - Lesson Learned.png", "./projects/ITPMO/IT PMO - In App Help Page.png", "./projects/ITPMO/IT PMO - Genrative AI without Premium License.png"]
             },
 
         ]
@@ -713,22 +713,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryImageName = document.getElementById('gallery-image-name');
 
     const galleryImages = [
-        { src: './projects/MDM/GLAccountHome.png', name: 'GLAccountHome' },
-        { src: './projects/MDM/DOARequest-DocuSign.png', name: 'DOARequest-DocuSign' },
-        { src: './projects/MDM/AdminScreenBOAIRS.png', name: 'AdminScreenBOAIRS' },
-        { src: './projects/MDM/DocuSign Integration.png', name: 'DocuSign Integration' },
-        { src: './projects/MDM/businesspartners.png', name: 'businesspartners' },
-        { src: './projects/MDM/mdmhome.png', name: 'mdmhome' },
-        { src: './projects/ITPMO/Generating.png', name: 'Generating' },
-        { src: './projects/ITPMO/ItempagewithGenAI integration.png', name: 'ItempagewithGenAI integration' },
-        { src: './projects/riskregister/Riskhomepage.png', name: 'Riskhomepage' },
-        { src: './projects/ITPMO/HelpPae.png', name: 'HelpPae' },
-        { src: './projects/ITPMO/GanttView.png', name: 'GanttView' },
-        { src: './projects/ITPMO/BoxIntegration.png', name: 'BoxIntegration' },
-        { src: './projects/henassetmgmt/historypage.png', name: 'historypage' },
-        { src: './projects/henassetmgmt/adminpage.png', name: 'adminpage' },
-        { src: './projects/henassetmgmt/editablepartsview.png', name: 'editablepartsview' },
-        { src: './projects/henassetmgmt/homepage.png', name: 'homepage' }
+        { src: './projects/MDM/MDM - GL Account Home.png', name: 'MDM - GL Account Home' },
+        { src: './projects/MDM/MDM - Delegation of Authority - Home.png', name: 'MDM - Delegation of Authority - Home' },
+        { src: './projects/MDM/MDM - Admin Screen (IRS & BoA Validation).png', name: 'MDM - Admin Screen (IRS & BoA Validation)' },
+        { src: './projects/MDM/MDM - DocuSign Integration with Task, Data Extraction.png', name: 'MDM - DocuSign Integration with Task, Data Extraction' },
+        { src: './projects/MDM/MDM - Business Partners - Home with Process Flow.png', name: 'MDM - Business Partners - Home with Process Flow' },
+        { src: './projects/MDM/Master Data Management (MDM - Home).png', name: 'Master Data Management (MDM - Home)' },
+        { src: './projects/ITPMO/IT PMO - Generative AI - Lesson Learned.png', name: 'IT PMO - Generative AI - Lesson Learned' },
+        { src: './projects/ITPMO/IT PMO - Genrative AI without Premium License.png', name: 'IT PMO - Genrative AI without Premium License' },
+        { src: './projects/riskregister/IT Risk Register - Home Page.png', name: 'IT Risk Register - Home Page' },
+        { src: './projects/ITPMO/IT PMO - In App Help Page.png', name: 'IT PMO - In App Help Page' },
+        { src: './projects/ITPMO/IT PMO - Gantt View with Quick Filters.png', name: 'IT PMO - Gantt View with Quick Filters' },
+        { src: './projects/ITPMO/IT PMO - Box Integration in Power Apps.png', name: 'IT PMO - Box Integration in Power Apps' },
+        { src: './projects/henassetmgmt/HEN Asset Mgmt - Quick History View.png', name: 'HEN Asset Mgmt - Quick History View' },
+        { src: './projects/henassetmgmt/HEN Asset Mgmt - Admin.png', name: 'HEN Asset Mgmt - Admin' },
+        { src: './projects/henassetmgmt/HEN Asset Mgmt - Editable Grid View - Parts.png', name: 'HEN Asset Mgmt - Editable Grid View - Parts' },
+        { src: './projects/henassetmgmt/HEN Asset Mgmt - Home View with Cards.png', name: 'HEN Asset Mgmt - Home View with Cards' }
     ];
 
     let currentGallerySlide = 0;

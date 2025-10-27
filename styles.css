@@ -111,6 +111,8 @@
 
 .project-highlights-list {
     padding-left: 0;
+    text-align: left;
+    font-size: smaller !important;
 }
 
 .project-highlights-list li {
@@ -180,9 +182,16 @@
 
 /* Gallery Modal Specific Styles */
 #image-gallery-modal .modal-content {
-    max-height: 95vh; /* Limit modal height */
+    max-height: 80vh; /* Limit modal height */
     display: flex;
     flex-direction: column;
+    background-color: #e5e7eb; /* gray-200 */
+    background-image: linear-gradient(to bottom, #e5e7eb, #d1d5db); /* gray-200 to gray-300 */
+}
+
+.dark #image-gallery-modal .modal-content {
+    background-color: #374151; /* gray-700 */
+    background-image: linear-gradient(to bottom, #374151, #1f2937); /* gray-700 to gray-800 */
 }
 
 .gallery-carousel-container {
