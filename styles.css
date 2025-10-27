@@ -109,6 +109,14 @@
     transition: background-color 0.2s, color 0.2s;
 }
 
+.project-highlights-list {
+    padding-left: 0;
+}
+
+.project-highlights-list li {
+    list-style-position: inside;
+}
+
 .font-semibold{
     text-align: left;
 }
@@ -164,4 +172,8 @@
 
     .experience-card .job-period {
         width: auto !important;
+    }
+
+    .project-highlights-list {
+        text-align: left !important;
     }}

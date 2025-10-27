@@ -268,8 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "projects": [
             {
-                "company": "Hunt Oil Company",
-                "period": "2023-Present",
                 "title": "Master Data Management & Vendor Onboarding",
                 "description": "A comprehensive Master Data Management solution for vendor onboarding, including validation with IRS and Bank of America APIs, and automated vendor creation in SAP S4/HANA.",
                 "tags": ["Power Platform", "SAP S4/HANA", "DocuSign", "IRS API"],
@@ -281,8 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 "images": ["https://placehold.co/1280x720/3b82f6/ffffff?text=MDM+Solution", "https://placehold.co/1280x720/6366f1/ffffff?text=SAP+Integration"]
             },
             {
-                "company": "Hunt Oil Company",
-                "period": "2023-Present",
                 "title": "RPA Migration - UiPath to Power Platform",
                 "description": "Migrated over 30 UiPath RPA processes to Power Platform RPA in under two months, achieving significant cost savings and improving auditability with Work Queues.",
                 "tags": ["Power Automate RPA", "UiPath", "Work Queue", "AI Processing"],
@@ -294,8 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 "images": ["https://placehold.co/1280x720/ec4899/ffffff?text=RPA+Migration", "https://placehold.co/1280x720/8b5cf6/ffffff?text=Power+Automate"]
             },
             {
-                "company": "Live Nation",
-                "period": "2022-2023",
                 "title": "Supplier Management Automation",
                 "description": "Developed a new supplier intake process using Power Apps with a multi-tier approval workflow, and automated data extraction from DocuSign into Dataverse.",
                 "tags": ["Power Apps", "Power Automate", "Dataverse", "Power BI"],
@@ -307,8 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 "images": ["https://placehold.co/1280x720/22c55e/ffffff?text=Supplier+Intake", "https://placehold.co/1280x720/14b8a6/ffffff?text=Live+Nation+Dashboard"]
             },
             {
-                "company": "Wells Fargo",
-                "period": "2022-2023",
                 "title": "SharePoint Migration & Automation",
                 "description": "Led the migration of over 1200 SharePoint 2013 sites to SharePoint Online, establishing governance, automating site intake, and managing a large offshore team.",
                 "tags": ["SharePoint", "Power Apps", "Sharegate", "SPFx"],
@@ -320,8 +312,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 "images": ["https://placehold.co/1280x720/f97316/ffffff?text=SharePoint+Migration", "https://placehold.co/1280x720/eab308/ffffff?text=Wells+Farto+Portal"]
             },
             {
-                "company": "American Airlines",
-                "period": "2018-2021",
                 "title": "Flight Ops Communication & K2 Modernization",
                 "description": "Created a critical application for Flight Ops to prevent overfly incidents, saving the company $2B annually, and modernized legacy K2 forms with responsive UI.",
                 "tags": ["K2", "Bootstrap", "SQL", "Angular"],
@@ -530,13 +520,12 @@ document.addEventListener('DOMContentLoaded', () => {
             imageContainer.innerHTML = `<img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover absolute inset-0">`;
 
             detailsContainer.innerHTML = `
-                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">${project.company} - <span class="text-blue-600 dark:text-blue-400">${project.period}</span></p>
                 <h3 class="text-2xl font-bold mt-2">${project.title}</h3>
                 <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm flex-grow">${project.description}</p>
                 <div class="flex flex-wrap gap-2 mt-4">
                     ${project.tags.map(tag => `<span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`).join('')}
                 </div>
-                <ul class="mt-4 space-y-2 text-sm">
+                <ul class="mt-4 space-y-2 text-sm project-highlights-list">
                     ${project.highlights.map(highlight => `<li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span>${highlight}</span></li>`).join('')}
                 </ul>
                 <div class="flex items-center justify-between mt-6">
