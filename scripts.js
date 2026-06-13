@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 "logo": "./companyLogo/huntLogo.png",
                 "icon": "bi-buildings-fill",
                 "responsibilities": [
+                    "Architected enterprise AI agents and Microsoft Copilot Studio solutions for intelligent knowledge retrieval and employee self-service.",
+                    "Pioneered Generative AI integrations (Claude, Gemini, ChatGPT) across Power Platform to automate document processing, summarization, and decision support.",
+                    "Designed an AI-powered Hunt Wiki bot delivering instant answers on internal documentation, HR, and open enrollment inquiries.",
                     "Architected and governed scalable Power Platform environments for enterprise solutions.",
                     "Spearheaded a reusable Power Apps component library to accelerate development.",
                     "Led the design of an MDM solution for streamlined vendor onboarding.",
