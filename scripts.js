@@ -1,800 +1,662 @@
-document.addEventListener('DOMContentLoaded', () => {
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
-    console.log('Script loaded and DOMContentLoaded fired.');
-
-    const portfolioData = {
-        "skills": [
-            {
-                "category": "Power Platform",
-                "icon": "bi-lightning-charge-fill",
-                "color": "purple",
-                "skills": ["Power Apps", "Power Automate", "Power BI", "Dataverse", "AI Agents", "RPA", "Power Pages"]
-            },
-            {
-                "category": "Cloud & Azure",
-                "icon": "bi-cloud-fill",
-                "color": "blue",
-                "skills": ["Azure Functions", "Logic Apps", "Azure DevOps", "On-Prem Gateway", "API Management"]
-            },
-            {
-                "category": "SharePoint & M365",
-                "icon": "bi-microsoft-teams",
-                "color": "green",
-                "skills": ["SharePoint Online", "SP2013", "SPFx", "Dynamics 365", "MS Teams", "Graph API"]
-            },
-            {
-                "category": "Programming",
-                "icon": "bi-code-slash",
-                "color": "slate",
-                "skills": ["C#", "SQL", "JavaScript", "TypeScript", "Angular", "React", "Node.js"]
-            },
-            {
-                "category": "RPA & Automation",
-                "icon": "bi-robot",
-                "color": "cyan",
-                "skills": ["UiPath", "Power Automate RPA", "K2", "Nintex", "Alteryx", "Document Processing"]
-            },
-            {
-                "category": "Artificial Intelligence",
-                "icon": "bi-cpu-fill",
-                "color": "red",
-                "skills": ["AI Agents", "Machine Learning", "Natural Language Processing", "Generative AI (Claude, Gemini, ChatGPT 5)"]
-            },
-            {
-                "category": "Microsoft Copilot Studio",
-                "icon": "bi-robot",
-                "color": "teal",
-                "skills": ["Conversational AI", "Bot Development", "Custom Connectors", "Generative AI Integration"]
-            },
-            {
-                "category": "Vibe Coding & Collaboration",
-                "icon": "bi-people-fill",
-                "color": "pink",
-                "skills": ["Real-time Collaboration", "Interactive Development", "Pair Programming", "Code Sharing"]
-            },
-            {
-                "category": "Integration & APIs",
-                "icon": "bi-plug-fill",
-                "color": "amber",
-                "skills": ["REST APIs", "SAP S4/HANA", "ServiceNow", "DocuSign", "Salesforce", "IRS API"]
-            }
-        ],
-        "experience": [
-            {
-                "company": "Hunt Oil Company",
-                "period": "Apr 2023 - Current",
-                "title": "Senior Solution Architect",
-                "logo": "./companyLogo/huntLogo.png",
-                "icon": "bi-buildings-fill",
-                "responsibilities": [
-                    "Architected enterprise AI agents and Microsoft Copilot Studio solutions for intelligent knowledge retrieval and employee self-service.",
-                    "Pioneered Generative AI integrations (Claude, Gemini, ChatGPT) across Power Platform to automate document processing, summarization, and decision support.",
-                    "Designed an AI-powered Hunt Wiki bot delivering instant answers on internal documentation, HR, and open enrollment inquiries.",
-                    "Architected and governed scalable Power Platform environments for enterprise solutions.",
-                    "Spearheaded a reusable Power Apps component library to accelerate development.",
-                    "Led the design of an MDM solution for streamlined vendor onboarding.",
-                    "Orchestrated vendor creation automation in SAP S4/HANA via OpenInvoice.",
-                    "Engineered complex DocuSign workflows for document generation and signing.",
-                    "Directed a team of 3 developers, implementing CI/CD pipelines for Power Platform.",
-                    "Pioneered modern development practices to foster a culture of innovation."
-                ]
-            },
-            {
-                "company": "Wells Fargo Bank",
-                "period": "Dec 2022 - Oct 2023",
-                "title": "Lead Application Architect",
-                "logo": "./companyLogo/wellsFargo.png",
-                "icon": "bi-bank2",
-                "responsibilities": [
-                    "Spearheaded governance and architecture for the migration of 1200+ SharePoint sites.",
-                    "Innovated an automated site intake process with Power Apps and Power Automate.",
-                    "Directed an offshore team for all migration and development activities.",
-                    "Strategically used Sharegate/AvePoint for seamless site migrations.",
-                    "Led the deployment of custom SPFx solutions for a unified user experience.",
-                    "Championed modern SharePoint features and best practices to drive user adoption."
-                ]
-            },
-            {
-                "company": "Live Nation / Ticketmaster",
-                "period": "Oct 2022 - Mar 2023",
-                "title": "Lead Application Architect",
-                "logo": "./companyLogo/liveNation.png",
-                "icon": "bi-ticket-perforated-fill",
-                "responsibilities": [
-                    "Mentored and upskilled a team of 3 on Power Platform fundamentals.",
-                    "Architected an automated solution to extract and sync DocuSign data into Dataverse.",
-                    "Spearheaded a new supplier intake process with a multi-tier approval workflow.",
-                    "Empowered business owners with intuitive Canvas Power Apps for task automation.",
-                    "Delivered actionable insights with Power BI reports for vendor tracking.",
-                    "Championed the Power Platform to solve complex business problems and drive innovation."
-                ]
-            },
-            {
-                "company": "Bravo Tech (Hunt Consolidated, Inc.)",
-                "period": "Oct 2021 - Dec 2022",
-                "title": "Lead Application Developer",
-                "logo": "./companyLogo/TekSystems.png",
-                "icon": "bi-gear-wide-connected",
-                "responsibilities": [
-                    "Engineered and deployed robust RPA processes with UiPath for data extraction.",
-                    "Designed an intelligent data scraping solution for PDFs from DocuSign.",
-                    "Architected a mission-critical compliance tracker with SharePoint and Power Platform.",
-                    "Translated business requirements into high-fidelity mockups with Figma.",
-                    "Provided technical leadership on automation best practices to drive innovation.",
-                    "Collaborated with cross-functional teams to prioritize automation opportunities."
-                ]
-            },
-            {
-                "company": "American Airlines Inc.",
-                "period": "Jun 2018 - Oct 2021",
-                "title": "Lead Application Developer",
-                "logo": "./companyLogo/aaLogo.png",
-                "icon": "bi-airplane-fill",
-                "responsibilities": [
-                    "Directed the technical vision and execution of UI solutions across the product lifecycle.",
-                    "Architected a mission-critical Flight Ops app, saving an estimated $2B annually.",
-                    "Pioneered Bootstrap integration with K2 Forms for modern, responsive UIs.",
-                    "Established a unified design language for all K2 and SharePoint applications.",
-                    "Spearheaded the development of a new A/C Parts setup system used by 20+ groups.",
-                    "Provided technical leadership and mentorship to a team of UI/UX developers."
-                ]
-            },
-            {
-                "company": "Range Resources",
-                "period": "Dec 2015 - Jul 2017",
-                "title": "Sr. SharePoint Developer",
-                "logo": "./companyLogo/RRLogo.png",
-                "icon": "bi-geo-alt-fill",
-                "responsibilities": [
-                    "Led the end-to-end SDLC for the SharePoint 2013 Intranet Portal.",
-                    "Architected complex, mobile-friendly workflows and forms with Nintex.",
-                    "Pioneered custom JavaScript and CSS solutions to extend Nintex Forms capabilities.",
-                    "Engineered a novel solution for capturing digital signatures and geo-location.",
-                    "Provided expert guidance on SharePoint and Nintex best practices.",
-                    "Collaborated with stakeholders to translate business requirements into technical solutions."
-                ]
-            },
-            {
-                "company": "Fannie Mae",
-                "period": "Aug 2014 - Dec 2015",
-                "title": "Sr. SharePoint Architecture – Developer/Designer/Ui Developer",
-                "logo": "./companyLogo/FannieMaeLogo-2.png",
-                "icon": "bi-house-door-fill",
-                "responsibilities": [
-                    "Directed all SDLC phases for the SP2007 to SP2013 site migration and enhancement.",
-                    "Led the successful migration of content and workflows with significant UI/UX upgrades.",
-                    "Architected a mobile-first Check-In app for iPad to streamline event management.",
-                    "Engineered a dynamic cascading drop-down menu solution with SharePoint Services.",
-                    "Provided technical leadership on SharePoint best practices for platform modernization.",
-                    "Collaborated with stakeholders to translate requirements into innovative solutions."
-                ]
-            },
-            {
-                "company": "Institute for Intergovernmental Research (IIR/DHS)",
-                "period": "Aug 2013 - Jul 2014",
-                "title": "Sr. SharePoint Developer/Administrator/Architect/Migration",
-                "logo": "./companyLogo/IIRDHS.png",
-                "icon": "bi-shield-fill-check",
-                "responsibilities": [
-                    "Led the management and enhancement of NIEM.gov and other key SharePoint 2013 projects.",
-                    "Directed the end-to-end SDLC for SharePoint 2010 and 2013 projects.",
-                    "Architected and administered hybrid SharePoint environments (Online and On-Premises).",
-                    "Engineered advanced search configurations and query rules in SharePoint 2013.",
-                    "Spearheaded Active Directory integration with SharePoint Online using ADFS 2.0.",
-                    "Developed and deployed custom C#-based sandbox solutions and web parts.",
-                    "Provided technical leadership in cleaning up legacy code and resolving site bugs."
-                ]
-            },
-            {
-                "company": "Bluetooth SIG (HQ)",
-                "period": "Feb 2013 - Jul 2013",
-                "title": "Sr. Software Developer",
-                "logo": "./companyLogo/BluetoothSIG.png",
-                "icon": "bi-bluetooth",
-                "responsibilities": [
-                    "Led all phases of the Agile SDLC as the lead SP 2013 Admin/Developer.",
-                    "Architected and executed a complete redesign of the public-facing bluetooth.org.",
-                    "Engineered new voting and attendance tracking functionalities in SharePoint.",
-                    "Leveraged SharePoint 2013 for both internal and external-facing websites.",
-                    "Provided technical leadership and strategic direction on SharePoint solutions.",
-                    "Collaborated with stakeholders to translate requirements into technical solutions."
-                ]
-            },
-            {
-                "company": "Lazard",
-                "period": "Apr 2012 - Feb 2013",
-                "title": "Software Application Developer",
-                "logo": "./companyLogo/LazardLogo.png",
-                "icon": "bi-bar-chart-line-fill",
-                "responsibilities": [
-                    "Led the architecture and development of SharePoint 2010 solutions.",
-                    "Engineered automated deployment of SharePoint environments with PowerShell.",
-                    "Architected a robust system for creating Document Libraries and Document Sets.",
-                    "Designed and developed complex, multi-level sequential workflows in VS2010 & SPD.",
-                    "Provided technical leadership and expertise in SharePoint 2010 solutions.",
-                    "Collaborated with stakeholders to translate requirements into technical designs."
-                ]
-            },
-            {
-                "company": "Ernst & Young LLP",
-                "period": "Jul 2011 - Apr 2012",
-                "title": "Software Developer",
-                "logo": "./companyLogo/EYLogo.png",
-                "icon": "bi-briefcase-fill",
-                "responsibilities": [
-                    "Played a key role in the implementation of SharePoint 2010 projects.",
-                    "Leveraged advanced features like Word Automation Services and Document Sets.",
-                    "Engineered extensive ribbon customizations using SP Object Model and CSOM.",
-                    "Designed and developed complex, multi-stage workflows in Visual Studio 2010.",
-                    "Spearheaded the integration of custom workflows with ribbon controls and content types.",
-                    "Provided technical expertise on SharePoint 2010 development best practices."
-                ]
-            }
-        ],
-        "certifications": [
-            {
-                "name": "Power Platform Architect",
-                "year": "2024"
-            },
-            {
-                "name": "Power Platform Developer",
-                "year": "2024"
-            },
-            {
-                "name": "UiPath Certified RPA Developer",
-                "year": "2022"
-            },
-            {
-                "name": "Nintex Workflow Pro Certified",
-                "year": "2021"
-            },
-            {
-                "name": "K2 Certified Architect",
-                "year": "2021"
-            },
-            {
-                "name": "Microsoft SharePoint Developer",
-                "year": "2014"
-            }
-        ],
-        "education": [
-            {
-                "degree": "Master of Science, Computer Science",
-                "university": "University of Bridgeport, CT",
-                "details": "GPA: 3.76/4.0 - 2011"
-            },
-            {
-                "degree": "Bachelor of Engineering, Information Technology",
-                "university": "BVM Engineering College, S.P. University, Gujarat, India",
-                "details": "GPA: 6.77/10.0 - 2008"
-            }
-        ],
-        "projects": [
-            {
-                "title": "Master Data Management & Vendor Onboarding",
-                "description": "A comprehensive Master Data Management solution for vendor onboarding, including validation with IRS and Bank of America APIs, and automated vendor creation in SAP S4/HANA.",
-                "tags": ["Power Platform", "SAP S4/HANA", "DocuSign", "IRS API"],
-                "highlights": [
-                    "Integrated with IRS and Bank of America APIs for vendor validation.",
-                    "Real-time, automated vendor creation in SAP S4/HANA.",
-                    "Reduced vendor onboarding time significantly through automation."
-                ],
-                "images": ["./projects/MDM/MDM - Admin Screen (IRS & BoA Validation).png", "./projects/MDM/MDM - Business Partners - Home with Process Flow.png", "./projects/MDM/MDM - Delegation of Authority - Home.png", "./projects/MDM/MDM - DocuSign Integration with Task, Data Extraction.png", "./projects/MDM/MDM - GL Account Home.png", "./projects/MDM/Master Data Management (MDM - Home).png"]
-            },
-            {
-                "title": "RPA Migration - UiPath to Power Platform",
-                "description": "Migrated over 30 UiPath RPA processes to Power Platform RPA in under two months, achieving significant cost savings and improving auditability with Work Queues.",
-                "tags": ["Power Automate RPA", "UiPath", "Work Queue", "AI Processing"],
-                "highlights": [
-                    "Saved over $40K annually by migrating from UiPath to Power Platform.",
-                    "Completed the migration of 30+ processes in less than 2 months.",
-                    "Implemented Work Queues for enhanced auditing and process tracking."
-                ],
-                "images": ["./projects/RPA/RPA - Dashboard - Quick Start.png"]
-            },
-            {
-                "title": "Hunt Wiki - Agent AI",
-                "description": "An AI-powered bot designed to provide intelligent assistance for internal documentation, open enrollment inquiries, and other organizational details, enhancing knowledge retrieval and employee support.",
-                "tags": ["AI", "Bot", "Knowledge Management", "Internal Communications", "Generative AI"],
-                "highlights": [
-                    "Developed an AI bot for instant access to internal documents.",
-                    "Automated responses for open enrollment and HR-related queries.",
-                    "Improved employee self-service and reduced support workload."
-                ],
-                "images": ["./projects/HuntWiki/Hunt Wiki - AI Agent.png", "./projects/HuntWiki/Hunt Wiki - AI Agent - Prompt.png", "./projects/HuntWiki/Hunt Wiki - AI Agent - Open Enrollment.png", "./projects/HuntWiki/Hunt Wiki - AI Agent - Response.png"]
-            },
-            {
-                "title": "IT Project/Portfolio Management",
-                "description": "A comprehensive solution for managing IT projects and portfolios, enhancing visibility, control, and strategic alignment across all initiatives. Features include Gantt charts, Box integration, and GenAI-powered insights.",
-                "tags": ["Project Management", "Portfolio Management", "ITPMO", "Gantt Chart", "Box Integration", "GenAI"],
-                "highlights": [
-                    "Implemented robust project and portfolio tracking with Gantt views.",
-                    "Integrated with Box for seamless document management and collaboration.",
-                    "Leveraged Generative AI for intelligent insights and reporting.",
-                    "Streamlined project workflows and improved decision-making."
-                ],
-                "images": ["./projects/ITPMO/IT PMO - Box Integration in Power Apps.png", "./projects/ITPMO/IT PMO - Gantt View with Quick Filters.png", "./projects/ITPMO/IT PMO - Generative AI - Lesson Learned.png", "./projects/ITPMO/IT PMO - In App Help Page.png", "./projects/ITPMO/IT PMO - Genrative AI without Premium License.png"]
-            },
-
-        ]
-    };
-
-    // --- THEME TOGGLE --- //
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    if (localStorage.getItem('theme') === 'dark') {
-        html.classList.add('dark');
-        themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    } else {
-        themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-    }
-    themeToggle.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        if (html.classList.contains('dark')) {
-            themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            themeToggle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-            localStorage.setItem('theme', 'light');
+const v2Data = {
+    technologyLogos: [
+        { name: "Model Context Protocol", icon: "assets/tech-logos/mcp.svg" },
+        { name: "Microsoft Agent 365", icon: "assets/tech-logos/agent-365.svg" },
+        { name: "Copilot Studio", icon: "assets/tech-logos/copilot-studio.svg" },
+        { name: "Power Platform", icon: "assets/tech-logos/power-platform.svg" },
+        { name: "Power Apps", icon: "assets/tech-logos/power-apps.svg" },
+        { name: "Power Automate", icon: "assets/tech-logos/power-automate.svg" },
+        { name: "Azure AI / Foundry", icon: "assets/tech-logos/azure-ai-foundry.svg" },
+        { name: "Foundry Agent Service", icon: "assets/tech-logos/azure-agent-service.svg" },
+        { name: "Claude", icon: "assets/tech-logos/claude.ico" },
+        { name: "SharePoint", icon: "assets/tech-logos/sharepoint.svg" },
+        { name: "Power BI", icon: "assets/tech-logos/power-bi.svg" },
+        { name: "Azure DevOps", icon: "assets/tech-logos/azure-devops.svg" }
+    ],
+    skillGroups: [
+        {
+            title: "Power Platform & Microsoft 365",
+            icon: "assets/tech-logos/power-platform.svg",
+            skills: [
+                ["Solution architecture", 5],
+                ["Power Apps", 5],
+                ["Power Automate", 5],
+                ["Power Automate RPA", 5],
+                ["SharePoint / Microsoft 365", 5],
+                ["Dataverse", 4.5],
+                ["Copilot Studio", 4.5],
+                ["Power BI", 2.5]
+            ]
+        },
+        {
+            title: "AI, MCP & Agentic Engineering",
+            icon: "assets/tech-logos/agent-365.svg",
+            skills: [
+                ["MCP SDK & server integration", 5],
+                ["AI agents & orchestration", 4.5],
+                ["Agent SDK patterns", 4],
+                ["Enterprise knowledge retrieval", 4.5],
+                ["Prompt design & grounding", 4.5],
+                ["Azure AI / Foundry", 4],
+                ["Claude / Codex engineering", 4.5],
+                ["Autonomous workflows", 4]
+            ]
+        },
+        {
+            title: "Integration, Cloud & Delivery",
+            icon: "assets/tech-logos/azure-devops.svg",
+            skills: [
+                ["Enterprise API integration", 5],
+                ["REST / GraphQL APIs", 4],
+                ["Governance, DLP & security", 5],
+                ["Azure DevOps & CI/CD", 4.5],
+                ["Azure Functions / Logic Apps", 4],
+                ["C# / .NET", 4.5],
+                ["SQL / data integration", 4.5],
+                ["Python", 4]
+            ]
+        },
+        {
+            title: "UI Engineering & Experience Design",
+            icon: "assets/tech-logos/power-apps.svg",
+            skills: [
+                ["UI/UX solution design", 4.5],
+                ["Responsive interface architecture", 5],
+                ["JavaScript / TypeScript", 4.5],
+                ["Angular development", 4],
+                ["React / SPFx development", 4],
+                ["Figma & rapid prototyping", 4],
+                ["Adaptive Cards", 4.5],
+                ["Unified Power Apps UI", 5]
+            ]
         }
+    ],
+    projects: [
+        {
+            type: "AI + Enterprise Integration",
+            title: "Enterprise MCP SDK and agent ecosystem",
+            description: "A repeatable platform for connecting AI clients and agents to enterprise tools without turning every integration into a one-off project.",
+            highlights: [
+                "Onboarded 10+ MCP servers across ServiceNow, Tanium, SharePoint Lists, Microsoft 365 reporting/licensing, Rapid7, Mimecast, SailPoint, Nutanix, and Palo Alto Panorama.",
+                "Standardized authentication, permissions, schemas, logging, testing, error handling, and server lifecycle practices.",
+                "Designed employee-onboarding orchestration, daily task execution, monitoring, reusable knowledge, and safe self-healing patterns.",
+                "Created reusable onboarding templates and health-check patterns so new MCP integrations can move from prototype to supported service faster.",
+                "Connected Copilot Studio, Agent SDK workflows, and AI engineering tools to governed enterprise actions with explicit human approval points."
+            ],
+            chips: ["MCP", "Agent SDK", "Copilot Studio", "Azure DevOps", "Security"],
+            images: [
+                { src: "projects/HuntWiki/Hunt Wiki - AI Agent.png", alt: "Hunt Wiki AI agent home experience" },
+                { src: "projects/HuntWiki/Hunt Wiki - AI Agent - Prompt.png", alt: "Hunt Wiki AI agent prompt experience" },
+                { src: "projects/HuntWiki/Hunt Wiki - AI Agent - Response.png", alt: "Hunt Wiki AI agent grounded response" },
+                { src: "projects/HuntWiki/Hunt Wiki - AI Agent - Open Enrollment.png", alt: "Hunt Wiki open enrollment knowledge experience" }
+            ]
+        },
+        {
+            type: "Power Platform + Governance",
+            title: "A faster, governed path from idea to enterprise app",
+            description: "Reusable components, mobile-first UI, Power Platform MCP, code apps, AI-assisted engineering, and release automation that help teams deliver consistent solutions in weeks instead of months.",
+            highlights: [
+                "Created responsive app components, adaptive-card patterns, and a unified UI for makers and developers.",
+                "Set environment strategy, DLP policies, security roles, connector controls, permissions, and automated promotion.",
+                "Built reusable Claude and Codex skills so junior developers and interns can contribute with safer standards.",
+                "Used Power Platform MCP and AI prompts to generate reports, flows, app scaffolding, and repeatable delivery assets.",
+                "Combined mobile-first layouts, code apps, shared components, and automated reviews to reduce rework across projects."
+            ],
+            chips: ["Power Apps", "Power Automate", "Governance", "CI/CD", "Developer enablement"],
+            images: [
+                { src: "projects/ITPMO/IT PMO - Gantt View with Quick Filters.png", alt: "IT PMO Gantt view with quick filters" },
+                { src: "projects/ITPMO/IT PMO - Box Integration in Power Apps.png", alt: "IT PMO Box integration inside Power Apps" },
+                { src: "projects/ITPMO/IT PMO - Generative AI - Lesson Learned.png", alt: "IT PMO generative AI lessons learned experience" },
+                { src: "projects/ITPMO/IT PMO - Genrative AI without Premium License.png", alt: "IT PMO generative AI experience without premium licensing" },
+                { src: "projects/ITPMO/IT PMO - In App Help Page.png", alt: "IT PMO contextual in-app help page" }
+            ]
+        },
+        {
+            type: "Power Platform + ERP Integration",
+            title: "Master data and vendor onboarding",
+            description: "An end-to-end onboarding product spanning validation, approvals, document generation, signatures, and automated ERP vendor creation.",
+            highlights: [
+                "Connected IRS and Bank of America validation services.",
+                "Integrated OpenInvoice, SAP S/4HANA, DocuSign, Dataverse, and Power Automate.",
+                "Created a mobile-friendly experience for domestic and international vendor workflows.",
+                "Added role-based administration, delegation of authority, task tracking, and audit-friendly process visibility.",
+                "Reduced manual handoffs by bringing validation, approvals, document generation, signatures, and ERP creation into one product."
+            ],
+            chips: ["Power Platform", "SAP S/4HANA", "DocuSign", "APIs", "Dataverse"],
+            images: [
+                { src: "projects/MDM/Master Data Management (MDM - Home).png", alt: "Master Data Management application home page" },
+                { src: "projects/MDM/MDM - Business Partners - Home with Process Flow.png", alt: "Business partner onboarding process flow" },
+                { src: "projects/MDM/MDM - Admin Screen (IRS & BoA Validation).png", alt: "MDM administrator validation configuration" },
+                { src: "projects/MDM/MDM - DocuSign Integration with Task, Data Extraction.png", alt: "MDM DocuSign task and data extraction integration" },
+                { src: "projects/MDM/MDM - Delegation of Authority - Home.png", alt: "MDM delegation of authority home page" },
+                { src: "projects/MDM/MDM - GL Account Home.png", alt: "MDM general ledger account experience" }
+            ]
+        },
+        {
+            type: "Automation Modernization",
+            title: "UiPath to Power Automate RPA",
+            description: "A rapid automation portfolio migration with stronger queue operations, recovery, tracking, and auditability.",
+            highlights: [
+                "Migrated 30+ processes in under two months.",
+                "Delivered more than $40K in estimated annual savings.",
+                "Introduced Work Queues for better monitoring, logging, and operational support.",
+                "Standardized retries, exception handling, run history, ownership, and recovery steps for production support.",
+                "Created a dashboard-led operating model so teams can see workload, status, failures, and business value in one place."
+            ],
+            chips: ["Power Automate RPA", "UiPath", "Work Queues", "Document processing"],
+            images: [
+                { src: "projects/RPA/RPA - Dashboard - Quick Start.png", alt: "RPA modernization dashboard and quick-start experience" }
+            ]
+        },
+        {
+            type: "SharePoint + Governance",
+            title: "1,200+ SharePoint site migration and modernization",
+            description: "Governance, information architecture, automated intake, reporting, and delivery coordination for a large SharePoint migration program.",
+            highlights: [
+                "Migrated and modernized 1,200+ SharePoint sites using governed information architecture and repeatable delivery patterns.",
+                "Built Power Apps and Power Automate intake/approval workflows.",
+                "Led migration execution, offshore coordination, SPFx modernization, and leadership reporting.",
+                "Organized migration waves, exception handling, ownership, and governance decisions so business teams knew what happened next.",
+                "Used operational dashboards and automated intake data to improve prioritization, readiness tracking, and stakeholder communication."
+            ],
+            chips: ["SharePoint Online", "ShareGate", "AvePoint", "SPFx", "Power BI"],
+            images: [
+                { src: "projects/ITPMO/IT PMO - Box Integration in Power Apps.png", alt: "Microsoft 365 modernization intake and Box integration experience" },
+                { src: "projects/ITPMO/IT PMO - Gantt View with Quick Filters.png", alt: "Microsoft 365 program delivery timeline and filters" },
+                { src: "projects/ITPMO/IT PMO - In App Help Page.png", alt: "Microsoft 365 modernization in-app guidance" }
+            ]
+        },
+        {
+            type: "Application Architecture + UX",
+            title: "Operational applications at airline scale",
+            description: "Responsive application architecture and reusable UI patterns for regulated workflows and cross-functional operational teams.",
+            highlights: [
+                "Created FAA-governed digital-signature and messaging workflows.",
+                "Delivered an aircraft-parts setup system used by more than 20 groups.",
+                "Built a Flight Ops application credited internally with approximately $2B in annual impact.",
+                "Established reusable responsive UI and interaction patterns across K2, SharePoint, SQL, and integrated operational systems.",
+                "Worked with cross-functional teams to turn complex regulated processes into clearer task flows, dashboards, and supportable experiences."
+            ],
+            chips: ["K2", "SharePoint", "SQL", "Alteryx", "Enterprise UX"],
+            images: [
+                { src: "projects/henassetmgmt/HEN Asset Mgmt - Home View with Cards.png", alt: "Enterprise asset management home page with cards" },
+                { src: "projects/henassetmgmt/HEN Asset Mgmt - Admin.png", alt: "Enterprise asset management administration page" },
+                { src: "projects/henassetmgmt/HEN Asset Mgmt - Editable Grid View - Parts.png", alt: "Enterprise asset management editable parts grid" },
+                { src: "projects/henassetmgmt/HEN Asset Mgmt - Quick History View.png", alt: "Enterprise asset management quick history view" },
+                { src: "projects/riskregister/IT Risk Register - Home Page.png", alt: "Enterprise IT risk register home page" }
+            ]
+        }
+    ],
+    experience: [
+        {
+            company: "Hunt Oil Company",
+            industry: "Energy & Natural Resources",
+            title: "Senior Solution Architect",
+            period: "Apr 2023 - Present",
+            logo: "companyLogo/huntLogo.png",
+            bullets: [
+                "Built an enterprise MCP SDK and onboarded 10+ servers across ITSM, security, identity, infrastructure, Microsoft 365, and business data platforms.",
+                "Deliver Copilot Studio, Agent SDK, autonomous workflow, Power Platform, Azure integration, mobile application, governance, and CI/CD capabilities.",
+                "Modernized enterprise MDM, vendor onboarding, SAP S/4HANA and OpenInvoice integration, DocuSign, IT portfolio management, and RPA operations."
+            ]
+        },
+        {
+            company: "Wells Fargo Bank",
+            industry: "Banking & Financial Services",
+            title: "Lead Application Architect",
+            period: "Dec 2022 - Oct 2023",
+            logo: "companyLogo/wellsFargo.png",
+            bullets: [
+                "Led governance, information architecture, and migration delivery for 1,200+ SharePoint 2013 sites moving to SharePoint Online.",
+                "Built Power Apps and Power Automate intake, approval, scheduling, and leadership-reporting experiences.",
+                "Led offshore delivery and migration coordination while modernizing navigation and shared user experiences through SPFx."
+            ]
+        },
+        {
+            company: "Live Nation / Ticketmaster",
+            industry: "Live Entertainment & Ticketing",
+            title: "Lead Application Architect",
+            period: "Oct 2022 - Mar 2023",
+            logo: "companyLogo/liveNation.png",
+            bullets: [
+                "Architected supplier onboarding with tiered approvals, Dataverse, Power Apps, Power Automate, and DocuSign.",
+                "Automated DocuSign data extraction into Dataverse and created operational Power BI reporting for vendor status and adoption.",
+                "Mentored a three-person team on Power Platform fundamentals, reusable solution patterns, and release practices."
+            ]
+        },
+        {
+            company: "Bravo Tech / Hunt Consolidated",
+            industry: "Technology Consulting & Energy",
+            title: "Lead Application Developer",
+            period: "Oct 2021 - Dec 2022",
+            logo: "companyLogo/BravoTech.svg",
+            bullets: [
+                "Delivered UiPath automation for utility statements and document workflows spanning DocuSign, PDF extraction, SQL, SharePoint, and Power Platform.",
+                "Built compliance and contractor-management applications from stakeholder discovery and Figma prototypes through production delivery.",
+                "Modernized and retired legacy K2 applications while documenting repeatable, supportable replacement patterns."
+            ]
+        },
+        {
+            company: "American Airlines",
+            industry: "Aviation & Transportation",
+            title: "Lead Application Developer",
+            period: "Jun 2018 - Oct 2021",
+            logo: "companyLogo/aaLogo.png",
+            bullets: [
+                "Led enterprise UX architecture for K2 and SharePoint products, creating reusable responsive themes and interaction patterns.",
+                "Built a Flight Operations messaging application used to prevent overfly events and credited internally with approximately $2B in annual impact.",
+                "Delivered FAA-governed workflows and an aircraft-parts setup system serving 20+ groups across SQL, Teradata, Alteryx, K2, and web technologies."
+            ]
+        },
+        {
+            company: "Range Resources",
+            industry: "Energy & Natural Resources",
+            title: "Senior SharePoint Developer",
+            period: "Dec 2015 - Jul 2017",
+            logo: "companyLogo/RRLogo.png",
+            bullets: [
+                "Designed SharePoint intranet architecture and reusable information-management patterns.",
+                "Delivered mobile-first Nintex forms and workflows with signatures, geolocation, and field-friendly experiences."
+            ]
+        },
+        {
+            company: "Fannie Mae",
+            industry: "Housing Finance & Financial Services",
+            title: "Senior SharePoint Architect / Developer / UI Developer",
+            period: "Aug 2014 - Dec 2015",
+            logo: "companyLogo/FannieMaeLogo-2.png",
+            bullets: [
+                "Supported SharePoint 2007-to-2013 migration, approval workflows, and responsive enterprise UI modernization.",
+                "Created iPad check-in experiences and reusable interface patterns for business-facing applications."
+            ]
+        },
+        {
+            company: "Institute for Intergovernmental Research / DHS",
+            industry: "Government & Public Safety",
+            title: "Senior SharePoint Developer / Administrator / Architect",
+            period: "Aug 2013 - Jul 2014",
+            logo: "companyLogo/IIRDHS.png",
+            bullets: [
+                "Owned NIEM.gov enhancements and hybrid SharePoint administration across search, ADFS integration, workflow, and platform support.",
+                "Delivered custom solutions and operating documentation for a government and public-safety environment."
+            ]
+        },
+        {
+            company: "Bluetooth SIG",
+            industry: "Technology Standards & Membership",
+            title: "Senior Software Developer",
+            period: "Feb 2013 - Jul 2013",
+            logo: "companyLogo/BluetoothSIG.png",
+            bullets: [
+                "Redesigned bluetooth.org and established the supporting SharePoint architecture and farm-administration approach.",
+                "Automated deployments and delivered navigation, voting, attendance, and member-experience features."
+            ]
+        },
+        {
+            company: "Lazard",
+            industry: "Investment Banking & Financial Services",
+            title: "Software Application Developer",
+            period: "Apr 2012 - Feb 2013",
+            logo: "companyLogo/LazardLogo.png",
+            bullets: [
+                "Built secure global document-management, metadata, and workflow solutions for enterprise collaboration.",
+                "Created custom SharePoint components and repeatable PowerShell deployment practices."
+            ]
+        },
+        {
+            company: "Ernst & Young",
+            industry: "Professional Services & Consulting",
+            title: "Software Developer",
+            period: "Jul 2011 - Apr 2012",
+            logo: "companyLogo/EYLogo.png",
+            bullets: [
+                "Implemented SharePoint document automation, workflows, and publishing controls for enterprise delivery.",
+                "Customized ribbon experiences and reusable components to simplify business processes and content operations."
+            ]
+        }
+    ],
+    credentials: [
+        ["Microsoft Power Platform Solution Architect Expert", "2024"],
+        ["Microsoft Power Platform Developer Associate", "Microsoft"],
+        ["UiPath Certified RPA Developer", "2022"],
+        ["Nintex Workflow Pro Certified", "2021"],
+        ["K2 Certified Architect", "2021"],
+        ["Microsoft SharePoint Developer Certifications", "2010 / 2013"]
+    ]
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const siteHeader = document.querySelector(".site-header");
+    const heroPortrait = document.querySelector(".portrait-card");
+    const portraitObserver = new IntersectionObserver(entries => {
+        siteHeader.classList.toggle("show-profile", !entries[0].isIntersecting);
+    }, { threshold: .2 });
+    portraitObserver.observe(heroPortrait);
+
+    const themeToggle = document.getElementById("theme-toggle-v2");
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    function syncThemeControl() {
+        const dark = document.documentElement.dataset.theme === "dark";
+        themeToggle.setAttribute("aria-pressed", String(dark));
+        themeToggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+        themeColor?.setAttribute("content", dark ? "#0b1427" : "#f4f7fc");
+    }
+    syncThemeControl();
+    themeToggle.addEventListener("click", () => {
+        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem("kp-profile-v2-theme", next);
+        syncThemeControl();
     });
 
-    // --- MOBILE MENU --- //
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-    // Close mobile menu when a link is clicked
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
+    const menuToggle = document.getElementById("menu-toggle-v2");
+    const mobileNav = document.getElementById("mobile-nav-v2");
+    function setMenuOpen(open) {
+        mobileNav.classList.toggle("open", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    }
+    menuToggle.addEventListener("click", () => {
+        setMenuOpen(!mobileNav.classList.contains("open"));
     });
+    mobileNav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setMenuOpen(false)));
 
-    // --- PILL NAVIGATION --- //
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navMarker = document.getElementById('nav-marker');
-    const navMenu = document.getElementById('nav-menu');
-    const sections = document.querySelectorAll('section');
+    document.getElementById("technology-logo-grid").innerHTML = v2Data.technologyLogos.map(item => `
+        <div class="technology-logo">
+            <img src="${item.icon}" alt="" aria-hidden="true">
+            <span>${item.name}</span>
+        </div>
+    `).join("");
 
-    function moveMarker(element) {
-        if (!element || !navMarker) return;
-        navMarker.style.width = `${element.offsetWidth}px`;
-        navMarker.style.left = `${element.offsetLeft}px`;
-        navMarker.style.height = `${element.offsetHeight}px`;
-        navMarker.style.top = `${element.offsetTop}px`;
-        navLinks.forEach(link => link.classList.remove('active'));
-        element.classList.add('active');
-    }
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            if (pageYOffset >= section.offsetTop - 72) { 
-                current = section.getAttribute('id');
-            }
-        });
-        if (current) {
-            const activeLink = navMenu.querySelector(`a[href*=${current}]`);
-            if (activeLink) {
-                moveMarker(activeLink);
-            }
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetElement = document.querySelector(link.getAttribute('href'));
-            window.scrollTo({ top: targetElement.offsetTop - 70, behavior: 'smooth' });
-            moveMarker(link); 
-        });
-    });
-
-    window.addEventListener('resize', () => {
-        const activeLink = navMenu.querySelector('.nav-link.active');
-        if (activeLink) {
-            moveMarker(activeLink);
-        }
-    });
-    moveMarker(navMenu.querySelector('a[href="#home"]'));
-
-    // --- STATS COUNT-UP --- //
-    const statsSection = document.getElementById('stats');
-    const counters = statsSection.querySelectorAll('[data-count]');
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-                    counters.forEach(counter => {
-                        const target = +counter.dataset.count;
-                        let current = 0;
-                        const increment = target / 100;
-                        const isCostSavings = counter.previousElementSibling && counter.previousElementSibling.classList.contains('bi-piggy-bank');
-            
-                        const update = () => {
-                            if (current < target) {
-                                current += increment;
-                                const displayValue = Math.ceil(current);
-                                if (isCostSavings) {
-                                    counter.innerText = `${displayValue}B+`;
-                                } else {
-                                    counter.innerText = `${displayValue}+`;
-                                }
-                                requestAnimationFrame(update);
-                            } else {
-                                if (isCostSavings) {
-                                    counter.innerText = `${target}B+`;
-                                } else {
-                                    counter.innerText = `${target}+`;
-                                }
-                            }
-                        };
-                        update();
-                    });
-            observer.disconnect();
-        }
-    }, { threshold: 0.5 });
-    if (statsSection) observer.observe(statsSection);
-
-    // --- CLIENT LOGO SCROLLER --- //
-    const logosContainer = document.querySelector(".logos-slide");
-    if (logosContainer) {
-        const totalWidth = Array.from(logosContainer.children).reduce((w, c) => w + c.offsetWidth + (parseInt(getComputedStyle(c).marginRight) * 2), 0);
-        logosContainer.style.width = `${totalWidth}px`;
-        const animationDuration = totalWidth / 400; 
-        logosContainer.style.animation = `scroll ${animationDuration}s linear infinite`;
-    }
-
-    const scrollLeftButton = document.getElementById("scroll-left");
-    const scrollRightButton = document.getElementById("scroll-right");
-    const logos = document.getElementById("logos-container");
-
-    if (logos && scrollLeftButton && scrollRightButton) {
-        scrollLeftButton.addEventListener("click", () => {
-            logos.scrollBy({ left: -300, behavior: 'smooth' });
-            logosContainer.style.animationPlayState = 'paused';
-            setTimeout(() => {
-                logosContainer.style.animationPlayState = 'running';
-            }, 5000);
-        });
-
-        scrollRightButton.addEventListener("click", () => {
-            logos.scrollBy({ left: 300, behavior: 'smooth' });
-            logosContainer.style.animationPlayState = 'paused';
-            setTimeout(() => {
-                logosContainer.style.animationPlayState = 'running';
-            }, 5000);
-        });
-
-        logos.addEventListener('mouseenter', () => {
-            logosContainer.style.animationPlayState = 'paused';
-        });
-
-        logos.addEventListener('mouseleave', () => {
-            logosContainer.style.animationPlayState = 'running';
-        });
-    }
-
-    // --- DYNAMIC DATA LOADING --- //
-    console.log('Attempting to populate sections...');
-    populateSkills(portfolioData.skills);
-    populateProjects(portfolioData.projects);
-    populateExperience(portfolioData.experience);
-    populateCertifications(portfolioData.certifications);
-    populateEducation(portfolioData.education);
-
-    function populateSkills(skills) {
-        const skillsContainer = document.getElementById('skills-container');
-        if (!skillsContainer) return;
-        skills.forEach(skillCategory => {
-            const div = document.createElement('div');
-            div.className = `p-6 rounded-xl border bg-${skillCategory.color}-50 dark:bg-${skillCategory.color}-900/50 border-${skillCategory.color}-200 dark:border-${skillCategory.color}-800`;
-            div.innerHTML = `
-                <h3 class="font-bold text-lg flex items-center gap-2 mb-4 text-${skillCategory.color}-800 dark:text-${skillCategory.color}-300">
-                    <i class="bi ${skillCategory.icon}"></i> ${skillCategory.category}
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                    ${skillCategory.skills.map(skill => `<span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full">${skill}</span>`).join('')}
+    document.getElementById("skill-groups").innerHTML = v2Data.skillGroups.map(group => `
+        <article class="skill-group reveal">
+            <div class="skill-group-header"><img src="${group.icon}" alt="" aria-hidden="true"><h3>${group.title}</h3></div>
+            ${group.skills.map(([name, score]) => `
+                <div class="rating-item">
+                    <div class="rating-label"><span>${name}</span><span>${score}/5</span></div>
+                    <div class="rating-track" role="img" aria-label="${name}: ${score} out of 5"><div class="rating-fill" data-rating-width="${score * 20}%"></div></div>
                 </div>
-            `;
-            skillsContainer.appendChild(div);
-        });
-    }
+            `).join("")}
+        </article>
+    `).join("");
 
-    function populateProjects(projects) {
-        let currentProjectIndex = 0;
-        const imageContainer = document.getElementById('project-image-container');
-        const detailsContainer = document.getElementById('project-details-container');
-
-        if (!imageContainer || !detailsContainer) return;
-
-        function renderProject(index) {
-            const project = projects[index];
-            
-            imageContainer.innerHTML = `
-                <div class="carousel-container relative w-full h-full overflow-hidden rounded-lg">
-                    <div class="carousel-slides flex transition-transform duration-500 ease-in-out h-full">
-                        ${project.images.map(image => `<div class="carousel-slide w-full flex-shrink-0 h-full"><img src="${image}" alt="${project.title}" class="w-full h-full object-cover"></div>`).join('')}
-                    </div>
-                    <button class="carousel-button carousel-prev absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"><i class="bi bi-chevron-left"></i></button>
-                    <button class="carousel-button carousel-next absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"><i class="bi bi-chevron-right"></i></button>
-                    <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-                        ${project.images.map((_, index) => `<button class="carousel-indicator w-3 h-3 bg-white bg-opacity-50 rounded-full ${index === 0 ? 'active' : ''}" data-slide-to="${index}"></button>`).join('')}
-                    </div>
+    const projectStories = document.getElementById("project-stories");
+    const projectImageIndexes = v2Data.projects.map(() => 0);
+    projectStories.innerHTML = v2Data.projects.map((project, index) => `
+        <article class="project-story reveal" data-project-card="${index}">
+            <div class="project-visual">
+                <span class="project-index">${String(index + 1).padStart(2, "0")}</span>
+                <img src="${project.images[0].src}" alt="${project.images[0].alt}" loading="lazy" decoding="async" data-project-image="${index}">
+                <div class="project-image-controls" aria-label="${project.title} image controls">
+                    <button type="button" data-project-previous="${index}" aria-label="Previous ${project.title} image" ${project.images.length === 1 ? "disabled" : ""}>←</button>
+                    <button type="button" data-project-next="${index}" aria-label="Next ${project.title} image" ${project.images.length === 1 ? "disabled" : ""}>→</button>
+                    <span data-project-count="${index}">1 / ${project.images.length}</span>
+                    <button class="open-gallery" type="button" data-project-gallery="${index}">Open gallery ↗</button>
                 </div>
-            `;
-
-            detailsContainer.innerHTML = `
-                <h3 class="text-2xl font-bold mt-2">${project.title}</h3>
-                <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm flex-grow">${project.description}</p>
-                <div class="flex flex-wrap gap-2 mt-4">
-                    ${project.tags.map(tag => `<span class="bg-slate-100 dark:bg-slate-700 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`).join('')}
-                </div>
-                <ul class="mt-4 space-y-2 text-sm project-highlights-list">
-                    ${project.highlights.map(highlight => `<li class="flex items-start gap-2"><i class="bi bi-check-circle-fill text-green-500 mt-1"></i><span>${highlight}</span></li>`).join('')}
-                </ul>
-                <div class="flex items-center justify-between mt-6">
-                    <button id="prev-project" class="bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
-                        <i class="bi bi-arrow-left text-2xl"></i>
-                    </button>
-                    <div class="text-center text-sm font-semibold text-slate-500 dark:text-slate-400">${index + 1} / ${projects.length}</div>
-                    <button id="next-project" class="bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white rounded-full w-12 h-12 flex items-center justify-center transition shadow-md">
-                        <i class="bi bi-arrow-right text-2xl"></i>
-                    </button>
-                </div>
-            `;
-
-            // Carousel Logic
-            const carouselSlides = imageContainer.querySelector('.carousel-slides');
-            const carouselIndicators = imageContainer.querySelectorAll('.carousel-indicator');
-            const prevCarouselButton = imageContainer.querySelector('.carousel-prev');
-            const nextCarouselButton = imageContainer.querySelector('.carousel-next');
-            let currentSlide = 0;
-
-            function showSlide(index) {
-                carouselSlides.style.transform = `translateX(-${index * 100}%)`;
-                carouselIndicators.forEach((indicator, i) => {
-                    if (i === index) {
-                        indicator.classList.add('active');
-                        indicator.classList.remove('bg-opacity-50');
-                    } else {
-                        indicator.classList.remove('active');
-                        indicator.classList.add('bg-opacity-50');
-                    }
-                });
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % project.images.length;
-                showSlide(currentSlide);
-            }
-
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + project.images.length) % project.images.length;
-                showSlide(currentSlide);
-            }
-
-            prevCarouselButton.addEventListener('click', prevSlide);
-            nextCarouselButton.addEventListener('click', nextSlide);
-
-            carouselIndicators.forEach(indicator => {
-                indicator.addEventListener('click', (e) => {
-                    currentSlide = parseInt(e.target.dataset.slideTo);
-                    showSlide(currentSlide);
-                });
-            });
-
-            showSlide(currentSlide); // Initialize carousel
-
-            // Auto-play (optional)
-            // setInterval(nextSlide, 5000); // Change image every 5 seconds
-
-            // Existing project navigation (now for the project details, not images)
-            document.getElementById('prev-project').addEventListener('click', () => {
-                currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
-                renderProject(currentProjectIndex);
-            });
-
-            document.getElementById('next-project').addEventListener('click', () => {
-                currentProjectIndex = (currentProjectIndex + 1) % projects.length;
-                renderProject(currentProjectIndex);
-            });
-        }
-
-        renderProject(currentProjectIndex);
-    }
-
-    function populateExperience(experience) {
-        const experienceContainer = document.getElementById('experience-container');
-        if (!experienceContainer) return;
-        experience.forEach(job => {
-            const div = document.createElement('div');
-            div.className = 'relative mb-12';
-
-            div.innerHTML = `
-                <div class="hidden md:block absolute top-0 left-32 -translate-x-1/2 z-10">
-                    <div class="job-icon bg-white dark:bg-slate-800 border-2 border-blue-600 w-14 h-14 rounded-full flex items-center justify-center">
-                        <i class="bi ${job.icon} text-3xl text-blue-600"></i>
-                    </div>
-                </div>
-
-                <div class="experience-card bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                    <div class="flex justify-between items-start">
-                        <div class="w-full text-left">
-                            <div class="job-period bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold px-3 py-1 rounded-md block w-40 text-center">
-                                ${job.period.replace(' - ', ' &nbsp;&rarr;&nbsp; ')}
-                            </div>
-                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">${job.title}</h3>
-                            <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">${job.company}</p>
-                        </div>
-                        <img class="company-logo w-28 h-auto object-contain" src="${job.logo}" alt="${job.company} Logo">
-                    </div>
-                    <ul class="list-disc pl-5 text-sm text-slate-500 dark:text-slate-400 space-y-1 text-left">
-                        ${job.responsibilities.map(r => `<li>${r}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-            experienceContainer.appendChild(div);
-        });
-    }
-
-    function populateCertifications(certifications) {
-        const certContainer = document.getElementById('certifications-container');
-        if (!certContainer) return;
-        certifications.forEach(cert => {
-            const div = document.createElement('div');
-            div.className = 'bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between';
-            div.innerHTML = `
-                <div class="flex items-center gap-4">
-                    <i class="bi bi-patch-check-fill text-blue-600 text-2xl"></i>
-                    <p class="font-semibold">${cert.name}</p>
-                </div>
-                <span class="text-xs font-semibold bg-slate-200 dark:bg-slate-600 px-2 py-1 rounded-full">${cert.year}</span>
-            `;
-            certContainer.appendChild(div);
-        });
-    }
-
-    function populateEducation(education) {
-        const educationContainer = document.getElementById('education-container');
-        if (!educationContainer) return;
-        education.forEach((edu, index) => {
-            const div = document.createElement('div');
-            div.innerHTML = `
-                <h4 class="font-bold text-lg">${edu.degree}</h4>
-                <p class="text-slate-600 dark:text-slate-400">${edu.university}</p>
-                <span class="inline-block bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-xs font-semibold px-2 py-1 rounded-full mt-2">${edu.details}</span>
-            `;
-            educationContainer.appendChild(div);
-            if (index < education.length - 1) {
-                const border = document.createElement('div');
-                border.className = 'border-t border-slate-200 dark:border-slate-700 my-4';
-                educationContainer.appendChild(border);
-            }
-        });
-    }
-
-    // --- STICKY PROFILE PHOTO IN HEADER --- //
-    const mainProfilePhoto = document.querySelector('#home .gemini-glow-border img');
-    const headerKpContainer = document.querySelector('header .flex.items-center.gap-2 > div');
-
-    if (mainProfilePhoto && headerKpContainer) {
-        const originalKpContent = headerKpContainer.innerHTML;
-        const stickyProfilePhotoHtml = `<img src="${mainProfilePhoto.src}" alt="Krupesh Patel" class="w-10 h-10 object-contain rounded-md shadow-md transition-transform duration-300 zoom-150">`;
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0
-        };
-
-        const profilePhotoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Main profile photo is in view, show 'KP'
-                    headerKpContainer.innerHTML = originalKpContent;
-                    headerKpContainer.classList.remove('p-0'); // Remove padding if added for image
-                } else {
-                    // Main profile photo is out of view, show sticky photo
-                    headerKpContainer.innerHTML = stickyProfilePhotoHtml;
-                    headerKpContainer.classList.add('p-0'); // Add padding if needed for image
-                }
-            });
-        }, observerOptions);
-
-        profilePhotoObserver.observe(mainProfilePhoto);
-    }
-
-    // --- IMAGE GALLERY MODAL --- //
-    const imageGalleryModal = document.getElementById('image-gallery-modal');
-    const viewGalleryButton = document.getElementById('view-gallery-button');
-    const closeGalleryModalButton = document.getElementById('close-gallery-modal');
-    const gallerySlidesContainer = imageGalleryModal.querySelector('.gallery-carousel-slides');
-    const galleryPrevButton = imageGalleryModal.querySelector('.gallery-carousel-prev');
-    const galleryNextButton = imageGalleryModal.querySelector('.gallery-carousel-next');
-    const galleryIndicatorsContainer = imageGalleryModal.querySelector('.gallery-carousel-indicators');
-    const galleryImageName = document.getElementById('gallery-image-name');
-
-    const galleryImages = [
-        { src: './projects/MDM/MDM - GL Account Home.png', name: 'MDM - GL Account Home' },
-        { src: './projects/MDM/MDM - Delegation of Authority - Home.png', name: 'MDM - Delegation of Authority - Home' },
-        { src: './projects/MDM/MDM - Admin Screen (IRS & BoA Validation).png', name: 'MDM - Admin Screen (IRS & BoA Validation)' },
-        { src: './projects/MDM/MDM - DocuSign Integration with Task, Data Extraction.png', name: 'MDM - DocuSign Integration with Task, Data Extraction' },
-        { src: './projects/MDM/MDM - Business Partners - Home with Process Flow.png', name: 'MDM - Business Partners - Home with Process Flow' },
-        { src: './projects/MDM/Master Data Management (MDM - Home).png', name: 'Master Data Management (MDM - Home)' },
-        { src: './projects/ITPMO/IT PMO - Generative AI - Lesson Learned.png', name: 'IT PMO - Generative AI - Lesson Learned' },
-        { src: './projects/ITPMO/IT PMO - Genrative AI without Premium License.png', name: 'IT PMO - Genrative AI without Premium License' },
-        { src: './projects/riskregister/IT Risk Register - Home Page.png', name: 'IT Risk Register - Home Page' },
-        { src: './projects/ITPMO/IT PMO - In App Help Page.png', name: 'IT PMO - In App Help Page' },
-        { src: './projects/ITPMO/IT PMO - Gantt View with Quick Filters.png', name: 'IT PMO - Gantt View with Quick Filters' },
-        { src: './projects/ITPMO/IT PMO - Box Integration in Power Apps.png', name: 'IT PMO - Box Integration in Power Apps' },
-        { src: './projects/henassetmgmt/HEN Asset Mgmt - Quick History View.png', name: 'HEN Asset Mgmt - Quick History View' },
-        { src: './projects/henassetmgmt/HEN Asset Mgmt - Admin.png', name: 'HEN Asset Mgmt - Admin' },
-        { src: './projects/henassetmgmt/HEN Asset Mgmt - Editable Grid View - Parts.png', name: 'HEN Asset Mgmt - Editable Grid View - Parts' },
-        { src: './projects/henassetmgmt/HEN Asset Mgmt - Home View with Cards.png', name: 'HEN Asset Mgmt - Home View with Cards' },
-        { src: './projects/RPA/RPA - Dashboard - Quick Start.png', name: 'RPA - Dashboard - Quick Start' },
-        { src: './projects/HuntWiki/Hunt Wiki - AI Agent.png', name: 'Hunt Wiki - AI Agents' },
-        { src: './projects/HuntWiki/Hunt Wiki - AI Agent - Prompt.png', name: 'Hunt Wiki - AI Agent - Prompt' },
-        { src: './projects/HuntWiki/Hunt Wiki - AI Agent - Open Enrollment.png', name: 'Hunt Wiki - AI Agent - Open Enrollment' },
-        { src: './projects/HuntWiki/Hunt Wiki - AI Agent - Response.png', name: 'Hunt Wiki - AI Agent - Response' }
-    ];
-
-    let currentGallerySlide = 0;
-
-    function populateGalleryCarousel() {
-        gallerySlidesContainer.innerHTML = galleryImages.map(image => `
-            <div class="gallery-carousel-slide w-full flex-shrink-0 h-full">
-                <img src="${image.src}" alt="${image.name}" class="w-full h-full object-contain">
             </div>
-        `).join('');
+            <div class="project-copy">
+                <p class="work-type">${project.type}</p>
+                <h3>${project.title}</h3>
+                <p class="project-description">${project.description}</p>
+                <ul>${project.highlights.map(item => `<li>${item}</li>`).join("")}</ul>
+                <div class="chip-row">${project.chips.map(item => `<span>${item}</span>`).join("")}</div>
+            </div>
+        </article>
+    `).join("");
 
-        galleryIndicatorsContainer.innerHTML = galleryImages.map((_, index) => `
-            <button class="gallery-carousel-indicator w-3 h-3 bg-white bg-opacity-50 rounded-full" data-slide-to="${index}"></button>
-        `).join('');
-
-        showGallerySlide(currentGallerySlide);
+    function updateProjectImage(projectIndex, requestedIndex) {
+        const project = v2Data.projects[projectIndex];
+        const imageIndex = (requestedIndex + project.images.length) % project.images.length;
+        projectImageIndexes[projectIndex] = imageIndex;
+        const card = projectStories.querySelector(`[data-project-card="${projectIndex}"]`);
+        const image = card.querySelector(`[data-project-image="${projectIndex}"]`);
+        image.src = project.images[imageIndex].src;
+        image.alt = project.images[imageIndex].alt;
+        card.querySelector(`[data-project-count="${projectIndex}"]`).textContent = `${imageIndex + 1} / ${project.images.length}`;
     }
 
-    function showGallerySlide(index) {
-        gallerySlidesContainer.style.transform = `translateX(-${index * 100}%)`;
-        galleryIndicatorsContainer.querySelectorAll('.gallery-carousel-indicator').forEach((indicator, i) => {
-            if (i === index) {
-                indicator.classList.add('active');
-                indicator.classList.remove('bg-opacity-50');
-            } else {
-                indicator.classList.remove('active');
-                indicator.classList.add('bg-opacity-50');
-            }
+    const galleryModal = document.getElementById("project-gallery");
+    const galleryTitle = document.getElementById("gallery-title");
+    const galleryImage = document.getElementById("gallery-image");
+    const galleryCount = document.getElementById("gallery-count");
+    const galleryThumbnails = document.getElementById("gallery-thumbnails");
+    const galleryPrevious = galleryModal.querySelector("[data-gallery-previous]");
+    const galleryNext = galleryModal.querySelector("[data-gallery-next]");
+    const galleryDialog = galleryModal.querySelector(".gallery-dialog");
+    const galleryClose = galleryModal.querySelector(".gallery-close");
+    const pageSurfaces = document.querySelectorAll(".site-header, #mobile-nav-v2, main, footer");
+    let galleryProjectIndex = 0;
+    let galleryImageIndex = 0;
+    let galleryRotation = 0;
+    let galleryTrigger = null;
+
+    function applyGalleryTransform() {
+        if (!galleryImage.complete || !galleryImage.naturalWidth) return;
+        const shellWidth = galleryImage.parentElement.clientWidth;
+        const shellHeight = galleryImage.parentElement.clientHeight;
+        galleryImage.style.transform = "none";
+        const imageWidth = galleryImage.offsetWidth;
+        const imageHeight = galleryImage.offsetHeight;
+        const quarterTurn = galleryRotation % 180 !== 0;
+        const scale = quarterTurn && imageWidth && imageHeight
+            ? Math.min(1, shellWidth / imageHeight, shellHeight / imageWidth) * .98
+            : 1;
+        galleryImage.style.transform = `rotate(${galleryRotation}deg) scale(${scale})`;
+    }
+
+    function renderGalleryImage() {
+        const project = v2Data.projects[galleryProjectIndex];
+        const current = project.images[galleryImageIndex];
+        galleryTitle.textContent = project.title;
+        galleryImage.src = current.src;
+        galleryImage.alt = current.alt;
+        galleryImage.onload = applyGalleryTransform;
+        if (galleryImage.complete && galleryImage.naturalWidth) requestAnimationFrame(applyGalleryTransform);
+        galleryCount.textContent = `${galleryImageIndex + 1} / ${project.images.length}`;
+        galleryPrevious.disabled = project.images.length === 1;
+        galleryNext.disabled = project.images.length === 1;
+        galleryThumbnails.querySelectorAll("[data-gallery-thumbnail]").forEach((button, index) => {
+            button.setAttribute("aria-current", String(index === galleryImageIndex));
         });
-        galleryImageName.textContent = galleryImages[index].name;
     }
 
-    function nextGallerySlide() {
-        currentGallerySlide = (currentGallerySlide + 1) % galleryImages.length;
-        showGallerySlide(currentGallerySlide);
+    function openGallery(projectIndex, imageIndex, trigger) {
+        galleryProjectIndex = projectIndex;
+        galleryImageIndex = imageIndex;
+        galleryRotation = 0;
+        galleryTrigger = trigger;
+        const project = v2Data.projects[projectIndex];
+        galleryThumbnails.innerHTML = project.images.map((image, index) => `
+            <button class="gallery-thumbnail" type="button" data-gallery-thumbnail="${index}" aria-label="View image ${index + 1}: ${image.alt}">
+                <img src="${image.src}" alt="" loading="lazy" decoding="async">
+            </button>
+        `).join("");
+        galleryModal.hidden = false;
+        document.body.classList.add("gallery-open");
+        pageSurfaces.forEach(surface => { surface.inert = true; });
+        renderGalleryImage();
+        galleryClose.focus();
     }
 
-    function prevGallerySlide() {
-        currentGallerySlide = (currentGallerySlide - 1 + galleryImages.length) % galleryImages.length;
-        showGallerySlide(currentGallerySlide);
+    function closeGallery() {
+        galleryModal.hidden = true;
+        document.body.classList.remove("gallery-open");
+        pageSurfaces.forEach(surface => { surface.inert = false; });
+        galleryImage.removeAttribute("src");
+        galleryTrigger?.focus();
     }
 
-    viewGalleryButton.addEventListener('click', () => {
-        imageGalleryModal.classList.remove('hidden');
-        populateGalleryCarousel(); // Populate and show the first slide when modal opens
-    });
+    function stepGallery(direction) {
+        const project = v2Data.projects[galleryProjectIndex];
+        galleryImageIndex = (galleryImageIndex + direction + project.images.length) % project.images.length;
+        galleryRotation = 0;
+        projectImageIndexes[galleryProjectIndex] = galleryImageIndex;
+        updateProjectImage(galleryProjectIndex, galleryImageIndex);
+        renderGalleryImage();
+    }
 
-    closeGalleryModalButton.addEventListener('click', () => {
-        imageGalleryModal.classList.add('hidden');
-    });
-
-    galleryPrevButton.addEventListener('click', prevGallerySlide);
-    galleryNextButton.addEventListener('click', nextGallerySlide);
-
-    galleryIndicatorsContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('gallery-carousel-indicator')) {
-            currentGallerySlide = parseInt(e.target.dataset.slideTo);
-            showGallerySlide(currentGallerySlide);
+    projectStories.addEventListener("click", event => {
+        const previous = event.target.closest("[data-project-previous]");
+        const next = event.target.closest("[data-project-next]");
+        const open = event.target.closest("[data-project-gallery]");
+        if (previous) {
+            const projectIndex = Number(previous.dataset.projectPrevious);
+            updateProjectImage(projectIndex, projectImageIndexes[projectIndex] - 1);
+        } else if (next) {
+            const projectIndex = Number(next.dataset.projectNext);
+            updateProjectImage(projectIndex, projectImageIndexes[projectIndex] + 1);
+        } else if (open) {
+            const projectIndex = Number(open.dataset.projectGallery);
+            openGallery(projectIndex, projectImageIndexes[projectIndex], open);
         }
     });
+
+    galleryModal.addEventListener("click", event => {
+        if (event.target.closest("[data-gallery-close]")) closeGallery();
+        if (event.target.closest("[data-gallery-previous]")) stepGallery(-1);
+        if (event.target.closest("[data-gallery-next]")) stepGallery(1);
+        if (event.target.closest("[data-gallery-rotate]")) {
+            galleryRotation = (galleryRotation + 90) % 360;
+            renderGalleryImage();
+        }
+        const thumbnail = event.target.closest("[data-gallery-thumbnail]");
+        if (thumbnail) {
+            galleryImageIndex = Number(thumbnail.dataset.galleryThumbnail);
+            galleryRotation = 0;
+            updateProjectImage(galleryProjectIndex, galleryImageIndex);
+            renderGalleryImage();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (galleryModal.hidden) return;
+        if (event.key === "Tab") {
+            const focusable = [...galleryDialog.querySelectorAll('button:not(:disabled), a[href], [tabindex]:not([tabindex="-1"])')].filter(element => element.getClientRects().length);
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && (document.activeElement === first || !galleryDialog.contains(document.activeElement))) {
+                last?.focus();
+                event.preventDefault();
+            } else if (!event.shiftKey && (document.activeElement === last || !galleryDialog.contains(document.activeElement))) {
+                first?.focus();
+                event.preventDefault();
+            }
+        }
+        if (event.key === "Escape") closeGallery();
+        if (event.key === "ArrowLeft") stepGallery(-1);
+        if (event.key === "ArrowRight") stepGallery(1);
+        if (event.key.toLowerCase() === "r") {
+            galleryRotation = (galleryRotation + 90) % 360;
+            renderGalleryImage();
+        }
+    });
+    window.addEventListener("resize", () => { if (!galleryModal.hidden) applyGalleryTransform(); });
+
+    const experienceList = document.getElementById("experience-list-v2");
+    experienceList.innerHTML = v2Data.experience.map(item => `
+        <article class="experience-item reveal">
+            <div class="experience-mark"><img src="${item.logo}" alt="${item.company} logo" loading="lazy" decoding="async"></div>
+            <div class="experience-body">
+                <h3>${item.title}</h3>
+                <p class="experience-company"><span>${item.company}</span><span class="experience-industry">${item.industry}</span></p>
+                <ul>${item.bullets.map(bullet => `<li>${bullet}</li>`).join("")}</ul>
+            </div>
+            <div class="experience-period">${item.period}</div>
+        </article>
+    `).join("");
+
+    document.getElementById("company-logo-grid").innerHTML = v2Data.experience.map(item => `
+        <div class="company-logo-card reveal">
+            <img src="${item.logo}" alt="${item.company} logo" loading="lazy" decoding="async">
+            <strong>${item.company}</strong>
+            <span>${item.industry}</span>
+        </div>
+    `).join("");
+
+    document.getElementById("credential-list-v2").innerHTML = v2Data.credentials.map(([name, year], index) => `
+        <div class="credential-row reveal"><span>${String(index + 1).padStart(2, "0")}</span><strong>${name}</strong><small>${year}</small></div>
+    `).join("");
+    document.getElementById("year-v2").textContent = new Date().getFullYear();
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const observerSupported = "IntersectionObserver" in window;
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".desktop-nav a");
+
+    function updateCounters(animate) {
+        document.querySelectorAll("[data-count-v2]").forEach(counter => {
+            const target = Number(counter.dataset.countV2);
+            if (!animate) {
+                counter.textContent = target.toLocaleString();
+                return;
+            }
+            const start = performance.now();
+            const duration = reducedMotion ? 1 : 1000;
+            function update(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                counter.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3))).toLocaleString();
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        });
+    }
+
+    if (observerSupported) {
+        document.documentElement.classList.add("js-enhanced");
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("visible");
+                entry.target.querySelectorAll(".rating-fill").forEach(fill => { fill.style.width = fill.dataset.ratingWidth; });
+                revealObserver.unobserve(entry.target);
+            });
+        }, { threshold: .1 });
+        document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
+
+        const counterObserver = new IntersectionObserver(entries => {
+            if (!entries[0].isIntersecting) return;
+            updateCounters(true);
+            counterObserver.disconnect();
+        }, { threshold: .4 });
+        counterObserver.observe(document.getElementById("proof-counters"));
+
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+            });
+        }, { rootMargin: "-40% 0px -52%" });
+        sections.forEach(section => sectionObserver.observe(section));
+    } else {
+        document.querySelectorAll(".reveal").forEach(item => item.classList.add("visible"));
+        updateCounters(false);
+    }
+
+    requestAnimationFrame(() => document.querySelectorAll(".rating-fill").forEach(fill => { fill.style.width = fill.dataset.ratingWidth; }));
+
+    function alignDeepLink() {
+        if (!window.location.hash) return;
+        const target = document.querySelector(window.location.hash);
+        if (!target) return;
+        const root = document.documentElement;
+        const previousBehavior = root.style.scrollBehavior;
+        const headerOffset = document.querySelector(".site-header")?.offsetHeight || 0;
+        root.style.scrollBehavior = "auto";
+        const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset - 8;
+        window.scrollTo(0, Math.max(0, targetTop));
+        requestAnimationFrame(() => { root.style.scrollBehavior = previousBehavior; });
+    }
+
+    // Dynamic project and experience cards change document height after the browser's
+    // initial hash jump. Re-align once the generated content has completed layout.
+    requestAnimationFrame(() => requestAnimationFrame(alignDeepLink));
+    window.setTimeout(alignDeepLink, 180);
+    window.setTimeout(alignDeepLink, 750);
+    window.addEventListener("load", alignDeepLink, { once: true });
+    window.addEventListener("pageshow", () => window.setTimeout(alignDeepLink, 0));
+    window.addEventListener("hashchange", alignDeepLink);
+    document.fonts?.ready.then(alignDeepLink);
+
 });

@@ -1,0 +1,11 @@
+# Local render-and-verify output
+tmp/
+
+# Private, on-demand application artifacts (not published on GitHub Pages)
+resume/Krupesh_Patel_Dynamic_Cover_Letter_Template.docx
+resume/Krupesh_Patel_Dynamic_Cover_Letter_Template.pdf
+
+# Local tooling caches
+__pycache__/
+*.pyc
+.DS_Store
