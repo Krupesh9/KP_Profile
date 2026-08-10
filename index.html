@@ -1,280 +1,255 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krupesh Patel - Senior AI &amp; Innovation Architect</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Krupesh Patel - AI and Power Platform Solutions Engineer / Architect with expertise across Microsoft 365, automation, enterprise integration, MCP, and agentic AI.">
+    <meta name="theme-color" content="#f4f7fc">
+    <title>Krupesh Patel | AI &amp; Power Platform Solutions Engineer / Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script>document.documentElement.dataset.theme = localStorage.getItem("kp-profile-v2-theme") === "dark" ? "dark" : "light";</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Krupesh Patel",
+      "jobTitle": "AI & Power Platform Solutions Engineer / Architect",
+      "email": "mailto:kp-9287@hotmail.com",
+      "telephone": "+1-251-581-4769",
+      "url": "https://krupesh9.github.io/KP_Profile/",
+      "sameAs": ["https://www.linkedin.com/in/krupesh87"],
+      "knowsAbout": ["AI agents", "Model Context Protocol", "Microsoft Copilot Studio", "Power Platform", "Power Apps", "Power Automate", "SharePoint", "Microsoft 365", "Azure AI", "API integration", "GraphQL", "Angular", "UI/UX"]
+    }
     </script>
+    <link rel="stylesheet" href="styles.css?v=24">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="scripts.js?v=14" defer></script>
 </head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
-
-    <!-- Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/50 dark:bg-slate-900/50 shadow-sm border-b border-slate-200 dark:border-slate-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center gap-2">
-                    <div class="bg-blue-600 text-white font-bold text-xl w-10 h-10 flex items-center justify-center rounded-md">KP</div>
-                    <span class="font-bold text-lg">Krupesh Patel</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <nav id="nav-menu" class="hidden md:flex items-center space-x-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-full relative">
-                        <div id="nav-marker" class="absolute bg-white dark:bg-slate-700 rounded-full shadow-md transition-all duration-300 ease-in-out"></div>
-                        <a href="#home" class="nav-link px-4 py-2 rounded-full z-10">Home</a>
-                        <a href="#skills" class="nav-link px-4 py-2 rounded-full z-10">Skills</a>
-                        <a href="#projects" class="nav-link px-4 py-2 rounded-full z-10">Projects</a>
-                        <a href="#experience" class="nav-link px-4 py-2 rounded-full z-10">Experience</a>
-                        <a href="#certifications" class="nav-link px-4 py-2 rounded-full z-10">Certifications</a>
-                    </nav>
-                    <button id="theme-toggle" class="text-xl text-slate-600 dark:text-slate-300 hover:text-blue-600">
-                        <i class="bi bi-moon-stars-fill"></i>
-                    </button>
-                    <button id="mobile-menu-button" class="md:hidden text-2xl">
-                        <i class="bi bi-list"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden container mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-            <a href="#home" class="block py-2 px-4 text-sm rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
-            <a href="#skills" class="block py-2 px-4 text-sm rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
-            <a href="#projects" class="block py-2 px-4 text-sm rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
-            <a href="#experience" class="block py-2 px-4 text-sm rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Experience</a>
-            <a href="#certifications" class="block py-2 px-4 text-sm rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Certifications</a>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Krupesh Patel profile home">
+            <span class="brand-monogram"><span class="brand-initials">KP</span><img src="assets/krupesh-profile-480.jpg" alt=""></span>
+            <strong>Krupesh<br>Patel</strong>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+            <a href="#top" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#work">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#credentials">Certifications</a>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" id="theme-toggle-v2" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+                <svg class="theme-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg>
+                <svg class="theme-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            </button>
+            <button class="menu-toggle" id="menu-toggle-v2" type="button" aria-expanded="false" aria-controls="mobile-nav-v2" aria-label="Open navigation menu">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="mobile-nav" id="mobile-nav-v2" aria-label="Mobile navigation">
+        <a href="#top">Home</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#credentials">Certifications</a>
+    </nav>
 
-        <!-- Landing Section -->
-        <section id="home" class="text-center flex flex-col justify-center items-center py-8 md:py-12">
-            <div class="p-1 rounded-full mx-auto mb-4 shadow-lg gemini-glow-border">
-                <img src="./favicon.ico" alt="Krupesh Patel" class="w-32 object-cover rounded-full">
-            </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">Krupesh Patel</h1>
-            <h2 class="text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400 mt-2">Senior AI &amp; Innovation Architect</h2>
-            <p class="text-base text-slate-500 dark:text-slate-400 mt-3 max-w-2xl mx-auto">Transforming businesses with AI agents, Generative AI, and intelligent cloud automation</p>
-
-            <div class="mt-3 flex flex-wrap justify-center gap-2">
-                <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm font-semibold py-1.5 px-4 rounded-full shadow-md">
-                    <i class="bi bi-cpu-fill"></i> AI Agents &amp; Copilot Studio
-                </span>
-                <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-semibold py-1.5 px-4 rounded-full shadow-md">
-                    <i class="bi bi-stars"></i> Generative AI
-                </span>
-            </div>
-            
-            <div class="my-4 flex items-center justify-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                <i class="bi bi-patch-check-fill"></i>
-                <span>Green Card EAD Holder</span>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-3 my-4">
-                <a href="mailto:kp-9287@hotmail.com" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium py-2 px-5 rounded-full flex items-center gap-2 transition"><i class="bi bi-envelope-fill"></i> kp-9287@hotmail.com</a>
-                <a href="tel:2515814769" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium py-2 px-5 rounded-full flex items-center gap-2 transition"><i class="bi bi-telephone-fill"></i> (251) 581-4769</a>
-                <a href="https://www.linkedin.com/in/krupesh87" target="_blank" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium py-2 px-5 rounded-full flex items-center gap-2 transition"><i class="bi bi-linkedin"></i> LinkedIn</a>
-            </div>
-
-            <div id="stats" class="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 my-6 max-w-7xl mx-auto">
-                <div class="text-center">
-                    <p class="text-3xl font-bold">
-                        <i class="bi bi-calendar-check text-blue-600 dark:text-blue-400 text-2xl align-middle mr-2"></i>
-                        <span data-count="15">0+</span>
-                    </p>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm">Years Experience</p>
+    <main id="main">
+        <section class="hero" id="top">
+            <div class="hero-inner">
+                <div class="portrait-stage reveal" aria-label="Portrait with animated AI color aura">
+                    <div class="aura aura-one"></div>
+                    <div class="aura aura-two"></div>
+                    <div class="aura aura-three"></div>
+                    <div class="aura-ring"></div>
+                    <div class="portrait-card">
+                        <img src="assets/krupesh-profile-480.jpg" alt="Krupesh Patel" width="479" height="720" fetchpriority="high" decoding="async">
+                    </div>
                 </div>
-                <div class="text-center">
-                    <p class="text-3xl font-bold">
-                        <i class="bi bi-file-earmark-check text-blue-600 dark:text-blue-400 text-2xl align-middle mr-2"></i>
-                        <span data-count="100">0+</span>
-                    </p>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm">Projects Completed</p>
+
+                <div class="hero-copy reveal">
+                    <h1 class="hero-name static-gradient">Krupesh Patel</h1>
+                    <h2 class="hero-title animated-gradient">AI &amp; Power Platform Solutions Engineer / Architect</h2>
+                    <p class="lead">I design enterprise solutions across SharePoint, Microsoft 365, Power Platform, Azure, APIs, automation, and AI—connecting new agent capabilities to the systems, governance, and user experiences businesses already depend on.</p>
+                    <div class="hero-focus-pills" aria-label="Primary areas of expertise">
+                        <span><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3m3-3v3m3-3v3M9 19v3m3-3v3m3-3v3M2 9h3m-3 3h3m-3 3h3m14-6h3m-3 3h3m-3 3h3"/></svg>AI Agents &amp; Copilot Studio</span>
+                        <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2 1.45 4.55L18 8l-4.55 1.45L12 14l-1.45-4.55L6 8l4.55-1.45L12 2Zm7 11 .9 2.1L22 16l-2.1.9L19 19l-.9-2.1L16 16l2.1-.9L19 13ZM5 13l1.15 2.85L9 17l-2.85 1.15L5 21l-1.15-2.85L1 17l2.85-1.15L5 13Z"/></svg>Generative AI</span>
+                    </div>
+                    <p class="ead-status"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2.7 14.1 4l2.5-.1 1.2 2.2 2.2 1.2-.1 2.5 1.3 2.2-1.3 2.1.1 2.5-2.2 1.2-1.2 2.2-2.5-.1-2.1 1.3-2.1-1.3-2.5.1-1.2-2.2L4 16.6l.1-2.5L2.8 12l1.3-2.2L4 7.3l2.2-1.2 1.2-2.2 2.5.1L12 2.7Z"/><path class="ead-check" d="m8.2 12.1 2.3 2.3 5.2-5.3"/></svg> Green Card EAD Holder</p>
+                    <div class="identity-strip reveal" aria-label="Contact information at a glance">
+                        <a class="identity-item" href="mailto:kp-9287@hotmail.com">
+                            <span class="identity-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
+                            <strong>kp-9287@hotmail.com</strong>
+                        </a>
+                        <a class="identity-item" href="tel:2515814769">
+                            <span class="identity-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 20 4 14 3 5c0-1 1-2 2-2Z"/></svg></span>
+                            <strong>(251) 581-4769</strong>
+                        </a>
+                        <a class="identity-item" href="https://www.linkedin.com/in/krupesh87" target="_blank" rel="noreferrer">
+                            <span class="identity-icon linkedin-icon" aria-hidden="true">in</span>
+                            <strong>LinkedIn</strong>
+                        </a>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <p class="text-3xl font-bold">
-                        <i class="bi bi-award text-blue-600 dark:text-blue-400 text-2xl align-middle mr-2"></i>
-                        <span data-count="5">0+</span>
-                    </p>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm">Certifications</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-3xl font-bold">
-                        <i class="bi bi-piggy-bank text-blue-600 dark:text-blue-400 text-2xl align-middle mr-2"></i>
-                        <span data-count="2">$0B+</span>
-                    </p>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm">Cost Savings</p>
+
+                <div class="hero-proof reveal" id="proof-counters" aria-label="Career highlights">
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 10 2 2 5-5"/></svg></span><strong data-count-v2="15">0</strong><span class="metric-label">years since 2011</span></div>
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5h6m-7 0H6v16h12V5h-2m-7-2h6v4H9V3Zm1 12 2 2 4-5"/></svg></span><strong data-count-v2="125">0</strong><span class="metric-label">projects completed</span></div>
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h5m0 0 5-6m-5 6 5 6"/></svg></span><strong data-count-v2="10">0</strong><span class="metric-label">enterprise MCP servers</span></div>
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M8 3h8M6 8h12a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7a3 3 0 0 1 3-3Z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M8 18h8"/></svg></span><strong data-count-v2="200">0</strong><span class="metric-label">dedicated AI agents created</span></div>
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><path d="M17 14v6m-3-3h6"/></svg></span><strong data-count-v2="30">0</strong><span class="metric-label">Power Apps &amp; canvas apps</span></div>
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h12l-3-3m3 3-3 3M20 17H8l3 3m-3-3 3-3"/><circle cx="4" cy="17" r="2"/><circle cx="20" cy="7" r="2"/></svg></span><strong data-count-v2="50">0</strong><span class="metric-label">Power Automate optimizations</span></div>
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg></span><strong data-count-v2="30">0</strong><span class="metric-label">RPA migrations</span></div>
+                    <div><span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M10 11 14 8m-4 5 4 3"/></svg></span><strong data-count-v2="1200">0</strong><span class="metric-label">SharePoint sites migrated</span></div>
                 </div>
             </div>
+        </section>
 
-            <div class="mt-10 flex flex-col items-center gap-4">
-                <a href="KrupeshPatel_Resume_2025.pdf" download class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                    <i class="bi bi-download mr-2"></i>Download Resume
-                </a>
-                <a href="#experience" class="mt-2 animate-bounce">
-                    <i class="bi bi-arrow-down-circle text-3xl text-slate-400 hover:text-blue-600"></i>
-                </a>
-            </div>
-
-            <!-- Skills Section -->
-            <section id="skills" class="py-20">
-                <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
-                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <noscript>
+            <section class="noscript-profile" aria-labelledby="noscript-profile-title">
+                <p class="kicker">Profile summary</p>
+                <h2 id="noscript-profile-title">AI &amp; Power Platform Solutions Engineer / Architect</h2>
+                <p>15+ years delivering enterprise SharePoint, Microsoft 365, Power Platform, Azure integration, automation, and applied AI solutions. Current work includes MCP-connected tools, Copilot Studio, Agent SDKs, autonomous workflows, governance, mobile Power Apps, and CI/CD delivery.</p>
+                <p><strong>Core skills:</strong> AI agents, MCP, Copilot Studio, Power Apps, Power Automate, SharePoint, Azure AI, APIs, GraphQL, Angular, UI/UX, RPA, DevOps, and governance.</p>
+                <p><strong>Experience:</strong> Hunt Oil Company, Wells Fargo Bank, Live Nation / Ticketmaster, Bravo Tech / Hunt Consolidated, American Airlines, Range Resources, Fannie Mae, IIR / DHS, Bluetooth SIG, Lazard, and Ernst &amp; Young.</p>
+                <div class="resume-actions">
+                    <a class="button primary" href="resume/Krupesh_Patel_AI_and_Power_Platform_Resume_V2.pdf" download>Download detailed résumé</a>
+                    <a class="button secondary" href="resume/Krupesh_Patel_AI_and_Power_Platform_One_Page_V2.html">View one-page profile</a>
+                </div>
             </section>
+        </noscript>
 
-        <!-- Featured Projects Section -->
-        <section id="projects" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-            <div id="project-card" class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-2xl overflow-hidden">
-                <div id="project-image-container" class="relative aspect-video lg:aspect-auto">
-                    <!-- Project image will be populated by JS -->
-                </div>
-                <div id="project-details-container" class="p-8 lg:p-12 flex flex-col justify-center">
-                    <!-- Project details will be populated by JS -->
+        <section class="platform-ribbon" aria-label="Technology ecosystem">
+            <div class="platform-ribbon-copy">
+                <p class="kicker">Technology ecosystem</p>
+                <h2>One architecture story, not a collection of buzzwords.</h2>
+                <div class="resume-actions" aria-label="Résumé actions">
+                    <a class="button primary" href="resume/Krupesh_Patel_AI_and_Power_Platform_Resume_V2.pdf" download>
+                        <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>
+                        Download résumé
+                    </a>
+                    <a class="button secondary" href="resume/Krupesh_Patel_AI_and_Power_Platform_One_Page_V2.html" target="_blank" rel="noreferrer">
+                        <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+                        View one-page profile
+                    </a>
                 </div>
             </div>
-            <div class="text-center mt-8">
-                <button id="view-gallery-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition shadow-lg">
-                    View Image Gallery
-                </button>
+            <div class="technology-logo-grid" id="technology-logo-grid"></div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="section-intro reveal">
+                <p class="kicker">Profile</p>
+                <h2>My foundation is enterprise Microsoft delivery. AI is the next capability layer.</h2>
+            </div>
+            <div class="about-grid">
+                <article class="about-story reveal">
+                    <p>Since July 2011, I have spent 15+ years designing, modernizing, and supporting applications where usability, integration, security, and operational reliability matter. That work started with SharePoint architecture and custom development, expanded into Power Apps, Power Automate, RPA, Azure, and enterprise APIs, and now includes MCP-connected tools, Copilot Studio, Agent SDKs, and autonomous workflows.</p>
+                    <p>The value I bring is continuity: I understand the systems companies have today and can help them adopt AI without abandoning sound architecture, governance, or the people who support the platform.</p>
+                </article>
+                <aside class="profile-focus reveal">
+                    <p class="kicker">Best-fit roles</p>
+                    <h3>AI Solutions Engineer / Architect</h3>
+                    <p>Power Platform Solution Architect</p>
+                    <p>Copilot, Agent &amp; Automation Architect</p>
+                    <p>Microsoft 365 Modernization Architect</p>
+                    <span>Dallas–Fort Worth, Texas · Open to enterprise architecture and engineering leadership opportunities</span>
+                </aside>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="py-12">
-             <h2 class="text-4xl font-bold text-center mb-20">My Experience</h2>
-            <div id="experience-container" class="relative max-w-5xl lg:max-w-7xl mx-auto px-4">
-                <div class="hidden md:block absolute left-14 h-full w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+        <section class="section skills-section" id="skills">
+            <div class="section-intro reveal">
+                <p class="kicker">Capabilities</p>
+                <h2>Balanced across platform architecture, automation, integration, and applied AI.</h2>
+            </div>
+            <div class="skill-groups" id="skill-groups"></div>
+        </section>
+
+        <section class="section work-section" id="work">
+            <div class="section-intro reveal">
+                <p class="kicker">Selected work</p>
+                <h2>AI-forward projects, backed by years of Power Platform delivery.</h2>
+            </div>
+            <div class="project-stories" id="project-stories"></div>
+        </section>
+
+        <section class="section experience-section" id="experience">
+            <div class="section-intro reveal">
+                <p class="kicker">Experience</p>
+                <h2>Enterprise depth before AI became the headline.</h2>
+            </div>
+            <div class="experience-list" id="experience-list-v2"></div>
+        </section>
+
+        <section class="brand-wall section" aria-labelledby="brand-wall-heading">
+            <div class="section-intro reveal">
+                <p class="kicker">Organizations</p>
+                <h2 id="brand-wall-heading">Built across industries, operating models, and technology eras.</h2>
+            </div>
+            <div class="company-logo-grid" id="company-logo-grid"></div>
+        </section>
+
+        <section class="section credential-section" id="credentials">
+            <div class="credential-layout">
+                <div class="reveal">
+                    <p class="kicker">Credentials</p>
+                    <h2>Architecture, development, automation, and platform certifications.</h2>
+                    <div id="credential-list-v2" class="credential-list"></div>
+                </div>
+                <aside class="education-panel reveal">
+                    <p class="kicker">Education</p>
+                    <h3>M.S. Computer Science</h3>
+                    <p>University of Bridgeport<br>GPA 3.76 / 4.0</p>
+                    <h3>B.E. Information Technology</h3>
+                    <p>BVM Engineering College<br>S.P. University</p>
+                </aside>
             </div>
         </section>
 
-        <!-- Certifications & Education Section -->
-        <section id="certifications" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">Certifications & Education</h2>
-            <div class="max-w-4xl mx-auto">
-
-                <!-- Professional Certifications -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg mb-12">
-                    <h3 class="font-bold text-2xl flex items-center gap-3 mb-6 text-slate-800 dark:text-slate-200">
-                        <i class="bi bi-award-fill"></i> Professional Certifications
-                    </h3>
-                    <div id="certifications-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-                </div>
-
-                <!-- Education -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-                    <h3 class="font-bold text-2xl flex items-center gap-3 mb-6 text-slate-800 dark:text-slate-200">
-                        <i class="bi bi-mortarboard-fill"></i> Education
-                    </h3>
-                    <div id="education-container" class="space-y-6"></div>
-                </div>
-
+        <section class="contact-cta">
+            <div>
+                <p class="kicker">Start a conversation</p>
+                <h2>Need someone who can connect AI ambition to enterprise reality?</h2>
+            </div>
+            <div class="hero-actions">
+                <a class="button light" href="mailto:kp-9287@hotmail.com">Email Krupesh</a>
+                <a class="plain-link light-link" href="https://www.linkedin.com/in/krupesh87" target="_blank" rel="noreferrer">LinkedIn →</a>
             </div>
         </section>
     </main>
 
-    <!-- Clients Section -->
-    <section id="clients" class="py-4 bg-slate-100 dark:bg-slate-800/50">
-        <div class="relative group">
-            <div id="logos-container" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory py-4">
-                <div class="logos-slide flex items-center w-max h-full snap-start">
-                    <img src="./companyLogo/aaLogo.png" alt="American Airlines" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/BluetoothSIG.png" alt="Bluetooth SIG" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/EYLogo.png" alt="Ernst & Young" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/FannieMaeLogo-2.png" alt="Fannie Mae" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/huntLogo.png" alt="Hunt Oil" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/IIRDHS.png" alt="IIR-DHS" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/LazardLogo.png" alt="Lazard" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/liveNation.png" alt="Live Nation" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/RRLogo.png" alt="Range Resources" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/VDOE.png" alt="VDOE" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/wellsFargo.png" alt="Wells Fargo" class="h-24 mx-8 object-contain">
-                    <!-- Duplicate logos for seamless scroll -->
-                    <img src="./companyLogo/aaLogo.png" alt="American Airlines" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/BluetoothSIG.png" alt="Bluetooth SIG" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/EYLogo.png" alt="Ernst & Young" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/FannieMaeLogo-2.png" alt="Fannie Mae" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/huntLogo.png" alt="Hunt Oil" class_name="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/IIRDHS.png" alt="IIR-DHS" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/LazardLogo.png" alt="Lazard" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/liveNation.png" alt="Live Nation" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/RRLogo.png" alt="Range Resources" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/VDOE.png" alt="VDOE" class="h-24 mx-8 object-contain">
-                    <img src="./companyLogo/wellsFargo.png" alt="Wells Fargo" class="h-24 mx-8 object-contain">
+    <div class="gallery-modal" id="project-gallery" hidden>
+        <button class="gallery-backdrop" type="button" data-gallery-close aria-label="Close image gallery"></button>
+        <section class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
+            <header class="gallery-header">
+                <div>
+                    <p class="kicker">Project gallery</p>
+                    <h2 id="gallery-title">Project images</h2>
                 </div>
+                <button class="gallery-close" type="button" data-gallery-close aria-label="Close image gallery">×</button>
+            </header>
+            <div class="gallery-stage">
+                <button class="gallery-arrow previous" type="button" data-gallery-previous aria-label="Previous project image">←</button>
+                <div class="gallery-image-shell">
+                    <img id="gallery-image" alt="">
+                </div>
+                <button class="gallery-arrow next" type="button" data-gallery-next aria-label="Next project image">→</button>
             </div>
-            <button id="scroll-left" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                <i class="bi bi-chevron-left text-xl"></i>
-            </button>
-            <button id="scroll-right" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                <i class="bi bi-chevron-right text-xl"></i>
-            </button>
-        </div>
-    </section>
+            <div class="gallery-toolbar">
+                <span id="gallery-count" aria-live="polite">1 / 1</span>
+                <button type="button" data-gallery-rotate aria-label="Rotate current image 90 degrees">↻ Rotate</button>
+                <span class="gallery-help">Use ← → to browse · R to rotate · Esc to close</span>
+            </div>
+            <div class="gallery-thumbnails" id="gallery-thumbnails" aria-label="Project image thumbnails"></div>
+        </section>
+    </div>
 
-    <footer class="text-center p-6 bg-slate-100 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
-        <p class="text-slate-500 dark:text-slate-400">&copy; 2025 Krupesh Patel. All rights reserved.</p>
+    <footer>
+        <span>© <span id="year-v2"></span> Krupesh Patel</span>
     </footer>
-
-        <!-- Image Gallery Modal -->
-
-        <div id="image-gallery-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
-
-                            <div class="modal-content p-4 rounded-lg shadow-lg relative w-full max-w-5xl h-full">
-                <button id="close-gallery-modal" class="absolute top-2 right-2 text-slate-600 dark:text-slate-300 text-3xl leading-none hover:text-blue-600">&times;</button>
-
-                <div class="gallery-carousel-container relative w-full h-96 overflow-hidden rounded-lg">
-
-                    <div class="gallery-carousel-slides flex transition-transform duration-500 ease-in-out h-full">
-
-                        <!-- Images will be populated by JS -->
-
-                    </div>
-
-                    <button class="gallery-carousel-button gallery-carousel-prev absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"><i class="bi bi-chevron-left"></i></button>
-
-                    <button class="gallery-carousel-button gallery-carousel-next absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"><i class="bi bi-chevron-right"></i></button>
-
-                    <div class="gallery-carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-
-                        <!-- Indicators will be populated by JS -->
-
-                    </div>
-
-                </div>
-
-                <p id="gallery-image-name" class="text-center text-sm font-semibold text-slate-500 dark:text-slate-400 mt-2"></p>
-
-            </div>
-
-        </div>
-
-    
-
-        <script src="scripts.js"></script>
-
-    </body>
-
-    </html>
+</body>
+</html>

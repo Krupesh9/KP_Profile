@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="One-page profile for Krupesh Patel, AI and Power Platform Solutions Engineer and Architect.">
+    <title>Krupesh Patel | One-Page AI &amp; Power Platform Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0e1b35;
+            --navy-2: #172945;
+            --ink: #172941;
+            --muted: #5e6f86;
+            --paper: #ffffff;
+            --canvas: #e9eef6;
+            --line: #dbe4f0;
+            --soft-blue: #eef5ff;
+            --soft-violet: #f4efff;
+            --soft-pink: #fff0f7;
+            --soft-cyan: #ecfaff;
+            --blue: #4285f4;
+            --violet: #8b5cf6;
+            --pink: #ec4899;
+            --coral: #fb7185;
+            --teal: #0f8b83;
+            --green: #22a866;
+            --radius: 15px;
+        }
+
+        * { box-sizing: border-box; }
+        html { background: var(--canvas); }
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--canvas);
+            font-family: "Source Sans 3", Arial, sans-serif;
+            line-height: 1.25;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        a { color: inherit; }
+        svg { display: block; }
+
+        .screen-toolbar {
+            position: sticky;
+            z-index: 20;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: .65rem;
+            padding: .7rem;
+            border-bottom: 1px solid rgba(14,27,53,.1);
+            background: rgba(233,238,246,.9);
+            backdrop-filter: blur(16px);
+        }
+        .screen-toolbar a,
+        .screen-toolbar button {
+            min-height: 2.7rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .45rem;
+            padding: .62rem 1rem;
+            border: 1px solid #c9d5e5;
+            border-radius: 999px;
+            color: var(--navy);
+            background: #fff;
+            font: 800 .78rem/1 "Plus Jakarta Sans", Arial, sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .screen-toolbar button {
+            border-color: transparent;
+            color: #fff;
+            background: var(--navy);
+        }
+        .screen-toolbar svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+        .resume-page {
+            position: relative;
+            width: 8.5in;
+            min-height: 11in;
+            margin: .35in auto;
+            overflow: hidden;
+            padding: .29in .31in .25in;
+            border-radius: 24px;
+            background: #f8faff;
+            box-shadow: 0 28px 90px rgba(14,27,53,.18);
+        }
+        .aurora-rule {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: .08in;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1fr .85fr;
+        }
+        .aurora-rule span:nth-child(1) { background: var(--blue); }
+        .aurora-rule span:nth-child(2) { background: var(--violet); }
+        .aurora-rule span:nth-child(3) { background: var(--pink); }
+        .aurora-rule span:nth-child(4) { background: var(--coral); }
+
+        .identity-card {
+            display: grid;
+            grid-template-columns: 1.12in minmax(0, 1fr) 2.1in;
+            gap: .19in;
+            align-items: center;
+            min-height: 1.6in;
+            padding: .2in .22in;
+            border-radius: 20px;
+            color: #fff;
+            background: var(--navy);
+        }
+        .portrait-frame {
+            position: relative;
+            width: 1.02in;
+            height: 1.3in;
+            padding: 3px;
+            border-radius: 999px;
+            background: linear-gradient(155deg, var(--blue), var(--violet) 38%, var(--pink) 68%, var(--coral));
+        }
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 18%;
+            border-radius: inherit;
+            background: #dce9ef;
+        }
+        .identity-copy { min-width: 0; }
+        .identity-copy h1 {
+            margin: 0;
+            color: #fff;
+            font: 800 26pt/1.02 "Plus Jakarta Sans", Arial, sans-serif;
+            letter-spacing: -.055em;
+        }
+        .identity-copy .role {
+            margin: .05in 0 0;
+            color: #9dc3ff;
+            font: 800 8.8pt/1.2 "Plus Jakarta Sans", Arial, sans-serif;
+        }
+        .identity-copy .positioning {
+            max-width: 44ch;
+            margin: .08in 0 0;
+            color: #c8d4e6;
+            font-size: 7.7pt;
+            line-height: 1.3;
+        }
+        .identity-contact {
+            display: grid;
+            gap: .052in;
+            padding-left: .17in;
+            border-left: 1px solid rgba(255,255,255,.14);
+        }
+        .contact-line {
+            display: grid;
+            grid-template-columns: .16in minmax(0,1fr);
+            gap: .06in;
+            align-items: center;
+            color: #e5edf8;
+            font-size: 7.1pt;
+            text-decoration: none;
+        }
+        .contact-line svg { width: .13in; height: .13in; fill: none; stroke: #8eb8ff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+        .contact-line.status { color: #62e79a; font-weight: 800; }
+
+        .metric-strip {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: .08in;
+            margin-top: .12in;
+        }
+        .metric {
+            min-height: .76in;
+            display: grid;
+            grid-template-columns: .24in auto;
+            align-content: center;
+            justify-content: center;
+            gap: .02in .055in;
+            padding: .08in .05in;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            background: var(--paper);
+        }
+        .metric:nth-child(1) { background: var(--soft-blue); }
+        .metric:nth-child(2) { background: #eef0ff; }
+        .metric:nth-child(3) { background: var(--soft-violet); }
+        .metric:nth-child(4) { background: var(--soft-pink); }
+        .metric:nth-child(5) { background: var(--soft-cyan); }
+        .metric svg { width: .22in; height: .22in; fill: none; stroke: var(--blue); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+        .metric strong { color: var(--navy); font: 800 14pt/1 "Plus Jakarta Sans", Arial, sans-serif; }
+        .metric span { grid-column: 1 / -1; color: var(--muted); font-size: 6.1pt; font-weight: 800; line-height: 1.05; text-align: center; text-transform: uppercase; }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2.25in minmax(0, 1fr);
+            gap: .14in;
+            margin-top: .14in;
+        }
+        .left-rail, .main-column { display: grid; align-content: start; gap: .12in; }
+        .card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+        }
+        .card-pad { padding: .15in .15in; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: .065in;
+            margin: 0 0 .09in;
+            color: var(--navy);
+            font: 800 8.8pt/1.1 "Plus Jakarta Sans", Arial, sans-serif;
+            letter-spacing: -.015em;
+            text-transform: uppercase;
+        }
+        .section-title::before {
+            content: "";
+            width: .08in;
+            height: .08in;
+            border-radius: 3px;
+            background: var(--blue);
+            box-shadow: .055in 0 0 var(--violet), .11in 0 0 var(--pink);
+            margin-right: .11in;
+        }
+        .profile-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 7.3pt;
+            line-height: 1.34;
+        }
+        .profile-card strong { color: var(--ink); }
+        .focus-chips { display: flex; flex-wrap: wrap; gap: .035in; margin-top: .08in; }
+        .focus-chips span {
+            padding: .035in .065in;
+            border: 1px solid #d4def0;
+            border-radius: 999px;
+            color: #334b6b;
+            background: #f7f9fd;
+            font-size: 5.9pt;
+            font-weight: 800;
+        }
+
+        .skill-list { display: grid; gap: .058in; }
+        .skill-row { display: grid; grid-template-columns: minmax(0,1fr) .78in; gap: .06in; align-items: center; }
+        .skill-row span { color: #263b59; font-size: 6.8pt; font-weight: 700; }
+        .skill-bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
+        .skill-bar i { height: .052in; border-radius: 999px; background: #dbe5f2; }
+        .skill-bar i.on { background: linear-gradient(90deg, var(--blue), var(--violet)); }
+        .skill-bar i.half { background: linear-gradient(90deg, var(--blue) 50%, #dbe5f2 50%); }
+
+        .credential-list { display: grid; gap: .035in; margin: 0; padding: 0; list-style: none; }
+        .credential-list li { position: relative; padding-left: .1in; color: #3c506d; font-size: 6.45pt; line-height: 1.24; }
+        .credential-list li::before { content: ""; position: absolute; left: 0; top: .34em; width: .04in; height: .04in; border-radius: 50%; background: var(--blue); }
+        .education { margin-top: .08in; padding-top: .07in; border-top: 1px solid var(--line); }
+        .education p { margin: 0 0 .055in; color: var(--muted); font-size: 6.2pt; line-height: 1.2; }
+        .education strong { display: block; color: var(--ink); font-size: 6.8pt; }
+
+        .experience-card { padding: .14in .15in .13in; }
+        .timeline { position: relative; display: grid; gap: .075in; }
+        .timeline::before { content: ""; position: absolute; top: .04in; bottom: .04in; left: .055in; width: 1px; background: #d6e1ef; }
+        .role-item { position: relative; padding-left: .18in; }
+        .role-item::before { content: ""; position: absolute; z-index: 1; left: .018in; top: .045in; width: .075in; height: .075in; border: 2px solid var(--blue); border-radius: 50%; background: #fff; }
+        .role-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: .06in; align-items: baseline; }
+        .role-heading h3 { margin: 0; color: var(--ink); font: 800 7.7pt/1.13 "Plus Jakarta Sans", Arial, sans-serif; }
+        .role-heading time { color: var(--blue); font-size: 6.2pt; font-weight: 800; white-space: nowrap; }
+        .role-title { margin: .018in 0 .027in; color: var(--teal); font-size: 6.5pt; font-weight: 800; }
+        .role-item ul { margin: 0; padding-left: .14in; }
+        .role-item li { margin: 0 0 .02in; color: #4d6079; font-size: 6.35pt; line-height: 1.24; }
+        .role-item.compact .role-title { margin-bottom: 0; }
+        .earlier-line { margin: .075in 0 0 .18in; padding: .065in .085in; border-radius: 8px; color: #5b6e86; background: #f5f8fc; font-size: 6pt; line-height: 1.24; }
+        .earlier-line strong { color: var(--ink); }
+
+        .impact-card { padding: .13in .14in .14in; }
+        .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .07in; }
+        .impact-item {
+            min-height: .76in;
+            padding: .085in .09in;
+            border: 1px solid #dfe7f2;
+            border-radius: 11px;
+            background: #f9fbfe;
+        }
+        .impact-item h3 { margin: 0 0 .027in; color: var(--ink); font: 800 6.7pt/1.18 "Plus Jakarta Sans", Arial, sans-serif; }
+        .impact-item p { margin: 0; color: #5a6c84; font-size: 6pt; line-height: 1.24; }
+        .impact-item:nth-child(1) { border-top: 3px solid var(--blue); }
+        .impact-item:nth-child(2) { border-top: 3px solid var(--violet); }
+        .impact-item:nth-child(3) { border-top: 3px solid var(--pink); }
+        .impact-item:nth-child(4) { border-top: 3px solid #16a3b6; }
+
+        .tech-card { padding: .11in .14in; }
+        .tech-line { display: flex; flex-wrap: wrap; gap: .035in; }
+        .tech-line span { padding: .03in .058in; border-radius: 999px; color: #40546f; background: #edf3fa; font-size: 5.55pt; font-weight: 800; }
+
+        .page-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: .12in;
+            padding: 0 .04in;
+            color: #6b7b90;
+            font-size: 5.8pt;
+            font-weight: 700;
+        }
+        .page-footer strong { color: var(--navy); }
+
+        @media screen and (max-width: 800px) {
+            .resume-page { width: min(100%, 43rem); min-height: 0; margin: 0 auto; padding: 1rem; border-radius: 0; }
+            .identity-card { grid-template-columns: 5.2rem 1fr; padding: 1rem; }
+            .portrait-frame { width: 4.7rem; height: 6rem; }
+            .identity-contact { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; padding: .8rem 0 0; border-top: 1px solid rgba(255,255,255,.14); border-left: 0; }
+            .identity-copy h1 { font-size: clamp(2rem, 9vw, 3rem); }
+            .identity-copy .role { font-size: 1rem; }
+            .identity-copy .positioning { font-size: .9rem; }
+            .contact-line { font-size: .875rem; }
+            .metric-strip { grid-template-columns: repeat(2, 1fr); gap: .55rem; }
+            .metric { min-height: 5rem; }
+            .metric:last-child { grid-column: 1 / -1; }
+            .content-grid { grid-template-columns: 1fr; gap: .7rem; }
+            .left-rail, .main-column { gap: .7rem; }
+            .card-pad, .experience-card, .impact-card, .tech-card { padding: 1rem; }
+            .section-title { font-size: .9rem; }
+            .profile-card p, .skill-row span, .credential-list li, .education p, .role-item li, .role-title, .earlier-line, .impact-item p, .tech-line span { font-size: 1rem; }
+            .role-heading h3, .impact-item h3 { font-size: 1.05rem; }
+            .role-heading time { font-size: .875rem; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .impact-item { min-height: 0; padding: .8rem; }
+            .page-footer { padding: .5rem 0; font-size: .66rem; }
+        }
+
+        @media print {
+            @page { size: Letter portrait; margin: 0; }
+            html, body { width: 8.5in; height: 11in; background: #fff; }
+            .screen-toolbar { display: none !important; }
+            .resume-page { width: 8.5in; height: 11in; min-height: 11in; margin: 0; border-radius: 0; box-shadow: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="screen-toolbar" aria-label="One-page resume actions">
+        <a href="Krupesh_Patel_AI_and_Power_Platform_One_Page_V2.pdf" download>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>
+            Download PDF
+        </a>
+        <button type="button" onclick="window.print()">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3m-10-4h10v8H7v-8Z"/></svg>
+            Print or save as PDF
+        </button>
+    </nav>
+
+    <main class="resume-page">
+        <div class="aurora-rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+        <header class="identity-card">
+            <div class="portrait-frame"><img src="../assets/krupesh-profile-480.jpg" alt="Krupesh Patel"></div>
+            <div class="identity-copy">
+                <h1>Krupesh Patel</h1>
+                <p class="role">AI &amp; Power Platform Solutions Engineer / Architect</p>
+                <p class="positioning">I connect agents, automation, Microsoft platforms, and enterprise APIs to real business systems, then add the governance and delivery discipline required to make them dependable.</p>
+            </div>
+            <div class="identity-contact" aria-label="Contact information">
+                <span class="contact-line"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 6l8 7 8-7"/></svg>Dallas-Fort Worth, TX</span>
+                <a class="contact-line" href="tel:2515814769"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 20 4 14 3 5c0-1 1-2 2-2Z"/></svg>(251) 581-4769</a>
+                <a class="contact-line" href="mailto:kp-9287@hotmail.com"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 7l9 7 9-7"/></svg>kp-9287@hotmail.com</a>
+                <a class="contact-line" href="https://www.linkedin.com/in/krupesh87"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 9v10M5 5v.1M10 19v-6c0-2 1-4 4-4s4 2 4 5v5m-8-7v-3"/></svg>linkedin.com/in/krupesh87</a>
+                <span class="contact-line status"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Green Card EAD</span>
+            </div>
+        </header>
+
+        <section class="metric-strip" aria-label="Career impact">
+            <article class="metric"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 10 2 2 5-5"/></svg><strong>15+</strong><span>Years since 2011</span></article>
+            <article class="metric"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 5h6m-7 0H6v16h12V5h-2m-7-2h6v4H9V3Zm1 12 2 2 4-5"/></svg><strong>125+</strong><span>Projects completed</span></article>
+            <article class="metric"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h5m0 0 5-6m-5 6 5 6"/></svg><strong>10+</strong><span>MCP servers</span></article>
+            <article class="metric"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h12l-3-3m3 3-3 3M20 17H8l3 3m-3-3 3-3"/><circle cx="4" cy="17" r="2"/><circle cx="20" cy="7" r="2"/></svg><strong>30+</strong><span>RPA migrations</span></article>
+            <article class="metric"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M10 11 14 8m-4 5 4 3"/></svg><strong>1,200+</strong><span>SharePoint sites migrated</span></article>
+        </section>
+
+        <div class="content-grid">
+            <aside class="left-rail">
+                <section class="card card-pad profile-card">
+                    <h2 class="section-title">Profile</h2>
+                    <p><strong>Hands-on architect with 15+ years of enterprise delivery.</strong> My foundation spans SharePoint, Microsoft 365, Power Platform, RPA, Azure, APIs, and UI/UX. I now apply that depth to MCP-connected tools, Copilot Studio, and autonomous agents without losing security, usability, or supportability.</p>
+                    <div class="focus-chips"><span>Architecture</span><span>Hands-on engineering</span><span>Governance</span><span>Delivery leadership</span></div>
+                </section>
+
+                <section class="card card-pad">
+                    <h2 class="section-title">Core strengths</h2>
+                    <div class="skill-list" aria-label="Self-assessed skill ratings out of five">
+                        <div class="skill-row"><span>Power Platform architecture</span><div class="skill-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+                        <div class="skill-row"><span>Power Apps / Automate / RPA</span><div class="skill-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+                        <div class="skill-row"><span>SharePoint / Microsoft 365</span><div class="skill-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+                        <div class="skill-row"><span>MCP / APIs / integration</span><div class="skill-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+                        <div class="skill-row"><span>Agents / Copilot Studio</span><div class="skill-bar" aria-label="4.5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i></div></div>
+                        <div class="skill-row"><span>Azure / DevOps / CI/CD</span><div class="skill-bar" aria-label="4.5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i></div></div>
+                        <div class="skill-row"><span>C# / JavaScript / Python / SQL</span><div class="skill-bar" aria-label="4.5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i></div></div>
+                        <div class="skill-row"><span>UI/UX / Angular / responsive UI</span><div class="skill-bar" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+                        <div class="skill-row"><span>Power BI</span><div class="skill-bar" aria-label="2.5 out of 5"><i class="on"></i><i class="on"></i><i class="half"></i><i></i><i></i></div></div>
+                    </div>
+                </section>
+
+                <section class="card card-pad">
+                    <h2 class="section-title">Credentials</h2>
+                    <ul class="credential-list">
+                        <li>Microsoft Power Platform Solution Architect Expert</li>
+                        <li>Power Platform Developer Associate</li>
+                        <li>UiPath Certified RPA Developer</li>
+                        <li>Nintex Workflow Pro and K2 Architect</li>
+                        <li>Microsoft SharePoint Developer certifications</li>
+                    </ul>
+                    <div class="education">
+                        <p><strong>M.S. Computer Science</strong>University of Bridgeport · GPA 3.76/4.0</p>
+                        <p><strong>B.E. Information Technology</strong>BVM Engineering College · S.P. University</p>
+                    </div>
+                </section>
+            </aside>
+
+            <div class="main-column">
+                <section class="card experience-card">
+                    <h2 class="section-title">Professional experience</h2>
+                    <div class="timeline">
+                        <article class="role-item">
+                            <div class="role-heading"><h3>Hunt Oil Company</h3><time>2023-Present</time></div>
+                            <p class="role-title">Senior Solution Architect · AI, Agents, MCP, Azure &amp; Power Platform</p>
+                            <ul>
+                                <li>Built a reusable MCP SDK and onboarded 10+ servers across ITSM, security, identity, infrastructure, Microsoft 365, and business data.</li>
+                                <li>Deliver agent orchestration, Copilot Studio, mobile Power Apps, Power Automate, governance, DLP, and Azure DevOps CI/CD, helping move delivery from months toward weeks.</li>
+                            </ul>
+                        </article>
+                        <article class="role-item">
+                            <div class="role-heading"><h3>Wells Fargo</h3><time>2022-2023</time></div>
+                            <p class="role-title">Lead Application Architect · M365, Power Platform &amp; Migration</p>
+                            <ul><li>Led governance and migration delivery for 1,200+ SharePoint sites, with automated intake, approvals, reporting, and SPFx modernization.</li></ul>
+                        </article>
+                        <article class="role-item compact">
+                            <div class="role-heading"><h3>Live Nation / Ticketmaster</h3><time>2022-2023</time></div>
+                            <p class="role-title">Lead Application Architect · Supplier Automation</p>
+                        </article>
+                        <article class="role-item compact">
+                            <div class="role-heading"><h3>BravoTECH / Hunt Consolidated</h3><time>2021-2022</time></div>
+                            <p class="role-title">Lead Application Developer · Automation &amp; Power Platform</p>
+                        </article>
+                        <article class="role-item">
+                            <div class="role-heading"><h3>American Airlines</h3><time>2018-2021</time></div>
+                            <p class="role-title">Lead Application Developer · Enterprise UX &amp; Automation</p>
+                            <ul><li>Led responsive enterprise UX and FAA-governed workflows; delivered Flight Operations and aircraft-parts applications across 20+ operating groups.</li></ul>
+                        </article>
+                    </div>
+                    <p class="earlier-line"><strong>Earlier experience:</strong> Range Resources · Fannie Mae · IIR/DHS · Bluetooth SIG · Lazard · Ernst &amp; Young | SharePoint architecture, workflow, migration, document management, and enterprise UI (2011-2017)</p>
+                </section>
+
+                <section class="card impact-card">
+                    <h2 class="section-title">Selected project impact</h2>
+                    <div class="impact-grid">
+                        <article class="impact-item"><h3>Enterprise MCP &amp; agent ecosystem</h3><p>Agent SDK/orchestrator, employee onboarding, daily task execution, monitoring, safe self-healing, reusable knowledge, and human approvals.</p></article>
+                        <article class="impact-item"><h3>Power Platform delivery system</h3><p>30+ apps, 50+ process automations, Copilot Studio, AI prompts, code apps, adaptive cards, reusable UI, DLP, permissions, and governed releases.</p></article>
+                        <article class="impact-item"><h3>Automation modernization</h3><p>Migrated 30+ UiPath processes to Power Automate RPA in under two months, with $40K+ estimated annual savings.</p></article>
+                        <article class="impact-item"><h3>Enterprise modernization</h3><p>1,200+ SharePoint sites migrated, 125+ projects completed, and operational applications delivered across 20+ business groups.</p></article>
+                    </div>
+                </section>
+
+                <section class="card tech-card">
+                    <h2 class="section-title">Technology ecosystem</h2>
+                    <div class="tech-line"><span>Power Platform</span><span>Copilot Studio</span><span>Azure AI</span><span>MCP</span><span>SharePoint</span><span>Microsoft 365</span><span>REST / GraphQL</span><span>Azure DevOps</span><span>Claude</span><span>ChatGPT Codex</span><span>Angular</span><span>Figma</span></div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="page-footer"><span><strong>Krupesh Patel</strong> · AI &amp; Power Platform Solutions Engineer / Architect</span><span>Dallas-Fort Worth · Green Card EAD</span></footer>
+    </main>
+</body>
+</html>
