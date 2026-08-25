@@ -319,7 +319,7 @@ const v2Data = {
     ],
     credentials: [
         ["Microsoft Power Platform Solution Architect Expert", "2024"],
-        ["Microsoft Power Platform Developer Associate", "Microsoft"],
+        ["Microsoft Power Platform Developer Associate", "2024"],
         ["UiPath Certified RPA Developer", "2022"],
         ["Nintex Workflow Pro Certified", "2021"],
         ["K2 Certified Architect", "2021"],

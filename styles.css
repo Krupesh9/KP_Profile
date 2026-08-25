@@ -329,9 +329,20 @@ body.gallery-open { overflow: hidden; }
 .credential-row span:first-child { color: var(--accent); font-size: .66rem; font-weight: 800; }
 .credential-row strong { font-size: .78rem; }
 .credential-row small { color: var(--muted); font-size: .65rem; }
-.education-panel { padding: 2.1rem; border-radius: var(--radius); background: var(--education-bg); color: #fff; box-shadow: var(--shadow); }
-.education-panel h3 { margin: 1.25rem 0 .2rem; font: 800 1rem/1.2 "Plus Jakarta Sans", sans-serif; }
-.education-panel p { color: var(--education-muted); font-size: 1rem; }
+.education-panel { display: grid; gap: .85rem; padding: 2.1rem; border-radius: var(--radius); background: var(--education-bg); color: #fff; box-shadow: var(--shadow); }
+.education-panel > .kicker { margin-bottom: .15rem; color: #fff; }
+.education-item { display: grid; grid-template-columns: minmax(0, 1fr) 8.3rem; gap: .9rem; align-items: center; min-height: 9.2rem; padding: 1rem; border: 1px solid rgba(255,255,255,.14); border-radius: .9rem; background: rgba(255,255,255,.07); }
+.education-panel h3 { margin: 0 0 .3rem; font: 800 1rem/1.25 "Plus Jakarta Sans", sans-serif; }
+.education-panel p { margin: 0; color: var(--education-muted); font-size: .88rem; line-height: 1.45; }
+.education-location { display: block; margin-top: .65rem; color: #fff; font-size: .68rem; font-weight: 750; line-height: 1.35; }
+.education-map { position: relative; display: grid; min-height: 7rem; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: .72rem; background: rgba(7,20,43,.2); }
+.education-map svg { width: 100%; height: 6.4rem; }
+.education-map strong { position: absolute; right: .5rem; bottom: .4rem; padding: .15rem .36rem; border-radius: 999px; background: rgba(7,20,43,.64); color: #fff; font: 800 .54rem/1.2 "Plus Jakarta Sans", sans-serif; letter-spacing: .12em; }
+.map-grid { fill: none; stroke: rgba(255,255,255,.06); stroke-width: 1; }
+.map-land { fill: rgba(255,255,255,.18); stroke: rgba(255,255,255,.72); stroke-linejoin: round; stroke-width: 1.6; }
+.map-coast { fill: none; stroke: rgba(255,255,255,.35); stroke-linecap: round; stroke-width: 1.3; }
+.map-pulse { fill: rgba(251,146,60,.22); stroke: rgba(251,191,36,.64); stroke-width: 1.5; }
+.map-pin { fill: #fbbf24; stroke: #fff; stroke-width: 1.8; }
 .education-panel hr { margin: 1.5rem 0; border: 0; border-top: 1px solid rgba(255,255,255,.18); }
 .education-note { font-style: italic; }
 
@@ -440,6 +451,8 @@ html[data-theme="dark"] .project-image-controls span { border-color: rgba(255,25
     .proof-icon { width: 1.45rem; height: 1.45rem; }
     .identity-item { min-height: 2.9rem; }
     .resume-actions { grid-template-columns: 1fr; width: 100%; }
+    .education-panel { padding: 1.25rem; }
+    .education-item { grid-template-columns: minmax(0, 1fr) 7.2rem; padding: .8rem; }
     .project-copy { padding: 1.35rem; }
     .project-image-controls { grid-template-columns: auto auto auto 1fr; }
     .project-image-controls span { justify-self: stretch; }
