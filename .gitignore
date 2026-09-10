@@ -9,3 +9,4 @@ resume/Krupesh_Patel_Dynamic_Cover_Letter_Template.pdf
 __pycache__/
 *.pyc
 .DS_Store
+.gstack/
