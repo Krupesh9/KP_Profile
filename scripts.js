@@ -330,10 +330,12 @@ const v2Data = {
 document.addEventListener("DOMContentLoaded", () => {
     const siteHeader = document.querySelector(".site-header");
     const heroPortrait = document.querySelector(".portrait-card");
-    const portraitObserver = new IntersectionObserver(entries => {
-        siteHeader.classList.toggle("show-profile", !entries[0].isIntersecting);
-    }, { threshold: .2 });
-    portraitObserver.observe(heroPortrait);
+    if ("IntersectionObserver" in window) {
+        const portraitObserver = new IntersectionObserver(entries => {
+            siteHeader.classList.toggle("show-profile", !entries[0].isIntersecting);
+        }, { threshold: .2 });
+        portraitObserver.observe(heroPortrait);
+    }
 
     const themeToggle = document.getElementById("theme-toggle-v2");
     const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -347,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.addEventListener("click", () => {
         const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
         document.documentElement.dataset.theme = next;
-        localStorage.setItem("kp-profile-v2-theme", next);
+        try { localStorage.setItem("kp-profile-v2-theme", next); } catch {}
         syncThemeControl();
     });
 
@@ -385,7 +387,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectStories = document.getElementById("project-stories");
     const projectImageIndexes = v2Data.projects.map(() => 0);
     projectStories.innerHTML = v2Data.projects.map((project, index) => `
-        <article class="project-story reveal" data-project-card="${index}">
+        <div class="project-chapter">
+        <div class="chapter-marker"><span>${String(index + 1).padStart(2, "0")}</span><p>PROJECT ${String(index + 1).padStart(2, "0")} / ${String(v2Data.projects.length).padStart(2, "0")}</p></div>
+        <article class="project-story" data-project-card="${index}">
             <div class="project-visual">
                 <span class="project-index">${String(index + 1).padStart(2, "0")}</span>
                 <img src="${project.images[0].src}" alt="${project.images[0].alt}" loading="lazy" decoding="async" data-project-image="${index}">
@@ -404,6 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="chip-row">${project.chips.map(item => `<span>${item}</span>`).join("")}</div>
             </div>
         </article>
+        </div>
     `).join("");
 
     function updateProjectImage(projectIndex, requestedIndex) {
@@ -414,6 +419,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const image = card.querySelector(`[data-project-image="${projectIndex}"]`);
         image.src = project.images[imageIndex].src;
         image.alt = project.images[imageIndex].alt;
+        image.getAnimations().forEach(animation => animation.cancel());
+        image.onload = () => animateEntrance(image, 0, 6, 320);
+        if (image.complete) image.onload();
         card.querySelector(`[data-project-count="${projectIndex}"]`).textContent = `${imageIndex + 1} / ${project.images.length}`;
     }
 
@@ -556,7 +564,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const experienceList = document.getElementById("experience-list-v2");
     experienceList.innerHTML = v2Data.experience.map(item => `
-        <article class="experience-item reveal">
+        <div class="experience-step">
+        <span class="experience-year">${item.period.match(/\d{4}/)?.[0] || ""}</span>
+        <article class="experience-item">
             <div class="experience-mark"><img src="${item.logo}" alt="${item.company} logo" loading="lazy" decoding="async"></div>
             <div class="experience-body">
                 <h3>${item.title}</h3>
@@ -565,6 +575,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="experience-period">${item.period}</div>
         </article>
+        </div>
     `).join("");
 
     document.getElementById("company-logo-grid").innerHTML = v2Data.experience.map(item => `
@@ -580,47 +591,140 @@ document.addEventListener("DOMContentLoaded", () => {
     `).join("");
     document.getElementById("year-v2").textContent = new Date().getFullYear();
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const motionToggle = document.getElementById("motion-toggle");
+    const activeAnimations = new Set();
+    let motionEnabled = document.documentElement.dataset.motion !== "off";
+    let requestedMotion = true;
+    try { requestedMotion = localStorage.getItem("kp-profile-motion") !== "off"; } catch {}
     const observerSupported = "IntersectionObserver" in window;
     const sections = document.querySelectorAll("main section[id]");
     const navLinks = document.querySelectorAll(".desktop-nav a");
+    const chapters = [...document.querySelectorAll(".project-chapter, .experience-step")];
+    const scrollItems = [...document.querySelectorAll(".project-copy > :not(ul), .project-copy li, .hero-proof > div, .rating-track")];
+    let scrollFrame = 0;
+    const scrollStates = new WeakMap();
+    const clamp = value => Math.max(0, Math.min(1, value));
 
-    function updateCounters(animate) {
+    // Scroll position is the animation's playhead, in both directions. Layout is
+    // measured from untransformed wrappers so transforms never feed back into it.
+    function renderScrollStory() {
+        scrollFrame = 0;
+        let settling = false;
+        const vh = innerHeight;
+        function smooth(element, target) {
+            const previous = scrollStates.get(element) ?? target;
+            const value = Math.abs(target - previous) < .001 ? target : previous + (target - previous) * .18;
+            if (value !== target) settling = true;
+            scrollStates.set(element, value);
+            return value;
+        }
+        const chapterBounds = chapters.map(chapter => chapter.getBoundingClientRect());
+        const itemTops = scrollItems.map(item => {
+            let top = 0;
+            for (let node = item; node; node = node.offsetParent) top += node.offsetTop;
+            return top - scrollY;
+        });
+        const track = projectStories.getBoundingClientRect();
+        const experienceTrack = experienceList.getBoundingClientRect();
+        const timelineProgress = clamp((vh * .5 - track.top) / track.height);
+        projectStories.style.setProperty("--timeline-progress", motionEnabled ? timelineProgress : 1);
+        experienceList.style.setProperty("--timeline-progress", motionEnabled ? clamp((vh * .5 - experienceTrack.top) / experienceTrack.height) : 1);
+        chapters.forEach((chapter, index) => {
+            const bounds = chapterBounds[index];
+            const progress = motionEnabled ? smooth(chapter, clamp((vh * .94 - bounds.top) / (vh * .64))) : 1;
+            chapter.style.setProperty("--chapter-progress", progress.toFixed(4));
+            chapter.classList.toggle("chapter-current", bounds.top < vh * .55 && bounds.bottom > vh * .55);
+        });
+        scrollItems.forEach((item, index) => {
+            const progress = motionEnabled ? smooth(item, clamp((vh * .96 - itemTops[index]) / (vh * .3))) : 1;
+            item.style.setProperty("--item-progress", progress.toFixed(4));
+            const counter = item.querySelector("[data-count-v2]");
+            if (counter) {
+                const value = Math.round(Number(counter.dataset.countV2) * progress);
+                const text = value.toLocaleString();
+                if (counter.textContent !== text) counter.textContent = text;
+            }
+        });
+        if (settling && motionEnabled) scrollFrame = requestAnimationFrame(renderScrollStory);
+    }
+    function scheduleScrollStory() {
+        if (!scrollFrame) scrollFrame = requestAnimationFrame(renderScrollStory);
+    }
+    window.addEventListener("scroll", scheduleScrollStory, { passive: true });
+    window.addEventListener("resize", scheduleScrollStory, { passive: true });
+    if ("ResizeObserver" in window) new ResizeObserver(scheduleScrollStory).observe(document.querySelector("main"));
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    document.querySelectorAll(".project-story, .experience-item, .skill-group").forEach(card => {
+        let pointerFrame = 0;
+        let pointerX = 0, pointerY = 0;
+        card.addEventListener("pointermove", event => {
+            if (!motionEnabled || !finePointer.matches) return;
+            pointerX = event.clientX;
+            pointerY = event.clientY;
+            if (pointerFrame) return;
+            pointerFrame = requestAnimationFrame(() => {
+                pointerFrame = 0;
+                const bounds = card.getBoundingClientRect();
+                card.style.setProperty("--pointer-x", `${(pointerX - bounds.left) / bounds.width * 100}%`);
+                card.style.setProperty("--pointer-y", `${(pointerY - bounds.top) / bounds.height * 100}%`);
+            });
+        }, { passive: true });
+    });
+
+    function animateEntrance(element, delay = 0, distance = 18, duration = 700) {
+        if (!motionEnabled || !element.animate) return;
+        const animation = element.animate([
+            { opacity: .3, transform: `translateY(${distance}px)` },
+            { opacity: 1, transform: "translateY(0)" }
+        ], { duration, delay, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" });
+        activeAnimations.add(animation);
+        animation.onfinish = animation.oncancel = () => activeAnimations.delete(animation);
+    }
+
+    function updateCounters() {
         document.querySelectorAll("[data-count-v2]").forEach(counter => {
-            const target = Number(counter.dataset.countV2);
-            if (!animate) {
-                counter.textContent = target.toLocaleString();
-                return;
-            }
-            const start = performance.now();
-            const duration = reducedMotion ? 1 : 1000;
-            function update(now) {
-                const progress = Math.min((now - start) / duration, 1);
-                counter.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3))).toLocaleString();
-                if (progress < 1) requestAnimationFrame(update);
-            }
-            requestAnimationFrame(update);
+            counter.textContent = Number(counter.dataset.countV2).toLocaleString();
         });
     }
 
+    function syncMotion() {
+        motionEnabled = requestedMotion && !motionPreference.matches;
+        document.documentElement.dataset.motion = motionEnabled ? "on" : "off";
+        motionToggle.setAttribute("aria-pressed", String(motionEnabled));
+        motionToggle.disabled = motionPreference.matches;
+        motionToggle.title = motionPreference.matches ? "Animations off: reduced motion enabled in device settings" : motionEnabled ? "Pause animations" : "Enable animations";
+        scheduleScrollStory();
+        if (!motionEnabled) {
+            window.scrollTo({ top: window.scrollY, left: window.scrollX, behavior: "instant" });
+            activeAnimations.forEach(animation => animation.cancel());
+            activeAnimations.clear();
+            updateCounters();
+        }
+    }
+    syncMotion();
+    motionToggle.addEventListener("click", () => {
+        requestedMotion = !motionEnabled;
+        try { localStorage.setItem("kp-profile-motion", requestedMotion ? "on" : "off"); } catch {}
+        syncMotion();
+    });
+    motionPreference.addEventListener("change", syncMotion);
+    updateCounters();
+
     if (observerSupported) {
-        document.documentElement.classList.add("js-enhanced");
         const revealObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add("visible");
+                // Parent reveals carry nested content together to avoid double movement.
+                if (!entry.target.parentElement.closest(".reveal")) {
+                    animateEntrance(entry.target);
+                }
                 entry.target.querySelectorAll(".rating-fill").forEach(fill => { fill.style.width = fill.dataset.ratingWidth; });
                 revealObserver.unobserve(entry.target);
             });
-        }, { threshold: .1 });
+        }, { threshold: 0, rootMargin: "0px 0px -32px 0px" });
         document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
-
-        const counterObserver = new IntersectionObserver(entries => {
-            if (!entries[0].isIntersecting) return;
-            updateCounters(true);
-            counterObserver.disconnect();
-        }, { threshold: .4 });
-        counterObserver.observe(document.getElementById("proof-counters"));
 
         const sectionObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -631,7 +735,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach(section => sectionObserver.observe(section));
     } else {
         document.querySelectorAll(".reveal").forEach(item => item.classList.add("visible"));
-        updateCounters(false);
+        updateCounters();
     }
 
     requestAnimationFrame(() => document.querySelectorAll(".rating-fill").forEach(fill => { fill.style.width = fill.dataset.ratingWidth; }));
@@ -656,7 +760,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.setTimeout(alignDeepLink, 750);
     window.addEventListener("load", alignDeepLink, { once: true });
     window.addEventListener("pageshow", () => window.setTimeout(alignDeepLink, 0));
-    window.addEventListener("hashchange", alignDeepLink);
+    window.addEventListener("hashchange", () => {
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (!target) return;
+        window.scrollTo({
+            top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - siteHeader.offsetHeight - 8),
+            behavior: motionEnabled ? "smooth" : "instant"
+        });
+    });
     document.fonts?.ready.then(alignDeepLink);
 
 });
