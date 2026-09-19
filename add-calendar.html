@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ffffff">
+  <title>Diwali Events 2026</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f7f7f8;
+      color: #111;
+    }
+    .wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0 0 10px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #444;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-size: 18px;
+      font-weight: 700;
+      background: #111;
+      color: #fff;
+      margin: 22px 0 12px;
+      cursor: pointer;
+    }
+    .events {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e5e5;
+    }
+    .event {
+      margin: 12px 0;
+    }
+    .small {
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Diwali Events 2026</h1>
+      <p>Add all Dallas & Frisco events to your calendar in one step.</p>
+
+      <button class="btn" onclick="downloadCalendar()">Add All Events to Calendar</button>
+
+      <p class="small">On iPhone, tap the button and then open the downloaded calendar file to add all events.</p>
+
+      <div class="events">
+        <div class="event"><strong>Kids Diwali 2026 (KDC)</strong><br>Oct 31, 2026 · All day</div>
+        <div class="event"><strong>Chopra Pujan 2026, Dallas TX</strong><br>Nov 8, 2026 · 4:00–8:00 PM</div>
+        <div class="event"><strong>Annakut - Nutan Varsh 2026, Dallas</strong><br>Nov 10, 2026 · 11:00 AM–9:00 PM</div>
+        <div class="event"><strong>Annakut - Nutan Varsh 2026, Frisco TX</strong><br>Nov 14, 2026 · 11:00 AM–8:00 PM</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+function downloadCalendar() {
+  const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Krupesh Patel//Diwali Events 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Diwali Events 2026 - Dallas & Frisco
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+X-LIC-LOCATION:America/Chicago
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:annakut-dallas-2026@krupesh9.github.io
+DTSTAMP:20260919T215511Z
+SUMMARY:Annakut - Nutan Varsh 2026\\, Dallas
+DTSTART;TZID=America/Chicago:20261110T110000
+DTEND;TZID=America/Chicago:20261110T210000
+LOCATION:BAPS Shri Swaminarayan Mandir\\, 4601 N State Hwy 161\\, Irving\\, TX
+  75038
+DESCRIPTION:Theme: Hinduism\\, Diwali Annakut 2026. 12 noon aarti and aarti 
+ every hour on top of the hour. 8:30 PM fireworks grand finale.
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Annakut - Nutan Varsh 2026\\, Dallas is in 1 week
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Annakut - Nutan Varsh 2026\\, Dallas is tomorrow
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:chopra-pujan-dallas-2026@krupesh9.github.io
+DTSTAMP:20260919T215511Z
+SUMMARY:Chopra Pujan 2026\\, Dallas TX
+DTSTART;TZID=America/Chicago:20261108T160000
+DTEND;TZID=America/Chicago:20261108T200000
+LOCATION:BAPS Shri Swaminarayan Mandir\\, 4601 N State Hwy 161\\, Irving\\, TX
+  75038
+DESCRIPTION:
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Chopra Pujan 2026\\, Dallas TX is in 1 week
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Chopra Pujan 2026\\, Dallas TX is tomorrow
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kids-diwali-kdc-2026@krupesh9.github.io
+DTSTAMP:20260919T215511Z
+SUMMARY:Kids Diwali 2026 (KDC)
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+LOCATION:BAPS Shri Swaminarayan Mandir\\, 4601 N State Hwy 161\\, Irving\\, TX
+  75038
+DESCRIPTION:Will put some description
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Kids Diwali 2026 (KDC) is in 1 week
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Kids Diwali 2026 (KDC) is tomorrow
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:annakut-frisco-2026@krupesh9.github.io
+DTSTAMP:20260919T215511Z
+SUMMARY:Annakut - Nutan Varsh 2026\\, Frisco TX
+DTSTART;TZID=America/Chicago:20261114T110000
+DTEND;TZID=America/Chicago:20261114T200000
+LOCATION:BAPS Shri Swaminarayan Mandir\\, 9190 Sam Rayburn Tollway S\\, Frisc
+ o\\, TX 75035
+DESCRIPTION:Food stalls and aarti every hour.
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Annakut - Nutan Varsh 2026\\, Frisco TX is in 1 week
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Annakut - Nutan Varsh 2026\\, Frisco TX is tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+`;
+  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Diwali_Events_Dallas_Frisco_2026.ics';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+}
+</script>
+</body>
+</html>
